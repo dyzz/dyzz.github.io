@@ -4745,7 +4745,7 @@ var n = "store/".concat(t);
         },
         networkName: "Mainnet",
         rpcUrl: "https://mainnet.infura.io/v3/865ab3c804cb47caa962010c897b40c5",
-        multisenderContractAddress: "0x2a9C34E0C4e40864d1C2ea5220DE0f668D95035b",
+        multisenderContractAddress: "0x4bf69C6E4Da6Ba22923a8B113900994802a37741",
         multisenderMerkleContractAddress: "0xE7BD68547F41413A6bAa7609550A7eB58C84c406",
         smartContractPollTime: 15,
         gasOracleUrls: ["https://gasprice.poa.network/", "https://ethgasstation.info/json/ethgasAPI.json"],
@@ -4769,7 +4769,7 @@ var n = "store/".concat(t);
         },
         networkName: "Ropsten",
         rpcUrl: "https://ropsten.infura.io/v3/5067eb1eff9d4f0e96c9761b116cd4bd",
-        multisenderContractAddress: "0x2a9C34E0C4e40864d1C2ea5220DE0f668D95035b",
+        multisenderContractAddress: "0x4bf69C6E4Da6Ba22923a8B113900994802a37741",
         multisenderMerkleContractAddress: "0x0ef328FF80CBcb7eb09AF21a841DBed1BF294aCF",
         tokenApis: [{
           url: "https://blockscout.com/eth/ropsten/api",
@@ -4791,7 +4791,7 @@ var n = "store/".concat(t);
         },
         networkName: "Rinkeby",
         rpcUrl: "https://rinkeby.infura.io/v3/5067eb1eff9d4f0e96c9761b116cd4bd",
-        multisenderContractAddress: "0x2a9C34E0C4e40864d1C2ea5220DE0f668D95035b",
+        multisenderContractAddress: "0x4bf69C6E4Da6Ba22923a8B113900994802a37741",
         multisenderMerkleContractAddress: "0x0ef328FF80CBcb7eb09AF21a841DBed1BF294aCF",
         tokenApis: [{
           url: "https://blockscout.com/eth/rinkeby/api",
@@ -4812,7 +4812,7 @@ var n = "store/".concat(t);
           tx: "https://goerli.etherscan.io/tx/"
         },
         networkName: "Goerli",
-        multisenderContractAddress: "0x2a9C34E0C4e40864d1C2ea5220DE0f668D95035b",
+        multisenderContractAddress: "0x4bf69C6E4Da6Ba22923a8B113900994802a37741",
         multisenderMerkleContractAddress: "0x0ef328FF80CBcb7eb09AF21a841DBed1BF294aCF",
         rpcUrl: "https://goerli.mycryptoapi.com/",
         tokenApis: [{
@@ -4835,7 +4835,7 @@ var n = "store/".concat(t);
         },
         networkName: "Kovan",
         rpcUrl: "https://kovan.infura.io/v3/c7463beadf2144e68646ff049917b716",
-        multisenderContractAddress: "0x2a9C34E0C4e40864d1C2ea5220DE0f668D95035b",
+        multisenderContractAddress: "0x4bf69C6E4Da6Ba22923a8B113900994802a37741",
         multisenderMerkleContractAddress: "0x0ef328FF80CBcb7eb09AF21a841DBed1BF294aCF",
         tokenApis: [{
           url: "https://blockscout.com/eth/kovan/api",
@@ -4857,7 +4857,7 @@ var n = "store/".concat(t);
         },
         networkName: "Ethereum classic",
         rpcUrl: "https://etc-geth.0xinfra.com/",
-        multisenderContractAddress: "0x2a9C34E0C4e40864d1C2ea5220DE0f668D95035b",
+        multisenderContractAddress: "0x4bf69C6E4Da6Ba22923a8B113900994802a37741",
         multisenderMerkleContractAddress: "0x0ef328FF80CBcb7eb09AF21a841DBed1BF294aCF",
         tokenApis: [{
           url: "https://blockscout.com/etc/mainnet/api",
@@ -4901,7 +4901,7 @@ var n = "store/".concat(t);
         },
         networkName: "xDai",
         rpcUrl: "https://dai.poa.network/",
-        multisenderContractAddress: "0x2a9C34E0C4e40864d1C2ea5220DE0f668D95035b",
+        multisenderContractAddress: "0x4bf69C6E4Da6Ba22923a8B113900994802a37741",
         multisenderMerkleContractAddress: "0x0ef328FF80CBcb7eb09AF21a841DBed1BF294aCF",
         tokenApis: [{
           url: "https://blockscout.com/poa/xdai/api",
