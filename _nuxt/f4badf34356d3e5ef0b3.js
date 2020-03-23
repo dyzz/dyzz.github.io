@@ -33,49 +33,50 @@
     var l = o(74)
     var d = new c.a(l.a.netId1.rpcUrl)
     var f = function() {
-        return {
-          records: {}
-        }
+      return {
+        records: {}
       }
+    }
     var m = {
-        getENSNameByAddress: function(e) {
-          return function(address) {
-            return e.records[address] ? e.records[address].name : null
-          }
+      getENSNameByAddress: function(e) {
+        return function(address) {
+          return e.records[address] ? e.records[address].name : null
         }
       }
+    }
     var h = {
-        SAVE_ENS_RECORD: function(e, t) {
-          var o = t.name;
-          var address = t.address;
-          var r = t.position;
-          this._vm.$set(e.records, address, {
-            name: o,
-            position: r
-          })
-        }
+      SAVE_ENS_RECORD: function(e, t) {
+        var o = t.name;
+        var address = t.address;
+        var r = t.position;
+        this._vm.$set(e.records, address, {
+          name: o,
+          position: r
+        })
       }
+    }
     var v = {
-        resolve: function(e, t) {
-          var o = this;
-          var n = (e.rootState, e.state, e.rootGetters, e.commit, t.name);
-          return Object(r.a)(regeneratorRuntime.mark((function e() {
-            var address;
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    return e.prev = 0, e.next = 3, d.eth.ens.getAddress(n);case 3:
-                    return address = e.sent, e.abrupt("return", address);case 7:
-                    throw e.prev = 7, e.t0 = e.catch(0), console.error("resolveENS", e.t0), new Error(o.app.i18n.t("wrongENS"));
-                  case 11:
-                  case "end":
-                    return e.stop()
-                }
+      resolve: function(e, t) {
+        var o = this;
+        var n = (e.rootState, e.state, e.rootGetters, e.commit, t.name);
+        return Object(r.a)(regeneratorRuntime.mark((function e() {
+          var address;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  return e.prev = 0, e.next = 3, d.eth.ens.getAddress(n);case 3:
+                  return address = e.sent, e.abrupt("return", address);case 7:
+                  throw e.prev = 7, e.t0 = e.catch(0), console.error("resolveENS", e.t0), new Error(o.app.i18n.t("wrongENS"));
+                case 11:
+                case "end":
+                  return e.stop()
               }
-            }), e, null, [[0, 7]])
-          })))()
-        }
+            }
+          }), e, null, [[0, 7]])
+        })))()
+      }
     }
   },
   1333: function(e, t, o) {
@@ -359,43 +360,43 @@
       return c
     }));
     var r = function() {
-        return {
-          nextPage: "approve"
-        }
+      return {
+        nextPage: "approve"
       }
+    }
     var n = {
-        SET_NEXT_PAGE: function(e, t) {
-          e.nextPage = t
-        }
+      SET_NEXT_PAGE: function(e, t) {
+        e.nextPage = t
       }
+    }
     var c = {
-        setNextPage: function(e, t) {
-          var o = e.commit;
-          var r = t.nextPage;
-          if (-1 === ["approve", "badAddresses", "index", "statistic", "summary", "vip", "claim"].indexOf(r)) {
-            throw Error("Invalid route ".concat(r));
-          }
-          o("SET_NEXT_PAGE", r)
-        },
-        goToTheNextPage: function(e) {
-          var t = e.state;
-          this._vm.$nuxt.$router.push({
-            path: "/".concat(t.nextPage),
-            query: this._vm.$nuxt.$route.query
-          })
-        },
-        goToIndex: function() {
-          this._vm.$nuxt.$router.push({
-            path: "/"
-          })
-        },
-        setNextPageAndGo: function(e, t) {
-          e.state;
-          var o = e.dispatch;
-          o("setNextPage", {
-            nextPage: t.nextPage
-          }), o("goToTheNextPage", {})
+      setNextPage: function(e, t) {
+        var o = e.commit;
+        var r = t.nextPage;
+        if (-1 === ["approve", "badAddresses", "index", "statistic", "summary", "vip", "claim"].indexOf(r)) {
+          throw Error("Invalid route ".concat(r));
         }
+        o("SET_NEXT_PAGE", r)
+      },
+      goToTheNextPage: function(e) {
+        var t = e.state;
+        this._vm.$nuxt.$router.push({
+          path: "/".concat(t.nextPage),
+          query: this._vm.$nuxt.$route.query
+        })
+      },
+      goToIndex: function() {
+        this._vm.$nuxt.$router.push({
+          path: "/"
+        })
+      },
+      setNextPageAndGo: function(e, t) {
+        e.state;
+        var o = e.dispatch;
+        o("setNextPage", {
+          nextPage: t.nextPage
+        }), o("goToTheNextPage", {})
+      }
     }
   },
   1430: function(e, t, o) {
@@ -420,395 +421,403 @@
     var k = f.toChecksumAddress
     var x = f.numberToHex
     var w = function() {
-        return {
-          address: {
-            value: "",
-            formValidationClass: "",
-            symbol: ""
-          },
-          tokenBalance: "0",
-          allowances: {},
-          decimals: null
-        }
+      return {
+        address: {
+          value: "",
+          formValidationClass: "",
+          symbol: ""
+        },
+        tokenBalance: "0",
+        allowances: {},
+        decimals: null
       }
+    }
     var y = {
-        SET_TOKEN_ADDRESS: function(e, t) {
-          var address = t.address;
-          var o = t.formValidationClass;
-          var r = void 0 === o ? "" : o;
-          var label = t.label;
-          var symbol = t.symbol;
-          e.address = {
-            value: address,
-            formValidationClass: r,
+      SET_TOKEN_ADDRESS: function(e, t) {
+        var address = t.address;
+        var o = t.formValidationClass;
+        var r = void 0 === o ? "" : o;
+        var label = t.label;
+        var symbol = t.symbol;
+        e.address = {
+          value: address,
+          formValidationClass: r,
+          label: label,
+          symbol: symbol
+        }
+      },
+      SET_DECIMALS: function(e, t) {
+        e.decimals = t
+      },
+      SET_TOKEN_BALANCE: function(e, t) {
+        e.tokenBalance = t
+      },
+      SET_TOKEN_ALLOWANCE: function(e, t) {
+        e.allowances = t
+      },
+      UPDATE_TOKEN_ALLOWANCE: function(e, t) {
+        var address = t.address;
+        var o = t.allowance;
+        e.allowances[address] = o
+      }
+    }
+    var j = {
+      tokenInstanceByAddress: function(e, t, o, r) {
+        return function(address) {
+          var e = {};
+          m(address) && (e = new r["metamask/web3"].eth.Contract(c, k(address)));return e
+        }
+      },
+      tokenInstance: function(e, t) {
+        var address = e.address.value;
+        return t.tokenInstanceByAddress(address)
+      },
+      toDecimals: function(e) {
+        return function(t, o, r) {
+          r = r || 4;
+          var n = e.decimals;
+          return n = o || n, new d.a(t).div(new d.a("10").pow(new d.a(n))).toFixed(r)
+        }
+      },
+      isNative: function(e) {
+        return "0x000000000000000000000000000000000000bEEF" === e.address.value
+      },
+      getTokenSymbol: function(e) {
+        return e.address.symbol
+      },
+      allowance: function(e, t, o, r) {
+        return t.isNative ? e.tokenBalance : e.allowances[r["distribution/contractAddress"]] || "0"
+      }
+    }
+    var M = {
+      setTokenAddress: function(e, t) {
+        var o = e.dispatch;
+        var r = e.commit;
+        var n = e.rootState;
+        var address = (e.rootGetters, t.address);
+        var label = t.label;
+        var symbol = t.symbol;
+        var c = address.length >= 42 && m(address);
+        if (r("SET_TOKEN_ADDRESS", {
+            address: address,
+            formValidationClass: c ? "is-success" : "is-danger",
             label: label,
             symbol: symbol
+          }), c) {
+          if ("0x000000000000000000000000000000000000bEEF" === address) {
+            var l = n.metamask.ethBalance;
+            return r("SET_DECIMALS", 18), void r("SET_TOKEN_BALANCE", l)
           }
-        },
-        SET_DECIMALS: function(e, t) {
-          e.decimals = t
-        },
-        SET_TOKEN_BALANCE: function(e, t) {
-          e.tokenBalance = t
-        },
-        SET_TOKEN_ALLOWANCE: function(e, t) {
-          e.allowances = t
-        },
-        UPDATE_TOKEN_ALLOWANCE: function(e, t) {
-          var address = t.address;
-          var o = t.allowance;
-          e.allowances[address] = o
+          o("_fetchDecimals"), o("_fetchTokenBalance"), o("_fetchAllowance")
         }
-      }
-    var j = {
-        tokenInstanceByAddress: function(e, t, o, r) {
-          return function(address) {
-            var e = {};
-            m(address) && (e = new r["metamask/web3"].eth.Contract(c, k(address)));return e
-          }
-        },
-        tokenInstance: function(e, t) {
-          var address = e.address.value;
-          return t.tokenInstanceByAddress(address)
-        },
-        toDecimals: function(e) {
-          return function(t, o, r) {
-            r = r || 4;
-            var n = e.decimals;
-            return n = o || n, new d.a(t).div(new d.a("10").pow(new d.a(n))).toFixed(r)
-          }
-        },
-        isNative: function(e) {
-          return "0x000000000000000000000000000000000000bEEF" === e.address.value
-        },
-        getTokenSymbol: function(e) {
-          return e.address.symbol
-        },
-        allowance: function(e, t, o, r) {
-          return t.isNative ? e.tokenBalance : e.allowances[r["distribution/contractAddress"]] || "0"
-        }
-      }
-    var M = {
-        setTokenAddress: function(e, t) {
-          var o = e.dispatch;
-          var r = e.commit;
-          var n = e.rootState;
-          var address = (e.rootGetters, t.address);
-          var label = t.label;
-          var symbol = t.symbol;
-          var c = address.length >= 42 && m(address);
-          if (r("SET_TOKEN_ADDRESS", {
-              address: address,
-              formValidationClass: c ? "is-success" : "is-danger",
-              label: label,
-              symbol: symbol
-            }), c) {
-            if ("0x000000000000000000000000000000000000bEEF" === address) {
-              var l = n.metamask.ethBalance;
-              return r("SET_DECIMALS", 18), void r("SET_TOKEN_BALANCE", l)
+      },
+      _fetchDecimals: function(e) {
+        var t = e.commit;
+        var o = e.dispatch;
+        return Object(n.a)(regeneratorRuntime.mark((function e() {
+          var r;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  return e.next = 2, o("askToken", {
+                      method: "decimals",
+                      web3Method: "call"
+                    });case 2:
+                  r = e.sent, t("SET_DECIMALS", h(r));case 4:
+                case "end":
+                  return e.stop()
+              }
             }
-            o("_fetchDecimals"), o("_fetchTokenBalance"), o("_fetchAllowance")
-          }
-        },
-        _fetchDecimals: function(e) {
-          var t = e.commit;
-          var o = e.dispatch;
-          return Object(n.a)(regeneratorRuntime.mark((function e() {
-            var r;
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    return e.next = 2, o("askToken", {
-                        method: "decimals",
-                        web3Method: "call"
-                      });case 2:
-                    r = e.sent, t("SET_DECIMALS", h(r));case 4:
-                  case "end":
-                    return e.stop()
-                }
+          }), e)
+        })))()
+      },
+      _fetchTokenBalance: function(e) {
+        var t = e.commit;
+        var o = e.dispatch;
+        var r = e.rootState;
+        return Object(n.a)(regeneratorRuntime.mark((function e() {
+          var n;
+          var c;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  return n = r.metamask.ethAccount, e.next = 3, o("askToken", {
+                      method: "balanceOf",
+                      params: [n],
+                      web3Method: "call"
+                    });case 3:
+                  c = e.sent, t("SET_TOKEN_BALANCE", v(c));case 5:
+                case "end":
+                  return e.stop()
               }
-            }), e)
-          })))()
-        },
-        _fetchTokenBalance: function(e) {
-          var t = e.commit;
-          var o = e.dispatch;
-          var r = e.rootState;
-          return Object(n.a)(regeneratorRuntime.mark((function e() {
-            var n;
-            var c;
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    return n = r.metamask.ethAccount, e.next = 3, o("askToken", {
-                        method: "balanceOf",
-                        params: [n],
-                        web3Method: "call"
-                      });case 3:
-                    c = e.sent, t("SET_TOKEN_BALANCE", v(c));case 5:
-                  case "end":
-                    return e.stop()
-                }
-              }
-            }), e)
-          })))()
-        },
-        _fetchAllowance: function(e) {
-          var t = e.commit;
-          var o = e.dispatch;
-          var r = e.rootState;
-          var c = e.rootGetters;
-          return Object(n.a)(regeneratorRuntime.mark((function e() {
-            var l;
-            var d;
-            var f;
-            var m;
-            var h;
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    return l = c["metamask/networkConfig"], d = l.multisenderContractAddress, f = l.multisenderMerkleContractAddress, m = r.metamask.ethAccount, h = {}, e.next = 5, Promise.all([d, f].map(function() {
-                        var e = Object(n.a)(regeneratorRuntime.mark((function e(address) {
-                          var t;
-                          return regeneratorRuntime.wrap((function(e) {
-                            for (;;) {
-                              switch (e.prev = e.next) {
-                                case 0:
-                                  return e.next = 2, o("askToken", {
-                                      method: "allowance",
-                                      params: [m, address],
-                                      web3Method: "call"
-                                    });case 2:
-                                  t = e.sent, h[address] = t;case 4:
-                                case "end":
-                                  return e.stop()
-                              }
+            }
+          }), e)
+        })))()
+      },
+      _fetchAllowance: function(e) {
+        var t = e.commit;
+        var o = e.dispatch;
+        var r = e.rootState;
+        var c = e.rootGetters;
+        return Object(n.a)(regeneratorRuntime.mark((function e() {
+          var l;
+          var d;
+          var f;
+          var m;
+          var h;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  return l = c["metamask/networkConfig"], d = l.multisenderContractAddress, f = l.multisenderMerkleContractAddress, m = r.metamask.ethAccount, h = {}, e.next = 5, Promise.all([d, f].map(function() {
+                      var e = Object(n.a)(regeneratorRuntime.mark((function e(address) {
+                        var t;
+                        return regeneratorRuntime.wrap((function(e) {
+                          for (;;) {
+                            switch (
+                            e.prev = e.next) {
+                              case 0:
+                                return e.next = 2, o("askToken", {
+                                    method: "allowance",
+                                    params: [m, address],
+                                    web3Method: "call"
+                                  });case 2:
+                                t = e.sent, h[address] = t;case 4:
+                              case "end":
+                                return e.stop()
                             }
-                          }), e)
-                        })));
-                        return function(t) {
-                          return e.apply(this, arguments)
-                        }
-                      }()));case 5:
-                    t("SET_TOKEN_ALLOWANCE", h);case 6:
-                  case "end":
-                    return e.stop()
-                }
+                          }
+                        }), e)
+                      })));
+                      return function(t) {
+                        return e.apply(this, arguments)
+                      }
+                    }()));case 5:
+                  t("SET_TOKEN_ALLOWANCE", h);case 6:
+                case "end":
+                  return e.stop()
               }
-            }), e)
-          })))()
-        },
-        sendApprove: function(e, t) {
-          e.state;
-          var o = e.rootState;
-          var r = e.getters;
-          var c = e.rootGetters;
-          var l = e.dispatch;
-          var d = e.commit;
-          return Object(n.a)(regeneratorRuntime.mark((function e() {
-            var n;
-            var f;
-            var m;
-            var h;
-            var data;
-            var k;
-            var w;
-            var y;
-            var j;
-            var M;
-            var A;
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    return e.prev = 0, n = c["metamask/fastGasPrice"], f = c["distribution/contractAddress"], m = o.metamask.ethAccount, h = r.tokenInstance, data = h.methods.approve(f, t).encodeABI(), e.next = 8, h.methods.approve(f, t).estimateGas({
-                        from: m
-                      });case 8:
-                    return k = e.sent, w = {
-                        method: "eth_sendTransaction",
-                        params: [{
-                          from: m,
-                          to: h._address,
-                          gas: x(k + 1e5),
-                          gasPrice: n,
-                          value: 0,
-                          data: data
-                        }],
-                        from: m
-                      }, e.next = 12, l("metamask/sendAsync", w, {
-                        root: !0
-                      });case 12:
-                    if (y = e.sent, d("txHashKeeper/SAVE_TX_HASH", {
-                        txName: "approveTx",
-                        txHash: y
-                      }, {
-                        root: !0
-                      }), !l("txHashKeeper/runTxWatcher", {
-                        txName: "approveTx",
-                        txHash: y
-                      }, {
-                        root: !0
-                      })) {
-                      e.next = 42;
-                      break
-                    }
-                    return j = r.allowance, e.next = 19, l("askTokenForChanges", {
-                        params: [m, f],
-                        method: "allowance",
-                        currentValue: j
-                      });case 19:
-                    if (M = e.sent, d("UPDATE_TOKEN_ALLOWANCE", {
-                        address: f,
-                        allowance: v(M)
-                      }), "push" !== o.distribution.strategy) {
-                      e.next = 35;
-                      break
-                    }
-                    return e.next = 25, l("distribution/findBadAddresses", {}, {
-                        root: !0
-                      });case 25:
-                    if (!e.sent) {
-                      e.next = 30;break
-                    }
-                    A = "badAddresses", e.next = 33;
-                    break;case 30:
-                    return e.next = 32, l("distribution/prepareTxs", {}, {
-                        root: !0
-                      });case 32:
-                    A = "summary";case 33:
-                    e.next = 38;
-                    break;case 35:
-                    return e.next = 37, l("distribution/prepareAirdropCreating", {}, {
-                        root: !0
-                      });case 37:
-                    A = "summary";case 38:
-                    return l("router/setNextPage", {
-                        nextPage: A
-                      }, {
-                        root: !0
-                      }), e.abrupt("return", !0);case 42:
-                    throw new Error("Approve failed");
-                  case 43:
-                    e.next = 49;
-                    break;case 45:
-                    throw e.prev = 45, e.t0 = e.catch(0), console.error(e.t0), new Error("Approve failed. ".concat(e.t0.message, ". Please contract support"));
-                  case 49:
-                  case "end":
-                    return e.stop()
-                }
-              }
-            }), e, null, [[0, 45]])
-          })))()
-        },
-        askToken: function(e, t) {
-          var o;
-          var n = e.dispatch;
-          var c = e.getters;
-          var l = t.method;
-          var d = t.params;
-          var f = void 0 === d ? [] : d;
-          var m = t.web3Method;
-          var h = c.tokenInstance;
-          if (h._address) {
-            return n("metamask/callWeb3", {
-              data: (o = h.methods)[l].apply(o, Object(r.a)(f)).encodeABI(),
-              to: h._address,
-              web3Method: m
-            }, {
-              root: !0
-            })
-          }
-        },
-        askTokenForChanges: function(e, t) {
-          var o;
-          var c = e.dispatch;
-          var l = e.getters;
-          var f = e.rootGetters;
-          var m = t.method;
-          var h = t.params;
-          var v = void 0 === h ? [] : h;
-          var k = t.currentValue;
-          var x = l.tokenInstance;
-          var w = f["metamask/networkConfig"].rpcCallRetryAttempt;
-          var data = (o = x.methods)[m].apply(o, Object(r.a)(v)).encodeABI();
-          return k = new d.a(k), new Promise(function() {
-              var e = Object(n.a)(regeneratorRuntime.mark((function e(t, o) {
-                var r;
-                return regeneratorRuntime.wrap((function(e) {
-                  for (;;) {
-                    switch (e.prev = e.next) {
-                      case 0:
-                        return r = function() {
-                            var e = Object(n.a)(regeneratorRuntime.mark((function e(l) {
-                              var f;
-                              var h;
-                              var v;
-                              var k;
-                              var w;
-                              return regeneratorRuntime.wrap((function(e) {
-                                for (;;) {
-                                  switch (e.prev = e.next) {
-                                    case 0:
-                                      return f = l.retryAttempt, h = void 0 === f ? 0 : f, v = l.currentValue, k = l.rpcCallRetryAttempt, h++, e.next = 4, c("metamask/callWeb3", {
-                                          data: data,
-                                          to: x._address,
-                                          web3Method: "call"
-                                        }, {
-                                          root: !0
-                                        });case 4:
-                                      if (w = e.sent, !new d.a(w).isEqualTo(v)) {
-                                        e.next = 11;break
-                                      }
-                                      if (!(h > k)) {
-                                        e.next = 8;
-                                        break
-                                      }
-                                      return e.abrupt("return", o(new Error("return value of '".concat(m, "' method was not changed"))));case 8:
-                                      setTimeout(Object(n.a)(regeneratorRuntime.mark((function e() {
-                                        return regeneratorRuntime.wrap((function(e) {
-                                          for (;;) {
-                                            switch (e.prev = e.next) {
-                                              case 0:
-                                                return e.next = 2, r({
-                                                    retryAttempt: h,
-                                                    currentValue: v,
-                                                    rpcCallRetryAttempt: k
-                                                  });case 2:
-                                              case "end":
-                                                return e.stop()
-                                            }
-                                          }
-                                        }), e)
-                                      }))), 1e3 * h), e.next = 12;
-                                      break;case 11:
-                                      return e.abrupt("return", t(w));case 12:
-                                    case "end":
-                                      return e.stop()
-                                  }
-                                }
-                              }), e)
-                            })));
-                            return function(t) {
-                              return e.apply(this, arguments)
-                            }
-                          }(), e.next = 3, r({
-                            currentValue: k,
-                            rpcCallRetryAttempt: w
-                          });case 3:
-                      case "end":
-                        return e.stop()
-                    }
+            }
+          }), e)
+        })))()
+      },
+      sendApprove: function(e, t) {
+        e.state;
+        var o = e.rootState;
+        var r = e.getters;
+        var c = e.rootGetters;
+        var l = e.dispatch;
+        var d = e.commit;
+        return Object(n.a)(regeneratorRuntime.mark((function e() {
+          var n;
+          var f;
+          var m;
+          var h;
+          var data;
+          var k;
+          var w;
+          var y;
+          var j;
+          var M;
+          var A;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  return e.prev = 0, n = c["metamask/fastGasPrice"], f = c["distribution/contractAddress"], m = o.metamask.ethAccount, h = r.tokenInstance, data = h.methods.approve(f, t).encodeABI(), e.next = 8, h.methods.approve(f, t).estimateGas({
+                      from: m
+                    });case 8:
+                  return k = e.sent, w = {
+                      method: "eth_sendTransaction",
+                      params: [{
+                        from: m,
+                        to: h._address,
+                        gas: x(k + 1e5),
+                        gasPrice: n,
+                        value: 0,
+                        data: data
+                      }],
+                      from: m
+                    }, e.next = 12, l("metamask/sendAsync", w, {
+                      root: !0
+                    });case 12:
+                  if (y = e.sent, d("txHashKeeper/SAVE_TX_HASH", {
+                      txName: "approveTx",
+                      txHash: y
+                    }, {
+                      root: !0
+                    }), !l("txHashKeeper/runTxWatcher", {
+                      txName: "approveTx",
+                      txHash: y
+                    }, {
+                      root: !0
+                    })) {
+                    e.next = 42;
+                    break
                   }
-                }), e)
-              })));
-              return function(t, o) {
-                return e.apply(this, arguments)
+                  return j = r.allowance, e.next = 19, l("askTokenForChanges", {
+                      params: [m, f],
+                      method: "allowance",
+                      currentValue: j
+                    });case 19:
+                  if (M = e.sent, d("UPDATE_TOKEN_ALLOWANCE", {
+                      address: f,
+                      allowance: v(M)
+                    }), "push" !== o.distribution.strategy) {
+                    e.next = 35;
+                    break
+                  }
+                  return e.next = 25, l("distribution/findBadAddresses", {}, {
+                      root: !0
+                    });case 25:
+                  if (!e.sent) {
+                    e.next = 30;break
+                  }
+                  A = "badAddresses", e.next = 33;
+                  break;case 30:
+                  return e.next = 32, l("distribution/prepareTxs", {}, {
+                      root: !0
+                    });case 32:
+                  A = "summary";case 33:
+                  e.next = 38;
+                  break;case 35:
+                  return e.next = 37, l("distribution/prepareAirdropCreating", {}, {
+                      root: !0
+                    });case 37:
+                  A = "summary";case 38:
+                  return l("router/setNextPage", {
+                      nextPage: A
+                    }, {
+                      root: !0
+                    }), e.abrupt("return", !0);case 42:
+                  throw new Error("Approve failed");
+                case 43:
+                  e.next = 49;
+                  break;case 45:
+                  throw e.prev = 45, e.t0 = e.catch(0), console.error(e.t0), new Error("Approve failed. ".concat(e.t0.message, ". Please contract support"));
+                case 49:
+                case "end":
+                  return e.stop()
               }
-            }())
+            }
+          }), e, null, [[0, 45]])
+        })))()
+      },
+      askToken: function(e, t) {
+        var o;
+        var n = e.dispatch;
+        var c = e.getters;
+        var l = t.method;
+        var d = t.params;
+        var f = void 0 === d ? [] : d;
+        var m = t.web3Method;
+        var h = c.tokenInstance;
+        if (h._address) {
+          return n("metamask/callWeb3", {
+            data: (o = h.methods)[l].apply(o, Object(r.a)(f)).encodeABI(),
+            to: h._address,
+            web3Method: m
+          }, {
+            root: !0
+          })
         }
+      },
+      askTokenForChanges: function(e, t) {
+        var o;
+        var c = e.dispatch;
+        var l = e.getters;
+        var f = e.rootGetters;
+        var m = t.method;
+        var h = t.params;
+        var v = void 0 === h ? [] : h;
+        var k = t.currentValue;
+        var x = l.tokenInstance;
+        var w = f["metamask/networkConfig"].rpcCallRetryAttempt;
+        var data = (o = x.methods)[m].apply(o, Object(r.a)(v)).encodeABI();
+        return k = new d.a(k), new Promise(function() {
+            var e = Object(n.a)(regeneratorRuntime.mark((function e(t, o) {
+              var r;
+              return regeneratorRuntime.wrap((function(e) {
+                for (;;) {
+                  switch (
+                  e.prev = e.next) {
+                    case 0:
+                      return r = function() {
+                          var e = Object(n.a)(regeneratorRuntime.mark((function e(l) {
+                            var f;
+                            var h;
+                            var v;
+                            var k;
+                            var w;
+                            return regeneratorRuntime.wrap((function(e) {
+                              for (;;) {
+                                switch (
+                                e.prev = e.next) {
+                                  case 0:
+                                    return f = l.retryAttempt, h = void 0 === f ? 0 : f, v = l.currentValue, k = l.rpcCallRetryAttempt, h++, e.next = 4, c("metamask/callWeb3", {
+                                        data: data,
+                                        to: x._address,
+                                        web3Method: "call"
+                                      }, {
+                                        root: !0
+                                      });case 4:
+                                    if (w = e.sent, !new d.a(w).isEqualTo(v)) {
+                                      e.next = 11;break
+                                    }
+                                    if (!(h > k)) {
+                                      e.next = 8;
+                                      break
+                                    }
+                                    return e.abrupt("return", o(new Error("return value of '".concat(m, "' method was not changed"))));case 8:
+                                    setTimeout(Object(n.a)(regeneratorRuntime.mark((function e() {
+                                      return regeneratorRuntime.wrap((function(e) {
+                                        for (;;) {
+                                          switch (
+                                          e.prev = e.next) {
+                                            case 0:
+                                              return e.next = 2, r({
+                                                  retryAttempt: h,
+                                                  currentValue: v,
+                                                  rpcCallRetryAttempt: k
+                                                });case 2:
+                                            case "end":
+                                              return e.stop()
+                                          }
+                                        }
+                                      }), e)
+                                    }))), 1e3 * h), e.next = 12;
+                                    break;case 11:
+                                    return e.abrupt("return", t(w));case 12:
+                                  case "end":
+                                    return e.stop()
+                                }
+                              }
+                            }), e)
+                          })));
+                          return function(t) {
+                            return e.apply(this, arguments)
+                          }
+                        }(), e.next = 3, r({
+                          currentValue: k,
+                          rpcCallRetryAttempt: w
+                        });case 3:
+                    case "end":
+                      return e.stop()
+                  }
+                }
+              }), e)
+            })));
+            return function(t, o) {
+              return e.apply(this, arguments)
+            }
+          }())
+      }
     }
   },
   1431: function(e, t, o) {
@@ -825,103 +834,104 @@
     var n = o(16)
     var c = o(11).hexToNumber
     var l = function() {
-        return {
-          approveTx: {
-            txHash: "",
-            status: n.default.nonExistent
-          },
-          vipTx: {
-            txHash: "",
-            status: n.default.nonExistent
-          },
-          topUpTx: {
-            txHash: "",
-            status: n.default.nonExistent
-          },
-          multisendTxs: {},
-          createAirdropTx: {
-            txHash: "",
-            status: n.default.nonExistent
-          },
-          claimAirdropTx: {
-            txHash: "",
-            status: n.default.nonExistent
-          },
-          leftOversTx: {
-            txHash: "",
-            status: n.default.nonExistent
-          }
+      return {
+        approveTx: {
+          txHash: "",
+          status: n.default.nonExistent
+        },
+        vipTx: {
+          txHash: "",
+          status: n.default.nonExistent
+        },
+        topUpTx: {
+          txHash: "",
+          status: n.default.nonExistent
+        },
+        multisendTxs: {},
+        createAirdropTx: {
+          txHash: "",
+          status: n.default.nonExistent
+        },
+        claimAirdropTx: {
+          txHash: "",
+          status: n.default.nonExistent
+        },
+        leftOversTx: {
+          txHash: "",
+          status: n.default.nonExistent
         }
       }
+    }
     var d = {
-        txExplorerUrl: function(e, t, o, r) {
-          return function(t, o) {
-            var n = r["metamask/networkConfig"].explorerUrl;
-            return "multisendTxs" === t ? n.tx + o : n.tx + e[t].txHash
+      txExplorerUrl: function(e, t, o, r) {
+        return function(t, o) {
+          var n = r["metamask/networkConfig"].explorerUrl;
+          return "multisendTxs" === t ? n.tx + o : n.tx + e[t].txHash
+        }
+      },
+      txHashToRender: function(e) {
+        return function(t, o) {
+          var r = o || e[t].txHash;
+          return r.slice(0, 20) + "..." + r.slice(-20)
+        }
+      },
+      txStatusClass: function(e) {
+        return function(e) {
+          var t;
+          switch (e) {
+            case n.default.waitingForReciept:
+              t = "is-loading";
+              break;case n.default.success:
+              t = "is-success";
+              break;case n.default.fail:
+              t = "is-danger"
           }
-        },
-        txHashToRender: function(e) {
-          return function(t, o) {
-            var r = o || e[t].txHash;
-            return r.slice(0, 20) + "..." + r.slice(-20)
-          }
-        },
-        txStatusClass: function(e) {
-          return function(e) {
-            var t;
-            switch (e) {
-              case n.default.waitingForReciept:
-                t = "is-loading";
-                break;case n.default.success:
-                t = "is-success";
-                break;case n.default.fail:
-                t = "is-danger"
-            }
-            return t
-          }
+          return t
         }
       }
+    }
     var f = {
-        SAVE_TX_HASH: function(e, t) {
-          var o = t.txName;
-          var r = t.txHash;
-          this._vm.$set(e[o], "txHash", r), this._vm.$set(e[o], "status", n.default.waitingForReciept)
-        },
-        CHANGE_TX_STATUS: function(e, t) {
-          var o = t.txName;
-          var r = t.status;
-          this._vm.$set(e[o], "status", r)
-        }
+      SAVE_TX_HASH: function(e, t) {
+        var o = t.txName;
+        var r = t.txHash;
+        this._vm.$set(e[o], "txHash", r), this._vm.$set(e[o], "status", n.default.waitingForReciept)
+      },
+      CHANGE_TX_STATUS: function(e, t) {
+        var o = t.txName;
+        var r = t.status;
+        this._vm.$set(e[o], "status", r)
       }
+    }
     var m = {
-        runTxWatcher: function(e, t) {
-          var o = e.commit;
-          var l = e.dispatch;
-          var d = t.txName;
-          var f = t.txHash;
-          return Object(r.a)(regeneratorRuntime.mark((function e() {
-            var t;
-            var r;
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    return e.next = 2, l("metamask/waitForTxReceipt", {
-                        txHash: f
-                      }, {
-                        root: !0
-                      });case 2:
-                    return t = e.sent, r = t.status, r = 1 === c(r) ? n.default.success : n.default.fail, o("CHANGE_TX_STATUS", {
-                        txName: d,
-                        status: r
-                      }), e.abrupt("return", r === n.default.success);case 7:
-                  case "end":
-                    return e.stop()
-                }
+      runTxWatcher: function(e, t) {
+        var o = e.commit;
+        var l = e.dispatch;
+        var d = t.txName;
+        var f = t.txHash;
+        return Object(r.a)(regeneratorRuntime.mark((function e() {
+          var t;
+          var r;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  return e.next = 2, l("metamask/waitForTxReceipt", {
+                      txHash: f
+                    }, {
+                      root: !0
+                    });case 2:
+                  return t = e.sent, r = t.status, r = 1 === c(r) ? n.default.success : n.default.fail, o("CHANGE_TX_STATUS", {
+                      txName: d,
+                      status: r
+                    }), e.abrupt("return", r === n.default.success);case 7:
+                case "end":
+                  return e.stop()
               }
-            }), e)
-          })))()
-        }
+            }
+          }), e)
+        })))()
+      }
     }
   },
   1432: function(e, t, o) {
@@ -961,231 +971,234 @@
     }
     var m = o(11).hexToNumber
     var h = function() {
-        return {
-          netId1: {
-            accountSender: {},
-            txs: {}
-          },
-          netId3: {
-            accountSender: {},
-            txs: {}
-          },
-          netId4: {
-            accountSender: {},
-            txs: {}
-          },
-          netId5: {
-            accountSender: {},
-            txs: {}
-          },
-          netId42: {
-            accountSender: {},
-            txs: {}
-          },
-          netId77: {
-            accountSender: {},
-            txs: {}
-          },
-          netId99: {
-            accountSender: {},
-            txs: {}
-          },
-          netId100: {
-            accountSender: {},
-            txs: {}
-          },
-          netId333: {
-            accountSender: {},
-            txs: {}
-          },
-          referrer: "0x0000000000000000000000000000000000000000"
-        }
+      return {
+        netId1: {
+          accountSender: {},
+          txs: {}
+        },
+        netId3: {
+          accountSender: {},
+          txs: {}
+        },
+        netId4: {
+          accountSender: {},
+          txs: {}
+        },
+        netId5: {
+          accountSender: {},
+          txs: {}
+        },
+        netId42: {
+          accountSender: {},
+          txs: {}
+        },
+        netId77: {
+          accountSender: {},
+          txs: {}
+        },
+        netId99: {
+          accountSender: {},
+          txs: {}
+        },
+        netId100: {
+          accountSender: {},
+          txs: {}
+        },
+        netId333: {
+          accountSender: {},
+          txs: {}
+        },
+        referrer: "0x0000000000000000000000000000000000000000"
       }
+    }
     var v = {
-        accountSender: function(e, t, o, r) {
-          var n = r["metamask/netId"];
-          return e["netId".concat(n)].accountSender
-        },
-        txs: function(e, t, o, r) {
-          var n = r["metamask/netId"];
-          return e["netId".concat(n)].txs
-        },
-        txsToRender: function(e, t) {
-          return Object.entries(t.txs).map((function(e) {
-            var t = Object(c.a)(e, 2);
-            return {
-              txHash: t[0],
-              status: t[1].status
-            }
-          }))
-        },
-        allTxsHaveSuccess: function(e, t) {
-          var o = Object.entries(t.txs);
-          return 0 !== o.length && o.filter((function(e) {
-              var t = Object(c.a)(e, 2);
-              t[0];return t[1].status === l.default.success
-            })).length === o.length
-        },
-        allTxsMined: function(e, t) {
-          var o = Object.entries(t.txs);
-          return 0 !== o.length && o.filter((function(e) {
-              var t = Object(c.a)(e, 2);
-              var o = (t[0], t[1]);
-              return [l.default.success, l.default.fail].includes(o.status)
-            })).length === o.length
-        }
-      }
-    var k = {
-        SAVE_TX: function(e, t) {
-          var o = t.params;
-          var r = t.gas;
-          var n = t.total;
-          var c = t.txHash;
-          var d = t.isMetamask;
-          var f = void 0 !== d && d;
-          var m = l.default.waitingForReciept;
-          var h = this._vm["metamask/netId"];
-          this._vm.$set(e["netId".concat(h)].txs, c, {
-            params: o,
-            gas: r,
-            total: n,
-            status: m,
-            isMetamask: f
-          })
-        },
-        CHANGE_TX_STATUS: function(e, t) {
-          var o = t.status;
-          var r = t.txHash;
-          var n = this._vm["metamask/netId"];
-          var c = e["netId".concat(n)][r];
-          this._vm.$set(e["netId".concat(n)].txs, r, f({
-            status: o
-          }, c))
-        },
-        SET_ACCOUNT_SENDER: function(e, t) {
-          var address = t.address;
-          var o = t.privateKey;
-          var r = this._vm["metamask/netId"];
-          this._vm.$set(e["netId".concat(r)], "accountSender", {
-            address: address,
-            privateKey: o
-          })
-        },
-        SAVE_SENDER_SIGNATURE: function(e, t) {
-          var o = t.signature;
-          var r = t.expiration;
-          var n = this._vm["metamask/netId"];
-          var c = e["netId".concat(n)].accountSender;
-          this._vm.$set(e["netId".concat(n)], "accountSender", f({
-            signature: o,
-            expiration: r
-          }, c))
-        },
-        RESET_TXS_STORAGE: function(e) {
-          var t = this._vm["metamask/netId"];
-          this._vm.$set(e["netId".concat(t)], "txs", {})
-        },
-        RESET_ACCOUNT_SENDER: function(e) {
-          var t = this._vm["metamask/netId"];
-          this._vm.$set(e["netId".concat(t)], "accountSender", {})
-        },
-        SAVE_REFERRER: function(e, t) {
-          e.referrer = t
-        }
-      }
-    var x = {
-        runTxWatcher: function(e, t) {
-          var o = e.commit;
-          var n = e.dispatch;
-          var c = t.txHash;
-          return Object(r.a)(regeneratorRuntime.mark((function e() {
-            var t;
-            var r;
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    return e.next = 2, n("metamask/waitForTxReceipt", {
-                        txHash: c
-                      }, {
-                        root: !0
-                      });case 2:
-                    return t = e.sent, r = t.status, r = 1 === m(r) ? l.default.success : l.default.fail, o("CHANGE_TX_STATUS", {
-                        status: r,
-                        txHash: c
-                      }), e.abrupt("return", r === l.default.success);case 7:
-                  case "end":
-                    return e.stop()
-                }
-              }
-            }), e)
-          })))()
-        },
-        setupAccount: function(e) {
-          var t = e.getters;
-          var o = e.commit;
-          var r = e.rootGetters;
-          if (!t.accountSender.address) {
-            var n = r["metamask/web3"].eth.accounts.create();
-            o("SET_ACCOUNT_SENDER", {
-              address: n.address,
-              privateKey: n.privateKey
-            }), o("RESET_TXS_STORAGE")
+      accountSender: function(e, t, o, r) {
+        var n = r["metamask/netId"];
+        return e["netId".concat(n)].accountSender
+      },
+      txs: function(e, t, o, r) {
+        var n = r["metamask/netId"];
+        return e["netId".concat(n)].txs
+      },
+      txsToRender: function(e, t) {
+        return Object.entries(t.txs).map((function(e) {
+          var t = Object(c.a)(e, 2);
+          return {
+            txHash: t[0],
+            status: t[1].status
           }
-        },
-        runSenderKeyDestroyer: function(e, t) {
-          var o = e.dispatch;
-          var n = e.commit;
-          var c = t.txsPromisesBucket;
-          return Object(r.a)(regeneratorRuntime.mark((function e() {
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    return e.next = 2, Promise.all(c);case 2:
-                    return e.next = 4, o("distribution/sendEthLeftOversToUser", {}, {
-                        root: !0
-                      });case 4:
-                    n("RESET_ACCOUNT_SENDER");case 5:
-                  case "end":
-                    return e.stop()
-                }
+        }))
+      },
+      allTxsHaveSuccess: function(e, t) {
+        var o = Object.entries(t.txs);
+        return 0 !== o.length && o.filter((function(e) {
+            var t = Object(c.a)(e, 2);
+            t[0];return t[1].status === l.default.success
+          })).length === o.length
+      },
+      allTxsMined: function(e, t) {
+        var o = Object.entries(t.txs);
+        return 0 !== o.length && o.filter((function(e) {
+            var t = Object(c.a)(e, 2);
+            var o = (t[0], t[1]);
+            return [l.default.success, l.default.fail].includes(o.status)
+          })).length === o.length
+      }
+    }
+    var k = {
+      SAVE_TX: function(e, t) {
+        var o = t.params;
+        var r = t.gas;
+        var n = t.total;
+        var c = t.txHash;
+        var d = t.isMetamask;
+        var f = void 0 !== d && d;
+        var m = l.default.waitingForReciept;
+        var h = this._vm["metamask/netId"];
+        this._vm.$set(e["netId".concat(h)].txs, c, {
+          params: o,
+          gas: r,
+          total: n,
+          status: m,
+          isMetamask: f
+        })
+      },
+      CHANGE_TX_STATUS: function(e, t) {
+        var o = t.status;
+        var r = t.txHash;
+        var n = this._vm["metamask/netId"];
+        var c = e["netId".concat(n)][r];
+        this._vm.$set(e["netId".concat(n)].txs, r, f({
+          status: o
+        }, c))
+      },
+      SET_ACCOUNT_SENDER: function(e, t) {
+        var address = t.address;
+        var o = t.privateKey;
+        var r = this._vm["metamask/netId"];
+        this._vm.$set(e["netId".concat(r)], "accountSender", {
+          address: address,
+          privateKey: o
+        })
+      },
+      SAVE_SENDER_SIGNATURE: function(e, t) {
+        var o = t.signature;
+        var r = t.expiration;
+        var n = this._vm["metamask/netId"];
+        var c = e["netId".concat(n)].accountSender;
+        this._vm.$set(e["netId".concat(n)], "accountSender", f({
+          signature: o,
+          expiration: r
+        }, c))
+      },
+      RESET_TXS_STORAGE: function(e) {
+        var t = this._vm["metamask/netId"];
+        this._vm.$set(e["netId".concat(t)], "txs", {})
+      },
+      RESET_ACCOUNT_SENDER: function(e) {
+        var t = this._vm["metamask/netId"];
+        this._vm.$set(e["netId".concat(t)], "accountSender", {})
+      },
+      SAVE_REFERRER: function(e, t) {
+        e.referrer = t
+      }
+    }
+    var x = {
+      runTxWatcher: function(e, t) {
+        var o = e.commit;
+        var n = e.dispatch;
+        var c = t.txHash;
+        return Object(r.a)(regeneratorRuntime.mark((function e() {
+          var t;
+          var r;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  return e.next = 2, n("metamask/waitForTxReceipt", {
+                      txHash: c
+                    }, {
+                      root: !0
+                    });case 2:
+                  return t = e.sent, r = t.status, r = 1 === m(r) ? l.default.success : l.default.fail, o("CHANGE_TX_STATUS", {
+                      status: r,
+                      txHash: c
+                    }), e.abrupt("return", r === l.default.success);case 7:
+                case "end":
+                  return e.stop()
               }
-            }), e)
-          })))()
-        },
-        rerunPendingTxsWatcher: function(e) {
-          var t = e.dispatch;
-          var o = e.getters;
-          var n = e.commit;
-          return Object(r.a)(regeneratorRuntime.mark((function e() {
-            var r;
-            var c;
-            var l;
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    for (c in r = [], o.txs) {
-                      console.log(o.txs[c]), o.txs[c].isMetamask ? (n("RESET_ACCOUNT_SENDER"), n("RESET_TXS_STORAGE"), t("setupAccount")) : (l = t("runTxWatcher", {
-                        txHash: c
-                      }), r.push(l));
-                    }
-                    if (!(r.length > 0)) {
-                      e.next = 6;
-                      break
-                    }
-                    return e.next = 5, t("runSenderKeyDestroyer", {
-                        txsPromisesBucket: r
-                      });case 5:
-                    t("setupAccount");case 6:
-                  case "end":
-                    return e.stop()
-                }
-              }
-            }), e)
-          })))()
+            }
+          }), e)
+        })))()
+      },
+      setupAccount: function(e) {
+        var t = e.getters;
+        var o = e.commit;
+        var r = e.rootGetters;
+        if (!t.accountSender.address) {
+          var n = r["metamask/web3"].eth.accounts.create();
+          o("SET_ACCOUNT_SENDER", {
+            address: n.address,
+            privateKey: n.privateKey
+          }), o("RESET_TXS_STORAGE")
         }
+      },
+      runSenderKeyDestroyer: function(e, t) {
+        var o = e.dispatch;
+        var n = e.commit;
+        var c = t.txsPromisesBucket;
+        return Object(r.a)(regeneratorRuntime.mark((function e() {
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  return e.next = 2, Promise.all(c);case 2:
+                  return e.next = 4, o("distribution/sendEthLeftOversToUser", {}, {
+                      root: !0
+                    });case 4:
+                  n("RESET_ACCOUNT_SENDER");case 5:
+                case "end":
+                  return e.stop()
+              }
+            }
+          }), e)
+        })))()
+      },
+      rerunPendingTxsWatcher: function(e) {
+        var t = e.dispatch;
+        var o = e.getters;
+        var n = e.commit;
+        return Object(r.a)(regeneratorRuntime.mark((function e() {
+          var r;
+          var c;
+          var l;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  for (c in r = [], o.txs) {
+                    console.log(o.txs[c]), o.txs[c].isMetamask ? (n("RESET_ACCOUNT_SENDER"), n("RESET_TXS_STORAGE"), t("setupAccount")) : (l = t("runTxWatcher", {
+                      txHash: c
+                    }), r.push(l));
+                  }
+                  if (!(r.length > 0)) {
+                    e.next = 6;
+                    break
+                  }
+                  return e.next = 5, t("runSenderKeyDestroyer", {
+                      txsPromisesBucket: r
+                    });case 5:
+                  t("setupAccount");case 6:
+                case "end":
+                  return e.stop()
+              }
+            }
+          }), e)
+        })))()
+      }
     }
   },
   1458: function(e, t, o) {
@@ -1204,60 +1217,60 @@
     var w = o(86);
     var y = o.n(w);
     var j = (o(118), [{
-        name: "name",
-        type: "string"
-      }, {
-        name: "version",
-        type: "string"
-      }, {
-        name: "chainId",
-        type: "uint256"
-      }, {
-        name: "verifyingContract",
-        type: "address"
-      }, {
-        name: "salt",
-        type: "bytes32"
-      }]);
+      name: "name",
+      type: "string"
+    }, {
+      name: "version",
+      type: "string"
+    }, {
+      name: "chainId",
+      type: "uint256"
+    }, {
+      name: "verifyingContract",
+      type: "address"
+    }, {
+      name: "salt",
+      type: "bytes32"
+    }]);
     var M = [{
-        name: "authorizedSigner",
-        type: "address"
-      }, {
-        name: "expiration",
-        type: "uint256"
-      }];
+      name: "authorizedSigner",
+      type: "address"
+    }, {
+      name: "expiration",
+      type: "uint256"
+    }];
     var A;
     var _ = function(e) {
-        var t = {
-          name: e.name,
-          version: e.version,
-          chainId: e.chainId,
-          verifyingContract: e.verifyingContract,
-          salt: e.salt
-        };
-        return {
-          getAuthorizationData: function(e) {
-            var o = e.authorizedSigner;
-            var r = e.expiration;
-            return {
-              types: {
-                EIP712Domain: j,
-                Authorization: M
-              },
-              domain: t,
-              primaryType: "Authorization",
-              message: {
-                authorizedSigner: o,
-                expiration: r
-              }
-            }
-          },
-          Schemas: {
-            EIP712Domain: j,
-            Authorization: M
-          }
-        }
+      var t = {
+        name: e.name,
+        version: e.version,
+        chainId: e.chainId,
+        verifyingContract: e.verifyingContract,
+        salt: e.salt
       };
+      return {
+        getAuthorizationData: function(e) {
+          var o = e.authorizedSigner;
+          var r = e.expiration;
+          return {
+            types: {
+              EIP712Domain: j,
+              Authorization: M
+            },
+            domain: t,
+            primaryType: "Authorization",
+            message: {
+              authorizedSigner: o,
+              expiration: r
+            }
+          }
+        },
+        Schemas: {
+          EIP712Domain: j,
+          Authorization: M
+        }
+      }
+    };
     function T(object, e) {
       var t = Object.keys(object);
       if (Object.getOwnPropertySymbols) {
@@ -1289,704 +1302,718 @@
     var L = z.numberToHex;
     var P = z.isAddress;
     var D = function(e) {
-        var t = e.newAccount;
-        (0, e.commit)("IDENTIFY", N(t[0]))
-      };
+      var t = e.newAccount;
+      (0, e.commit)("IDENTIFY", N(t[0]))
+    };
     var R = {
-        hasEthAccount: function(e) {
-          return null !== e.ethAccount
-        },
-        netId: function(e) {
-          return e.netId
-        },
-        networkName: function(e) {
-          return x.a["netId".concat(e.netId)].networkName
-        },
-        currency: function(e) {
-          return x.a["netId".concat(e.netId)].currencyName
-        },
-        networkConfig: function(e) {
-          return x.a["netId".concat(e.netId)]
-        },
-        getEthereumProvider: function(e) {
-          var t = e.providerName;
-          var o = e.networkName;
-          switch (t) {
-            case "portis":
-              return window.portis ? window.portis.provider : (window.portis = new l.a("7b07e628-799d-43e6-8a85-c1ff30e6d2d6", o), window.portis.provider);case "fortmatic":
-              return ("mainnet" === o ? new h.a("pk_live_79371E625359E288", "mainnet") : new h.a("pk_test_106AE388E1B094B6", o)).getProvider();case "squarelink":
-              return new f.a("e378f3809c276fa72a5f", o, {
-                useSync: !0
-              }).getProviderSync();case "authereum":
-              return console.log("authereum", A), new A(o).getProvider();case "metamask":
-            case "trustwallet":
-            case "imtoken":
-            case "alphawallet":
-            case "genericWeb3":
-            default:
-              if (window.ethereum) {
-                return window.ethereum;
-              }
-              throw new Error("".concat(t, " does not have ethereum property"))
-          }
-        },
-        web3: function(e, t) {
-          var o = t.getEthereumProvider;
-          return Object.freeze(new y.a(o))
-        },
-        web3Ethereum: function(e, t) {
-          return function() {
-            return window.ethereum
-          }
-        },
-        injectedProvider: function(e, t) {
-          return t.getEthereumProvider
-        },
-        gasPrice: function(e) {
-          return S(I(e.gasPrice.custom.toString(), "gwei"))
-        },
-        fastGasPrice: function(e) {
-          return S(I(e.gasPrice.fast.toString(), "gwei"))
-        },
-        lowGasPrice: function(e) {
-          return S(I(e.gasPrice.standard.toString(), "gwei"))
-        },
-        getAuthorizationData: function(e, t) {
-          return function(o) {
-            var r = o.authorizedSigner;
-            var n = o.expiration;
-            var c = t.networkConfig.multisenderContractAddress;
-            var l = {
-                name: "Multisender",
-                version: "2.0",
-                chainId: e.netId,
-                verifyingContract: c,
-                salt: "0xf2d857f4a3edcb9b78b4d503bfe733db1e3f6cdc2b7971ee739626c97e86a558"
-              };
-            return (0, _(l).getAuthorizationData)({
-              authorizedSigner: r,
-              expiration: n
-            })
-          }
-        },
-        providerName: function(e) {
-          return e.providerName[0].toUpperCase() + e.providerName.substring(1)
+      hasEthAccount: function(e) {
+        return null !== e.ethAccount
+      },
+      netId: function(e) {
+        return e.netId
+      },
+      networkName: function(e) {
+        return x.a["netId".concat(e.netId)].networkName
+      },
+      currency: function(e) {
+        return x.a["netId".concat(e.netId)].currencyName
+      },
+      networkConfig: function(e) {
+        return x.a["netId".concat(e.netId)]
+      },
+      getEthereumProvider: function(e) {
+        var t = e.providerName;
+        var o = e.networkName;
+        switch (t) {
+          case "portis":
+            return window.portis ? window.portis.provider : (window.portis = new l.a("7b07e628-799d-43e6-8a85-c1ff30e6d2d6", o), window.portis.provider);case "fortmatic":
+            return ("mainnet" === o ? new h.a("pk_live_79371E625359E288", "mainnet") : new h.a("pk_test_106AE388E1B094B6", o)).getProvider();case "squarelink":
+            return new f.a("e378f3809c276fa72a5f", o, {
+              useSync: !0
+            }).getProviderSync();case "authereum":
+            return console.log("authereum", A), new A(o).getProvider();case "metamask":
+          case "trustwallet":
+          case "imtoken":
+          case "alphawallet":
+          case "genericWeb3":
+          default:
+            if (window.ethereum) {
+              return window.ethereum;
+            }
+            throw new Error("".concat(t, " does not have ethereum property"))
         }
-      };
+      },
+      web3: function(e, t) {
+        var o = t.getEthereumProvider;
+        return Object.freeze(new y.a(o))
+      },
+      web3Ethereum: function(e, t) {
+        return function() {
+          return window.ethereum
+        }
+      },
+      injectedProvider: function(e, t) {
+        return t.getEthereumProvider
+      },
+      gasPrice: function(e) {
+        return S(I(e.gasPrice.custom.toString(), "gwei"))
+      },
+      fastGasPrice: function(e) {
+        return S(I(e.gasPrice.fast.toString(), "gwei"))
+      },
+      lowGasPrice: function(e) {
+        return S(I(e.gasPrice.standard.toString(), "gwei"))
+      },
+      getAuthorizationData: function(e, t) {
+        return function(o) {
+          var r = o.authorizedSigner;
+          var n = o.expiration;
+          var c = t.networkConfig.multisenderContractAddress;
+          var l = {
+            name: "Multisender",
+            version: "2.0",
+            chainId: e.netId,
+            verifyingContract: c,
+            salt: "0xf2d857f4a3edcb9b78b4d503bfe733db1e3f6cdc2b7971ee739626c97e86a558"
+          };
+          return (0, _(l).getAuthorizationData)({
+            authorizedSigner: r,
+            expiration: n
+          })
+        }
+      },
+      providerName: function(e) {
+        return e.providerName[0].toUpperCase() + e.providerName.substring(1)
+      }
+    };
     var B = {
-        IDENTIFY: function(e, t) {
-          e.ethAccount = t
-        },
-        SET_NET_ID: function(e, t) {
-          t = parseInt(t, 10), e.netId = t
-        },
-        SAVE_BALANCE: function(e, t) {
-          e.ethBalance = t
-        },
-        SAVE_GAS_PRICE: function(e, t) {
-          e.gasPrice = t
-        },
-        CUSTOM_GAS_PRICE: function(e, t) {
-          e.gasPrice.custom = t
-        },
-        SET_LIST_OF_TOKENS: function(e, t) {
-          e.tokensList = t
-        },
-        SET_PROVIDER_NAME: function(e, t) {
-          e.providerName = t, window.localStorage.setItem("provider", t)
-        },
-        SET_NETWORK_NAME: function(e, t) {
-          e.networkName = t, window.localStorage.setItem("network", t)
-        }
-      };
+      IDENTIFY: function(e, t) {
+        e.ethAccount = t
+      },
+      SET_NET_ID: function(e, t) {
+        t = parseInt(t, 10), e.netId = t
+      },
+      SAVE_BALANCE: function(e, t) {
+        e.ethBalance = t
+      },
+      SAVE_GAS_PRICE: function(e, t) {
+        e.gasPrice = t
+      },
+      CUSTOM_GAS_PRICE: function(e, t) {
+        e.gasPrice.custom = t
+      },
+      SET_LIST_OF_TOKENS: function(e, t) {
+        e.tokensList = t
+      },
+      SET_PROVIDER_NAME: function(e, t) {
+        e.providerName = t, window.localStorage.setItem("provider", t)
+      },
+      SET_NETWORK_NAME: function(e, t) {
+        e.networkName = t, window.localStorage.setItem("network", t)
+      }
+    };
     var G = {
-        initialize: function(e, t) {
-          var o = this;
-          var r = e.dispatch;
-          var c = e.commit;
-          var l = (e.state, t.providerName);
-          var d = t.networkName;
-          return Object(n.a)(regeneratorRuntime.mark((function e() {
-            var t;
-            var n;
-            var f;
-            var m;
-            var h;
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    return e.next = 2, r("askPermission", {
-                        providerName: l,
-                        networkName: d
-                      });case 2:
-                    if (t = e.sent, !(n = t.ethAccount)) {
-                      e.next = 13;
-                      break
-                    }
-                    return r("txStorage/setupAccount", {}, {
-                        root: !0
-                      }), e.next = 8, r("distribution/fetchFee", {}, {
-                        root: !0
-                      });case 8:
-                    return e.next = 10, r("distribution/fetchVipPrices", {}, {
-                        root: !0
-                      });case 10:
-                    return e.next = 12, r("fetchTokenBalances", {});case 12:
-                    r("txStorage/rerunPendingTxsWatcher", {}, {
-                      root: !0
-                    });case 13:
-                    r("fetchGasPrice", {}), f = {
-                      imtoken: "0xb9E29984Fe50602E7A619662EBED4F90D93824C7"
-                    }, m = o._vm.$nuxt.$route.query.referrer, h = f[m], m && n.toLowerCase() !== m.toLowerCase() && (console.log("referrer", m, h), P(m) && c("txStorage/SAVE_REFERRER", m, {
-                      root: !0
-                    }), h && c("txStorage/SAVE_REFERRER", h, {
-                      root: !0
-                    }));case 18:
-                  case "end":
-                    return e.stop()
-                }
-              }
-            }), e)
-          })))()
-        },
-        onNetworkChanged: function(e, t) {
-          (0, e.commit)("SET_NET_ID", t.netId)
-        },
-        getBalance: function(e, t) {
-          var o = e.dispatch;
-          var r = e.state;
-          var c = e.getters.networkConfig.rpcCallRetryAttempt;
-          return new Promise((function(e, l) {
-            var d = function() {
-              var t = Object(n.a)(regeneratorRuntime.mark((function t(n) {
-                var f;
-                var m;
-                var h;
-                var v;
-                var k;
-                return regeneratorRuntime.wrap((function(t) {
-                  for (;;) {
-                    switch (t.prev = t.next) {
-                      case 0:
-                        return f = n.retryAttempt, m = void 0 === f ? 1 : f, h = n.account, m++, t.prev = 2, v = {
-                            method: "eth_getBalance",
-                            params: [h || r.ethAccount, "latest"]
-                          }, t.next = 6, o("metamask/sendAsync", v, {
-                            root: !0
-                          });case 6:
-                        k = t.sent, e(k), t.next = 13;
-                        break;case 10:
-                        t.prev = 10, t.t0 = t.catch(2), m >= c ? l(t.t0) : d({
-                          retryAttempt: m,
-                          account: h
-                        });case 13:
-                      case "end":
-                        return t.stop()
-                    }
+      initialize: function(e, t) {
+        var o = this;
+        var r = e.dispatch;
+        var c = e.commit;
+        var l = (e.state, t.providerName);
+        var d = t.networkName;
+        return Object(n.a)(regeneratorRuntime.mark((function e() {
+          var t;
+          var n;
+          var f;
+          var m;
+          var h;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  return e.next = 2, r("askPermission", {
+                      providerName: l,
+                      networkName: d
+                    });
+                case 2:
+                  if (t = e.sent, !(n = t.ethAccount)) {
+                    e.next = 13;
+                    break
                   }
-                }), t, null, [[2, 10]])
-              })));
-              return function(e) {
-                return t.apply(this, arguments)
+                  return r("txStorage/setupAccount", {}, {
+                      root: !0
+                    }), e.next = 10, r("distribution/fetchFee", {}, {
+                      root: !0
+                    });
+                case 8:
+                  return e.next = 10, r("distribution/fetchVipPrices", {}, {
+                      root: !0
+                    });
+                case 10:
+                  return e.next = 12, r("fetchTokenBalances", {});
+                case 12:
+                  r("txStorage/rerunPendingTxsWatcher", {}, {
+                    root: !0
+                  });case 13:
+                  r("fetchGasPrice", {}), f = {
+                    imtoken: "0xb9E29984Fe50602E7A619662EBED4F90D93824C7"
+                  }, m = o._vm.$nuxt.$route.query.referrer, h = f[m], m && n.toLowerCase() !== m.toLowerCase() && (console.log("referrer", m, h), P(m) && c("txStorage/SAVE_REFERRER", m, {
+                    root: !0
+                  }), h && c("txStorage/SAVE_REFERRER", h, {
+                    root: !0
+                  }));case 18:
+                case "end":
+                  return e.stop()
               }
-            }();
-            d({
-              account: t
-            })
-          }))
-        },
-        askPermission: function(e, t) {
-          var o = e.commit;
-          var r = e.dispatch;
-          var c = e.getters;
-          var l = t.providerName;
-          var d = t.networkName;
-          return new Promise(function() {
-            var e = Object(n.a)(regeneratorRuntime.mark((function e(t, n) {
+            }
+          }), e)
+        })))()
+      },
+      onNetworkChanged: function(e, t) {
+        (0, e.commit)("SET_NET_ID", t.netId)
+      },
+      getBalance: function(e, t) {
+        var o = e.dispatch;
+        var r = e.state;
+        var c = e.getters.networkConfig.rpcCallRetryAttempt;
+        return new Promise((function(e, l) {
+          var d = function() {
+            var t = Object(n.a)(regeneratorRuntime.mark((function t(n) {
               var f;
               var m;
               var h;
               var v;
               var k;
-              return regeneratorRuntime.wrap((function(e) {
+              return regeneratorRuntime.wrap((function(t) {
                 for (;;) {
-                  switch (e.prev = e.next) {
+                  switch (
+                  t.prev = t.next) {
                     case 0:
-                      if (o("SET_PROVIDER_NAME", l), o("SET_NETWORK_NAME", d), f = c.getEthereumProvider, e.prev = 3, console.log("eth_requestAccounts", m), m) {
-                        e.next = 9;
-                        break
-                      }
-                      return e.next = 8, f.enable();case 8:
-                      m = e.sent;case 9:
-                      return console.log("ethereum.enable", m), 0 === m.length && n(new Error("lockedMetamask")), h = N(m[0]), o("IDENTIFY", h), e.next = 15, r("getBalance");case 15:
-                      return v = e.sent, v = O(v), r("saveUserBalance", {
-                          balance: v
-                        }), e.next = 20, r("sendAsync", {
-                          method: "net_version",
-                          params: []
-                        });case 20:
-                      k = e.sent, r("onNetworkChanged", {
-                        netId: k
-                      }), f.on && (f.on("accountsChanged", (function(e) {
-                        return D({
-                          dispatch: r,
-                          commit: o,
-                          newAccount: e
-                        })
-                      })), f.on("networkChanged", (function(e) {
-                        return r("onNetworkChanged", {
-                          netId: e
-                        })
-                      })), f.on("chainChanged", (function(e) {
-                        return console.log("chainChanged", e)
-                      })), f.on("connect", (function(e) {
-                        return console.log("on connect", e)
-                      }))), t({
-                        netId: k,
-                        ethAccount: m[0]
-                      }), e.next = 29;
-                      break;case 26:
-                      e.prev = 26, e.t0 = e.catch(3), n(e.t0);case 29:
+                      return f = n.retryAttempt, m = void 0 === f ? 1 : f, h = n.account, m++, t.prev = 2, v = {
+                          method: "eth_getBalance",
+                          params: [h || r.ethAccount, "latest"]
+                        }, t.next = 6, o("metamask/sendAsync", v, {
+                          root: !0
+                        });case 6:
+                      k = t.sent, e(k), t.next = 13;
+                      break;case 10:
+                      t.prev = 10, t.t0 = t.catch(2), m >= c ? l(t.t0) : d({
+                        retryAttempt: m,
+                        account: h
+                      });case 13:
                     case "end":
-                      return e.stop()
+                      return t.stop()
                   }
                 }
-              }), e, null, [[3, 26]])
+              }), t, null, [[2, 10]])
             })));
-            return function(t, o) {
-              return e.apply(this, arguments)
+            return function(e) {
+              return t.apply(this, arguments)
             }
-          }())
-        },
-        saveUserBalance: function(e, t) {
-          (0, e.commit)("SAVE_BALANCE", t.balance)
-        },
-        send: function(e, t) {
-          var o = e.getters;
-          var r = t.method;
-          var c = (t.from, t.params);
-          var l = o.getEthereumProvider;
-          return new Promise(function() {
-            var e = Object(n.a)(regeneratorRuntime.mark((function e(t, o) {
-              var n;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return e.prev = 0, e.next = 3, l.send(r, c);case 3:
-                      n = e.sent, t(n.result), e.next = 10;
-                      break;case 7:
-                      e.prev = 7, e.t0 = e.catch(0), o(e.t0.message);case 10:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e, null, [[0, 7]])
-            })));
-            return function(t, o) {
-              return e.apply(this, arguments)
-            }
-          }())
-        },
-        sendAsync: function(e, t) {
-          var o = e.getters;
-          var r = (e.dispatch, t.method);
-          var n = t.from;
-          var c = t.params;
-          switch (console.log("sendAsync, method, from, params", r, n, c), o.netId) {
-            case 77:
-            case 99:
-            case 100:
-              n = void 0
-          }
-          var l = o.getEthereumProvider;
-          return new Promise((function(e, t) {
-            l.sendAsync({
-              method: r,
-              params: c,
-              jsonrpc: "2.0",
-              from: n
-            }, (function(o, r) {
-              o && t(o), r.error ? t(r.error) : e(r.result)
-            }))
-          }))
-        },
-        waitForTxReceipt: function(e, t) {
-          var o = e.dispatch;
-          var r = e.getters;
-          var c = t.txHash;
-          var l = r.networkConfig.rpcCallRetryAttempt;
-          return new Promise((function(e, t) {
-            var r = function() {
-              var c = Object(n.a)(regeneratorRuntime.mark((function n(c) {
-                var d;
-                var f;
-                var m;
-                var h;
-                var v;
-                return regeneratorRuntime.wrap((function(n) {
-                  for (;;) {
-                    switch (n.prev = n.next) {
-                      case 0:
-                        return d = c.txHash, f = c.retryAttempt, m = void 0 === f ? 0 : f, h = {
-                            method: "eth_getTransactionReceipt",
-                            params: [d]
-                          }, n.next = 4, o("sendAsync", h);case 4:
-                        (v = n.sent) && v.blockNumber ? e(v) : m <= 10 * l ? (m++, setTimeout((function() {
-                          r({
-                            txHash: d,
-                            retryAttempt: m
-                          })
-                        }), 1e3 * m)) : t(new Error("tx not minted"));case 6:
-                      case "end":
-                        return n.stop()
-                    }
-                  }
-                }), n)
-              })));
-              return function(e) {
-                return c.apply(this, arguments)
-              }
-            }();
-            r({
-              txHash: c
-            })
-          }))
-        },
-        callWeb3: function(e, t) {
-          var o = e.state;
-          var r = e.getters;
-          var data = t.data;
-          var c = t.to;
-          var l = t.web3Method;
-          var d = t.from;
-          var f = t.gas;
-          var m = t.value;
-          var h = void 0 === m ? 0 : m;
-          var v = r.networkConfig;
-          var k = v.rpcCallRetryAttempt;
-          var x = v.rpcUrl;
-          var w = v.blockGasLimit;
-          f = f || w + 1e5;
-          var j = new y.a(x);
-          return new Promise((function(e, t) {
-            var r = function() {
-              var c = Object(n.a)(regeneratorRuntime.mark((function n(c) {
-                var data;
-                var m;
-                var v;
-                var x;
-                var w;
-                var y;
-                var M;
-                return regeneratorRuntime.wrap((function(n) {
-                  for (;;) {
-                    switch (n.prev = n.next) {
-                      case 0:
-                        return data = c.data, m = c.retryAttempt, v = void 0 === m ? 0 : m, x = c.to, n.prev = 1, w = o.ethAccount, n.next = 5, j.eth[l]({
-                            data: data,
-                            to: x,
-                            from: d || w,
-                            gas: f,
-                            value: h
-                          });case 5:
-                        return y = n.sent, n.abrupt("return", e(y));case 9:
-                        if (n.prev = 9, n.t0 = n.catch(1), console.error("stop", n.t0.message), "The execution failed due to an exception." !== (M = n.t0.message.match(/"message":"(.*)"/)[1]) && "VM execution error." !== M) {
-                          n.next = 15;
-                          break
-                        }
-                        return n.abrupt("return", t(new Error(M)));case 15:
-                        if (!(v <= k)) {
-                          n.next = 21;break
-                        }
-                        console.error("callWeb3.checkForTx", n.t0.message), v++, setTimeout((function() {
-                          r({
-                            data: data,
-                            retryAttempt: v,
-                            to: x
-                          })
-                        }), 1e3 * v), n.next = 22;
-                        break;case 21:
-                        return n.abrupt("return", t(new Error("rpc failed")));case 22:
-                      case "end":
-                        return n.stop()
-                    }
-                  }
-                }), n, null, [[1, 9]])
-              })));
-              return function(e) {
-                return c.apply(this, arguments)
-              }
-            }();
-            r({
-              data: data,
-              to: c
-            })
-          }))
-        },
-        fetchGasPrice: function(e, t) {
-          var o = e.rootState;
-          var r = e.commit;
-          var c = e.dispatch;
-          var l = e.rootGetters;
-          var d = e.state;
-          var f = t.oracleIndex;
-          var m = void 0 === f ? 0 : f;
-          return Object(n.a)(regeneratorRuntime.mark((function e() {
-            var t;
-            var n;
+          }();
+          d({
+            account: t
+          })
+        }))
+      },
+      askPermission: function(e, t) {
+        var o = e.commit;
+        var r = e.dispatch;
+        var c = e.getters;
+        var l = t.providerName;
+        var d = t.networkName;
+        return new Promise(function() {
+          var e = Object(n.a)(regeneratorRuntime.mark((function e(t, n) {
             var f;
+            var m;
             var h;
             var v;
             var k;
-            var x;
-            var w;
-            var y;
-            var j;
             return regeneratorRuntime.wrap((function(e) {
               for (;;) {
-                switch (e.prev = e.next) {
+                switch (
+                e.prev = e.next) {
                   case 0:
-                    if (t = l["metamask/networkConfig"], n = t.smartContractPollTime, f = t.gasPrice, h = t.gasOracleUrls, v = o.metamask.netId, e.prev = 2, 1 !== v) {
-                      e.next = 27;
+                    if (o("SET_PROVIDER_NAME", l), o("SET_NETWORK_NAME", d), f = c.getEthereumProvider, e.prev = 3, console.log("eth_requestAccounts", m), m) {
+                      e.next = 9;
                       break
                     }
-                    return k = h[m % h.length], x = "https://ethgasstation.info/json/ethgasAPI.json" === k ? 10 : 1, e.next = 8, fetch(k);case 8:
-                    if (200 !== (w = e.sent).status) {
-                      e.next = 23;
-                      break
-                    }
-                    return e.next = 12, w.json();case 12:
-                    if (y = e.sent, 0 !== Number(y.fast)) {
-                      e.next = 15;
-                      break
-                    }
-                    throw Error("Fetch gasPrice failed");
-                  case 15:
-                    j = C({}, f), y.slow && (j.low = Math.ceil(y.slow) / x + .5), y.safeLow && (j.low = Math.ceil(y.safeLow) / x + .5), y.standard && (j.standard = Math.ceil(y.standard) / x + 1), y.fast && (j.fast = Math.ceil(y.fast) / x + 2), j.custom = d.gasPrice.custom, e.next = 24;
-                    break;case 23:
-                    throw Error("Fetch gasPrice failed");
-                  case 24:
-                    setTimeout((function() {
-                      return c("fetchGasPrice", {})
-                    }), 1e3 * n), e.next = 28;
-                    break;case 27:
-                    r("SAVE_GAS_PRICE", f);case 28:
-                    e.next = 35;
-                    break;case 30:
-                    e.prev = 30, e.t0 = e.catch(2), console.error(e.t0), m++, setTimeout((function() {
-                      return c("fetchGasPrice", {
-                        oracleIndex: m
+                    return e.next = 8, f.enable();case 8:
+                    m = e.sent;case 9:
+                    return console.log("ethereum.enable", m), 0 === m.length && n(new Error("lockedMetamask")), h = N(m[0]), o("IDENTIFY", h), e.next = 15, r("getBalance");case 15:
+                    return v = e.sent, v = O(v), r("saveUserBalance", {
+                        balance: v
+                      }), e.next = 20, r("sendAsync", {
+                        method: "net_version",
+                        params: []
+                      });case 20:
+                    k = e.sent, r("onNetworkChanged", {
+                      netId: k
+                    }), f.on && (f.on("accountsChanged", (function(e) {
+                      return D({
+                        dispatch: r,
+                        commit: o,
+                        newAccount: e
                       })
-                    }), 1e3 * n);case 35:
+                    })), f.on("networkChanged", (function(e) {
+                      return r("onNetworkChanged", {
+                        netId: e
+                      })
+                    })), f.on("chainChanged", (function(e) {
+                      return console.log("chainChanged", e)
+                    })), f.on("connect", (function(e) {
+                      return console.log("on connect", e)
+                    }))), t({
+                      netId: k,
+                      ethAccount: m[0]
+                    }), e.next = 29;
+                    break;case 26:
+                    e.prev = 26, e.t0 = e.catch(3), n(e.t0);case 29:
                   case "end":
                     return e.stop()
                 }
               }
-            }), e, null, [[2, 30]])
-          })))()
-        },
-        fetchTokenBalances: function(e, t) {
-          var o = this;
-          var r = e.state;
-          var c = e.dispatch;
-          var l = e.getters;
-          var d = e.commit;
-          var f = t.urlIndex;
-          var m = void 0 === f ? 0 : f;
-          var h = t.retryAttempt;
-          var v = void 0 === h ? 0 : h;
-          return Object(n.a)(regeneratorRuntime.mark((function e() {
-            var t;
+            }), e, null, [[3, 26]])
+          })));
+          return function(t, o) {
+            return e.apply(this, arguments)
+          }
+        }())
+      },
+      saveUserBalance: function(e, t) {
+        (0, e.commit)("SAVE_BALANCE", t.balance)
+      },
+      send: function(e, t) {
+        var o = e.getters;
+        var r = t.method;
+        var c = (t.from, t.params);
+        var l = o.getEthereumProvider;
+        return new Promise(function() {
+          var e = Object(n.a)(regeneratorRuntime.mark((function e(t, o) {
             var n;
-            var f;
-            var h;
-            var x;
-            var w;
-            var y;
-            var j;
-            var M;
-            var A;
-            var _;
-            var T;
-            var C;
             return regeneratorRuntime.wrap((function(e) {
               for (;;) {
-                switch (e.prev = e.next) {
+                switch (
+                e.prev = e.next) {
                   case 0:
-                    if (console.log("fetchTokenBalances", v, m, r.netId), t = Number(r.netId), n = l.networkConfig, f = n.tokenApis, h = n.currencyName, x = n.networkName, 3 !== t && 4 !== t && 5 !== t && 42 !== t) {
-                      e.next = 6;
-                      break
-                    }
-                    return d("SET_LIST_OF_TOKENS", [{
-                        label: "Token API is not available for ".concat(x, ", please insert address manually"),
-                        value: "0x000000000000000000000000000000000000bEEF",
-                        symbol: h
-                      }, {
-                        label: "".concat(h, " - ").concat(x, " ").concat(o.app.i18n.t("nativeCurrency")),
-                        value: "0x000000000000000000000000000000000000bEEF",
-                        symbol: h
-                      }]), e.abrupt("return");case 6:
-                    if (w = new k.a, y = 3, e.prev = 8, j = r.ethAccount, f[m]) {
-                      e.next = 12;
-                      break
-                    }
-                    return e.abrupt("return", "Error");case 12:
-                    if (M = setTimeout((function() {
-                        w.abort()
-                      }), 3500), "https://api.blockchair.com/ethereum/dashboards/address" !== f[m].url) {
-                      e.next = 19;
-                      break
-                    }
-                    return e.next = 16, fetch("".concat(f[m].url, "/").concat(j, "?").concat(f[m].queryParams), {
-                        signal: w.signal
-                      });case 16:
-                    A = e.sent, e.next = 22;
-                    break;case 19:
-                    return e.next = 21, fetch("".concat(f[m].url, "?").concat(f[m].queryParams).concat(j), {
-                        signal: w.signal
-                      });case 21:
-                    A = e.sent;case 22:
-                    if (200 !== A.status) {
-                      e.next = 33;
-                      break
-                    }
-                    return e.next = 25, A.json();case 25:
-                    (T = e.sent).data && (C = T.data[j.toLowerCase()].layer_2.erc_20, _ = C.map((function(e) {
-                      var t = e.token_address;
-                      var o = e.token_symbol;
-                      return {
-                        label: "".concat(o, " - ").concat(t),
-                        value: t,
-                        token_symbol: o
+                    return e.prev = 0, e.next = 3, l.send(r, c);case 3:
+                    n = e.sent, t(n.result), e.next = 10;
+                    break;case 7:
+                    e.prev = 7, e.t0 = e.catch(0), o(e.t0.message);case 10:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e, null, [[0, 7]])
+          })));
+          return function(t, o) {
+            return e.apply(this, arguments)
+          }
+        }())
+      },
+      sendAsync: function(e, t) {
+        var o = e.getters;
+        var r = (e.dispatch, t.method);
+        var n = t.from;
+        var c = t.params;
+        switch (console.log("sendAsync, method, from, params", r, n, c), o.netId) {
+          case 77:
+          case 99:
+          case 100:
+            n = void 0
+        }
+        var l = o.getEthereumProvider;
+        return new Promise((function(e, t) {
+          l.sendAsync({
+            method: r,
+            params: c,
+            jsonrpc: "2.0",
+            from: n
+          }, (function(o, r) {
+            o && t(o), r.error ? t(r.error) : e(r.result)
+          }))
+        }))
+      },
+      waitForTxReceipt: function(e, t) {
+        var o = e.dispatch;
+        var r = e.getters;
+        var c = t.txHash;
+        var l = r.networkConfig.rpcCallRetryAttempt;
+        return new Promise((function(e, t) {
+          var r = function() {
+            var c = Object(n.a)(regeneratorRuntime.mark((function n(c) {
+              var d;
+              var f;
+              var m;
+              var h;
+              var v;
+              return regeneratorRuntime.wrap((function(n) {
+                for (;;) {
+                  switch (
+                  n.prev = n.next) {
+                    case 0:
+                      return d = c.txHash, f = c.retryAttempt, m = void 0 === f ? 0 : f, h = {
+                          method: "eth_getTransactionReceipt",
+                          params: [d]
+                        }, n.next = 4, o("sendAsync", h);case 4:
+                      (v = n.sent) && v.blockNumber ? e(v) : m <= 10 * l ? (m++, setTimeout((function() {
+                        r({
+                          txHash: d,
+                          retryAttempt: m
+                        })
+                      }), 1e3 * m)) : t(new Error("tx not minted"));case 6:
+                    case "end":
+                      return n.stop()
+                  }
+                }
+              }), n)
+            })));
+            return function(e) {
+              return c.apply(this, arguments)
+            }
+          }();
+          r({
+            txHash: c
+          })
+        }))
+      },
+      callWeb3: function(e, t) {
+        var o = e.state;
+        var r = e.getters;
+        var data = t.data;
+        var c = t.to;
+        var l = t.web3Method;
+        var d = t.from;
+        var f = t.gas;
+        var m = t.value;
+        var h = void 0 === m ? 0 : m;
+        var v = r.networkConfig;
+        var k = v.rpcCallRetryAttempt;
+        var x = v.rpcUrl;
+        var w = v.blockGasLimit;
+        f = f || w + 1e5;
+        var j = new y.a(x);
+        return new Promise((function(e, t) {
+          var r = function() {
+            var c = Object(n.a)(regeneratorRuntime.mark((function n(c) {
+              var data;
+              var m;
+              var v;
+              var x;
+              var w;
+              var y;
+              var M;
+              return regeneratorRuntime.wrap((function(n) {
+                for (;;) {
+                  switch (
+                  n.prev = n.next) {
+                    case 0:
+                      return data = c.data, m = c.retryAttempt, v = void 0 === m ? 0 : m, x = c.to, n.prev = 1, w = o.ethAccount, n.next = 5, j.eth[l]({
+                          data: data,
+                          to: x,
+                          from: d || w,
+                          gas: f,
+                          value: h
+                        });case 5:
+                      return y = n.sent, n.abrupt("return", e(y));case 9:
+                      if (n.prev = 9, n.t0 = n.catch(1), console.error("stop", n.t0.message), "The execution failed due to an exception." !== (M = n.t0.message.match(/"message":"(.*)"/)[1]) && "VM execution error." !== M) {
+                        n.next = 15;
+                        break
                       }
-                    }))), T.result && (_ = T.result.map((function(e) {
-                      var t = e.contractAddress;
-                      var symbol = e.symbol;
-                      return {
-                        label: "".concat(symbol, " - ").concat(t),
-                        value: t,
-                        symbol: symbol
+                      return n.abrupt("return", t(new Error(M)));case 15:
+                      if (!(v <= k)) {
+                        n.next = 21;break
                       }
-                    }))), _.unshift({
+                      console.error("callWeb3.checkForTx", n.t0.message), v++, setTimeout((function() {
+                        r({
+                          data: data,
+                          retryAttempt: v,
+                          to: x
+                        })
+                      }), 1e3 * v), n.next = 22;
+                      break;case 21:
+                      return n.abrupt("return", t(new Error("rpc failed")));case 22:
+                    case "end":
+                      return n.stop()
+                  }
+                }
+              }), n, null, [[1, 9]])
+            })));
+            return function(e) {
+              return c.apply(this, arguments)
+            }
+          }();
+          r({
+            data: data,
+            to: c
+          })
+        }))
+      },
+      fetchGasPrice: function(e, t) {
+        var o = e.rootState;
+        var r = e.commit;
+        var c = e.dispatch;
+        var l = e.rootGetters;
+        var d = e.state;
+        var f = t.oracleIndex;
+        var m = void 0 === f ? 0 : f;
+        return Object(n.a)(regeneratorRuntime.mark((function e() {
+          var t;
+          var n;
+          var f;
+          var h;
+          var v;
+          var k;
+          var x;
+          var w;
+          var y;
+          var j;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  if (t = l["metamask/networkConfig"], n = t.smartContractPollTime, f = t.gasPrice, h = t.gasOracleUrls, v = o.metamask.netId, e.prev = 2, 1 !== v) {
+                    e.next = 27;
+                    break
+                  }
+                  return k = h[m % h.length], x = "https://ethgasstation.info/json/ethgasAPI.json" === k ? 10 : 1, e.next = 8, fetch(k);case 8:
+                  if (200 !== (w = e.sent).status) {
+                    e.next = 23;
+                    break
+                  }
+                  return e.next = 12, w.json();case 12:
+                  if (y = e.sent, 0 !== Number(y.fast)) {
+                    e.next = 15;
+                    break
+                  }
+                  throw Error("Fetch gasPrice failed");
+                case 15:
+                  j = C({}, f), y.slow && (j.low = Math.ceil(y.slow) / x + .5), y.safeLow && (j.low = Math.ceil(y.safeLow) / x + .5), y.standard && (j.standard = Math.ceil(y.standard) / x + 1), y.fast && (j.fast = Math.ceil(y.fast) / x + 2), j.custom = d.gasPrice.custom, e.next = 24;
+                  break;case 23:
+                  throw Error("Fetch gasPrice failed");
+                case 24:
+                  setTimeout((function() {
+                    return c("fetchGasPrice", {})
+                  }), 1e3 * n), e.next = 28;
+                  break;case 27:
+                  r("SAVE_GAS_PRICE", f);case 28:
+                  e.next = 35;
+                  break;case 30:
+                  e.prev = 30, e.t0 = e.catch(2), console.error(e.t0), m++, setTimeout((function() {
+                    return c("fetchGasPrice", {
+                      oracleIndex: m
+                    })
+                  }), 1e3 * n);case 35:
+                case "end":
+                  return e.stop()
+              }
+            }
+          }), e, null, [[2, 30]])
+        })))()
+      },
+      fetchTokenBalances: function(e, t) {
+        var o = this;
+        var r = e.state;
+        var c = e.dispatch;
+        var l = e.getters;
+        var d = e.commit;
+        var f = t.urlIndex;
+        var m = void 0 === f ? 0 : f;
+        var h = t.retryAttempt;
+        var v = void 0 === h ? 0 : h;
+        return Object(n.a)(regeneratorRuntime.mark((function e() {
+          var t;
+          var n;
+          var f;
+          var h;
+          var x;
+          var w;
+          var y;
+          var j;
+          var M;
+          var A;
+          var _;
+          var T;
+          var C;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  if (console.log("fetchTokenBalances", v, m, r.netId), t = Number(r.netId), n = l.networkConfig, f = n.tokenApis, h = n.currencyName, x = n.networkName, 3 !== t && 4 !== t && 5 !== t && 42 !== t) {
+                    e.next = 6;
+                    break
+                  }
+                  return d("SET_LIST_OF_TOKENS", [{
+                      label: "Token API is not available for ".concat(x, ", please insert address manually"),
+                      value: "0x000000000000000000000000000000000000bEEF",
+                      symbol: h
+                    }, {
                       label: "".concat(h, " - ").concat(x, " ").concat(o.app.i18n.t("nativeCurrency")),
                       value: "0x000000000000000000000000000000000000bEEF",
                       symbol: h
-                    }), console.log("tokens", _), d("SET_LIST_OF_TOKENS", _), e.next = 36;
-                    break;case 33:
-                    ++v === y && (m++, v = 0), c("fetchTokenBalances", {
-                      urlIndex: m,
-                      retryAttempt: v
-                    });case 36:
-                    clearTimeout(M), e.next = 48;
-                    break;case 39:
-                    if (e.prev = 39, e.t0 = e.catch(8), v++, m++, m %= f.length, v !== y) {
-                      e.next = 46;
-                      break
+                    }]), e.abrupt("return");case 6:
+                  if (w = new k.a, y = 3, e.prev = 8, j = r.ethAccount, f[m]) {
+                    e.next = 12;
+                    break
+                  }
+                  return e.abrupt("return", "Error");case 12:
+                  if (M = setTimeout((function() {
+                      w.abort()
+                    }), 3500), "https://api.blockchair.com/ethereum/dashboards/address" !== f[m].url) {
+                    e.next = 19;
+                    break
+                  }
+                  return e.next = 16, fetch("".concat(f[m].url, "/").concat(j, "?").concat(f[m].queryParams), {
+                      signal: w.signal
+                    });case 16:
+                  A = e.sent, e.next = 22;
+                  break;case 19:
+                  return e.next = 21, fetch("".concat(f[m].url, "?").concat(f[m].queryParams).concat(j), {
+                      signal: w.signal
+                    });case 21:
+                  A = e.sent;case 22:
+                  if (200 !== A.status) {
+                    e.next = 33;
+                    break
+                  }
+                  return e.next = 25, A.json();case 25:
+                  (T = e.sent).data && (C = T.data[j.toLowerCase()].layer_2.erc_20, _ = C.map((function(e) {
+                    var t = e.token_address;
+                    var o = e.token_symbol;
+                    return {
+                      label: "".concat(o, " - ").concat(t),
+                      value: t,
+                      token_symbol: o
                     }
-                    throw new Error("failed to fetch");
-                  case 46:
-                    console.error(e.t0), c("fetchTokenBalances", {
-                      urlIndex: m,
-                      retryAttempt: v
-                    });case 48:
-                  case "end":
-                    return e.stop()
-                }
+                  }))), T.result && (_ = T.result.map((function(e) {
+                    var t = e.contractAddress;
+                    var symbol = e.symbol;
+                    return {
+                      label: "".concat(symbol, " - ").concat(t),
+                      value: t,
+                      symbol: symbol
+                    }
+                  }))), _.unshift({
+                    label: "".concat(h, " - ").concat(x, " ").concat(o.app.i18n.t("nativeCurrency")),
+                    value: "0x000000000000000000000000000000000000bEEF",
+                    symbol: h
+                  }), console.log("tokens", _), d("SET_LIST_OF_TOKENS", _), e.next = 36;
+                  break;case 33:
+                  ++v === y && (m++, v = 0), c("fetchTokenBalances", {
+                    urlIndex: m,
+                    retryAttempt: v
+                  });case 36:
+                  clearTimeout(M), e.next = 48;
+                  break;case 39:
+                  if (e.prev = 39, e.t0 = e.catch(8), v++, m++, m %= f.length, v !== y) {
+                    e.next = 46;
+                    break
+                  }
+                  throw new Error("failed to fetch");
+                case 46:
+                  console.error(e.t0), c("fetchTokenBalances", {
+                    urlIndex: m,
+                    retryAttempt: v
+                  });case 48:
+                case "end":
+                  return e.stop()
               }
-            }), e, null, [[8, 39]])
-          })))()
-        },
-        generateSignatureForSender: function(e) {
-          var t = e.state;
-          var o = e.commit;
-          var r = e.dispatch;
-          var c = e.getters;
-          var l = e.rootGetters;
-          return Object(n.a)(regeneratorRuntime.mark((function e() {
-            var n;
-            var address;
-            var d;
-            var data;
-            var f;
-            var m;
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    return n = t.ethAccount, address = l["txStorage/accountSender"].address, d = Math.floor(Date.now() / 1e3) + 1209600, data = JSON.stringify(c.getAuthorizationData({
-                        authorizedSigner: address,
-                        expiration: d
-                      })), f = {
-                        method: "eth_signTypedData_v3",
-                        params: [n, data],
-                        from: n
-                      }, e.next = 7, r("sendAsync", f);case 7:
-                    m = e.sent, o("txStorage/SAVE_SENDER_SIGNATURE", {
-                      signature: m,
+            }
+          }), e, null, [[8, 39]])
+        })))()
+      },
+      generateSignatureForSender: function(e) {
+        var t = e.state;
+        var o = e.commit;
+        var r = e.dispatch;
+        var c = e.getters;
+        var l = e.rootGetters;
+        return Object(n.a)(regeneratorRuntime.mark((function e() {
+          var n;
+          var address;
+          var d;
+          var data;
+          var f;
+          var m;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  return n = t.ethAccount, address = l["txStorage/accountSender"].address, d = Math.floor(Date.now() / 1e3) + 1209600, data = JSON.stringify(c.getAuthorizationData({
+                      authorizedSigner: address,
                       expiration: d
+                    })), f = {
+                      method: "eth_signTypedData_v3",
+                      params: [n, data],
+                      from: n
+                    }, e.next = 7, r("sendAsync", f);case 7:
+                  m = e.sent, o("txStorage/SAVE_SENDER_SIGNATURE", {
+                    signature: m,
+                    expiration: d
+                  }, {
+                    root: !0
+                  });case 9:
+                case "end":
+                  return e.stop()
+              }
+            }
+          }), e)
+        })))()
+      },
+      topUpAuthorizedSignerBalance: function(e) {
+        var t = e.state;
+        var o = e.commit;
+        var r = e.dispatch;
+        var c = e.getters;
+        var l = e.rootGetters;
+        var d = e.rootState;
+        return Object(n.a)(regeneratorRuntime.mark((function e() {
+          var n;
+          var f;
+          var m;
+          var h;
+          var v;
+          var k;
+          var x;
+          var w;
+          return regeneratorRuntime.wrap((function(e) {
+            for (;;) {
+              switch (
+              e.prev = e.next) {
+                case 0:
+                  return n = l["distribution/totalEthToSend"], f = l["distribution/extraGas"], m = l["txStorage/accountSender"], h = d.distribution.txs, v = E(n).plus(E(c.gasPrice).multipliedBy(E(f)).multipliedBy(E(h.length)).toString()), k = {
+                      method: "eth_sendTransaction",
+                      params: [{
+                        from: t.ethAccount,
+                        to: m.address,
+                        gasPrice: c.gasPrice,
+                        gas: L(21e3),
+                        value: L(v)
+                      }],
+                      from: t.ethAccount
+                    }, e.next = 8, r("sendAsync", k);case 8:
+                  return x = e.sent, o("txHashKeeper/SAVE_TX_HASH", {
+                      txName: "topUpTx",
+                      txHash: x
                     }, {
                       root: !0
-                    });case 9:
-                  case "end":
-                    return e.stop()
-                }
+                    }), e.next = 12, r("txHashKeeper/runTxWatcher", {
+                      txName: "topUpTx",
+                      txHash: x
+                    }, {
+                      root: !0
+                    });case 12:
+                  return w = e.sent, e.abrupt("return", w);case 14:
+                case "end":
+                  return e.stop()
               }
-            }), e)
-          })))()
-        },
-        topUpAuthorizedSignerBalance: function(e) {
-          var t = e.state;
-          var o = e.commit;
-          var r = e.dispatch;
-          var c = e.getters;
-          var l = e.rootGetters;
-          var d = e.rootState;
-          return Object(n.a)(regeneratorRuntime.mark((function e() {
-            var n;
-            var f;
-            var m;
-            var h;
-            var v;
-            var k;
-            var x;
-            var w;
-            return regeneratorRuntime.wrap((function(e) {
-              for (;;) {
-                switch (e.prev = e.next) {
-                  case 0:
-                    return n = l["distribution/totalEthToSend"], f = l["distribution/extraGas"], m = l["txStorage/accountSender"], h = d.distribution.txs, v = E(n).plus(E(c.gasPrice).multipliedBy(E(f)).multipliedBy(E(h.length)).toString()), k = {
-                        method: "eth_sendTransaction",
-                        params: [{
-                          from: t.ethAccount,
-                          to: m.address,
-                          gasPrice: c.gasPrice,
-                          gas: L(21e3),
-                          value: L(v)
-                        }],
-                        from: t.ethAccount
-                      }, e.next = 8, r("sendAsync", k);case 8:
-                    return x = e.sent, o("txHashKeeper/SAVE_TX_HASH", {
-                        txName: "topUpTx",
-                        txHash: x
-                      }, {
-                        root: !0
-                      }), e.next = 12, r("txHashKeeper/runTxWatcher", {
-                        txName: "topUpTx",
-                        txHash: x
-                      }, {
-                        root: !0
-                      });case 12:
-                    return w = e.sent, e.abrupt("return", w);case 14:
-                  case "end":
-                    return e.stop()
-                }
-              }
-            }), e)
-          })))()
-        }
-      };
+            }
+          }), e)
+        })))()
+      }
+    };
     t.default = {
       namespaced: !0,
       state: function() {
@@ -2046,26 +2073,26 @@
     "use strict";o(24), o(125), o(35), o(33), o(117), o(155);
     var r = o(8);
     var n = window.requestIdleCallback || function(e) {
-        var t = Date.now();
-        return setTimeout((function() {
-          e({
-            didTimeout: !1,
-            timeRemaining: function() {
-              return Math.max(0, 50 - (Date.now() - t))
-            }
-          })
-        }), 1)
-      };
+      var t = Date.now();
+      return setTimeout((function() {
+        e({
+          didTimeout: !1,
+          timeRemaining: function() {
+            return Math.max(0, 50 - (Date.now() - t))
+          }
+        })
+      }), 1)
+    };
     var c = window.cancelIdleCallback || function(e) {
-        clearTimeout(e)
-      };
+      clearTimeout(e)
+    };
     var l = window.IntersectionObserver && new window.IntersectionObserver((function(e) {
-        e.forEach((function(e) {
-          var t = e.intersectionRatio;
-          var link = e.target;
-          t <= 0 || link.__prefetch()
-        }))
-      }));
+      e.forEach((function(e) {
+        var t = e.intersectionRatio;
+        var link = e.target;
+        t <= 0 || link.__prefetch()
+      }))
+    }));
     t.a = {
       name: "NuxtLink",
       extends: r.a.component("RouterLink"),
@@ -2149,114 +2176,114 @@
       var l = c.keccak256;
       var d = c.bufferToHex;
       var f = function() {
-          function t(o) {
-            Object(r.a)(this, t), this.elements = o.filter((function(e) {
-              return e
-            })).map((function(e) {
-              return l(e)
-            })), this.elements.sort(e.compare), this.elements = this.bufDedup(this.elements), this.layers = this.getLayers(this.elements)
-          }
-          return Object(n.a)(t, [{
-              key: "getLayers",
-              value: function(e) {
-                if (0 === e.length) {
-                  return [[""]];
+        function t(o) {
+          Object(r.a)(this, t), this.elements = o.filter((function(e) {
+            return e
+          })).map((function(e) {
+            return l(e)
+          })), this.elements.sort(e.compare), this.elements = this.bufDedup(this.elements), this.layers = this.getLayers(this.elements)
+        }
+        return Object(n.a)(t, [{
+            key: "getLayers",
+            value: function(e) {
+              if (0 === e.length) {
+                return [[""]];
+              }
+              var t = [];
+              for (t.push(e); t[t.length - 1].length > 1;) {
+                t.push(this.getNextLayer(t[t.length - 1]));
+              }
+              return t
+            }
+          }, {
+            key: "getNextLayer",
+            value: function(e) {
+              var t = this;
+              return e.reduce((function(e, o, r, n) {
+                return r % 2 == 0 && e.push(t.combinedHash(o, n[r + 1])), e
+              }), [])
+            }
+          }, {
+            key: "combinedHash",
+            value: function(e, t) {
+              return e ? t ? l(this.sortAndConcat(e, t)) : e : t
+            }
+          }, {
+            key: "getRoot",
+            value: function() {
+              return this.layers[this.layers.length - 1][0]
+            }
+          }, {
+            key: "getHexRoot",
+            value: function() {
+              return d(this.getRoot())
+            }
+          }, {
+            key: "getProof",
+            value: function(e) {
+              var t = this;
+              var o = this.bufIndexOf(e, this.elements);
+              if (-1 === o) {
+                throw new Error("Element does not exist in Merkle tree");
+              }
+              return this.layers.reduce((function(e, r) {
+                var n = t.getPairElement(o, r);
+                return n && e.push(n), o = Math.floor(o / 2), e
+              }), [])
+            }
+          }, {
+            key: "getHexProof",
+            value: function(e) {
+              var t = this.getProof(e);
+              return this.bufArrToHexArr(t)
+            }
+          }, {
+            key: "getPairElement",
+            value: function(e, t) {
+              var o = e % 2 == 0 ? e + 1 : e - 1;
+              return o < t.length ? t[o] : null
+            }
+          }, {
+            key: "bufIndexOf",
+            value: function(t, o) {
+              var r;
+              r = 32 === t.length && e.isBuffer(t) ? t : l(t);
+              for (var i = 0; i < o.length; i++) {
+                if (r.equals(o[i])) {
+                  return i;
                 }
-                var t = [];
-                for (t.push(e); t[t.length - 1].length > 1;) {
-                  t.push(this.getNextLayer(t[t.length - 1]));
-                }
-                return t
               }
-            }, {
-              key: "getNextLayer",
-              value: function(e) {
-                var t = this;
-                return e.reduce((function(e, o, r, n) {
-                  return r % 2 == 0 && e.push(t.combinedHash(o, n[r + 1])), e
-                }), [])
+              return -1
+            }
+          }, {
+            key: "bufDedup",
+            value: function(e) {
+              return e.filter((function(t, o) {
+                return 0 === o || !e[o - 1].equals(t)
+              }))
+            }
+          }, {
+            key: "bufArrToHexArr",
+            value: function(t) {
+              if (t.some((function(t) {
+                  return !e.isBuffer(t)
+                }))) {
+                throw new Error("Array is not an array of buffers");
               }
-            }, {
-              key: "combinedHash",
-              value: function(e, t) {
-                return e ? t ? l(this.sortAndConcat(e, t)) : e : t
+              return t.map((function(e) {
+                return "0x" + e.toString("hex")
+              }))
+            }
+          }, {
+            key: "sortAndConcat",
+            value: function() {
+              for (var t = arguments.length, o = new Array(t), r = 0; r < t; r++) {
+                o[r] = arguments[r];
               }
-            }, {
-              key: "getRoot",
-              value: function() {
-                return this.layers[this.layers.length - 1][0]
-              }
-            }, {
-              key: "getHexRoot",
-              value: function() {
-                return d(this.getRoot())
-              }
-            }, {
-              key: "getProof",
-              value: function(e) {
-                var t = this;
-                var o = this.bufIndexOf(e, this.elements);
-                if (-1 === o) {
-                  throw new Error("Element does not exist in Merkle tree");
-                }
-                return this.layers.reduce((function(e, r) {
-                  var n = t.getPairElement(o, r);
-                  return n && e.push(n), o = Math.floor(o / 2), e
-                }), [])
-              }
-            }, {
-              key: "getHexProof",
-              value: function(e) {
-                var t = this.getProof(e);
-                return this.bufArrToHexArr(t)
-              }
-            }, {
-              key: "getPairElement",
-              value: function(e, t) {
-                var o = e % 2 == 0 ? e + 1 : e - 1;
-                return o < t.length ? t[o] : null
-              }
-            }, {
-              key: "bufIndexOf",
-              value: function(t, o) {
-                var r;
-                r = 32 === t.length && e.isBuffer(t) ? t : l(t);
-                for (var i = 0; i < o.length; i++) {
-                  if (r.equals(o[i])) {
-                    return i;
-                  }
-                }
-                return -1
-              }
-            }, {
-              key: "bufDedup",
-              value: function(e) {
-                return e.filter((function(t, o) {
-                  return 0 === o || !e[o - 1].equals(t)
-                }))
-              }
-            }, {
-              key: "bufArrToHexArr",
-              value: function(t) {
-                if (t.some((function(t) {
-                    return !e.isBuffer(t)
-                  }))) {
-                  throw new Error("Array is not an array of buffers");
-                }
-                return t.map((function(e) {
-                  return "0x" + e.toString("hex")
-                }))
-              }
-            }, {
-              key: "sortAndConcat",
-              value: function() {
-                for (var t = arguments.length, o = new Array(t), r = 0; r < t; r++) {
-                  o[r] = arguments[r];
-                }
-                return e.concat([].concat(o).sort(e.compare))
-              }
-            }]), t
-        }();
+              return e.concat([].concat(o).sort(e.compare))
+            }
+          }]), t
+      }();
       t.a = function(e, t) {
         e.app;t("merkleTree", f)
       }
@@ -2398,592 +2425,593 @@
       return new v.a(y)
     }
     var M = {
-        name: "NuxtChild",
-        functional: !0,
-        props: {
-          nuxtChildKey: {
-            type: String,
-            default: ""
-          },
-          keepAlive: Boolean,
-          keepAliveProps: {
-            type: Object,
-            default: void 0
-          }
+      name: "NuxtChild",
+      functional: !0,
+      props: {
+        nuxtChildKey: {
+          type: String,
+          default: ""
         },
-        render: function(e, t) {
-          var o = t.parent;
-          var data = t.data;
-          var r = t.props;
-          data.nuxtChild = !0;
-          for (var n = o, c = o.$nuxt.nuxt.transitions, l = o.$nuxt.nuxt.defaultTransition, d = 0; o;) {
-            o.$vnode && o.$vnode.data.nuxtChild && d++, o = o.$parent;
-          }
-          data.nuxtChildDepth = d;
-          var f = c[d] || l;
-          var m = {};
-          A.forEach((function(e) {
-            void 0 !== f[e] && (m[e] = f[e])
-          }));
-          var h = {};
-          _.forEach((function(e) {
-            "function" == typeof f[e] && (h[e] = f[e].bind(n))
-          }));
-          var v = h.beforeEnter;
-          if (h.beforeEnter = function(e) {
-              if (window.$nuxt.$nextTick((function() {
-                  window.$nuxt.$emit("triggerScroll")
-                })), v) {
-                return v.call(n, e)
-              }
-            }, !1 === f.css) {
-            var k = h.leave;
-            (!k || k.length < 2) && (h.leave = function(e, t) {
-              k && k.call(n, e), n.$nextTick(t)
-            })
-          }
-          var x = e("routerView", data);
-          return r.keepAlive && (x = e("keep-alive", {
-              props: r.keepAliveProps
-            }, [x])), e("transition", {
-              props: m,
-              on: h
-            }, [x])
+        keepAlive: Boolean,
+        keepAliveProps: {
+          type: Object,
+          default: void 0
         }
-      };
+      },
+      render: function(e, t) {
+        var o = t.parent;
+        var data = t.data;
+        var r = t.props;
+        data.nuxtChild = !0;
+        for (var n = o, c = o.$nuxt.nuxt.transitions, l = o.$nuxt.nuxt.defaultTransition, d = 0; o;) {
+          o.$vnode && o.$vnode.data.nuxtChild && d++, o = o.$parent;
+        }
+        data.nuxtChildDepth = d;
+        var f = c[d] || l;
+        var m = {};
+        A.forEach((function(e) {
+          void 0 !== f[e] && (m[e] = f[e])
+        }));
+        var h = {};
+        _.forEach((function(e) {
+          "function" == typeof f[e] && (h[e] = f[e].bind(n))
+        }));
+        var v = h.beforeEnter;
+        if (h.beforeEnter = function(e) {
+            if (window.$nuxt.$nextTick((function() {
+                window.$nuxt.$emit("triggerScroll")
+              })), v) {
+              return v.call(n, e)
+            }
+          }, !1 === f.css) {
+          var k = h.leave;
+          (!k || k.length < 2) && (h.leave = function(e, t) {
+            k && k.call(n, e), n.$nextTick(t)
+          })
+        }
+        var x = e("routerView", data);
+        return r.keepAlive && (x = e("keep-alive", {
+            props: r.keepAliveProps
+          }, [x])), e("transition", {
+            props: m,
+            on: h
+          }, [x])
+      }
+    };
     var A = ["name", "mode", "appear", "css", "type", "duration", "enterClass", "leaveClass", "appearClass", "enterActiveClass", "enterActiveClass", "leaveActiveClass", "appearActiveClass", "enterToClass", "leaveToClass", "appearToClass"];
     var _ = ["beforeEnter", "enter", "afterEnter", "enterCancelled", "beforeLeave", "leave", "afterLeave", "leaveCancelled", "beforeAppear", "appear", "afterAppear", "appearCancelled"];
     var T = {
-        name: "NuxtError",
-        props: {
-          error: {
-            type: Object,
-            default: null
-          }
-        },
-        computed: {
-          statusCode: function() {
-            return this.error && this.error.statusCode || 500
-          },
-          message: function() {
-            return this.error.message || "Error"
-          }
-        },
-        head: function() {
-          return {
-            title: this.message,
-            meta: [{
-              name: "viewport",
-              content: "width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
-            }]
-          }
+      name: "NuxtError",
+      props: {
+        error: {
+          type: Object,
+          default: null
         }
-      };
+      },
+      computed: {
+        statusCode: function() {
+          return this.error && this.error.statusCode || 500
+        },
+        message: function() {
+          return this.error.message || "Error"
+        }
+      },
+      head: function() {
+        return {
+          title: this.message,
+          meta: [{
+            name: "viewport",
+            content: "width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+          }]
+        }
+      }
+    };
     var C = (o(705), o(17));
     var E = Object(C.a)(T, (function() {
-        var e = this;
-        var t = e.$createElement;
-        var o = e._self._c || t;
-        return o("div", {
-          staticClass: "__nuxt-error-page"
-        }, [o("div", {
-          staticClass: "error"
-        }, [o("svg", {
-          attrs: {
-            xmlns: "http://www.w3.org/2000/svg",
-            width: "90",
-            height: "90",
-            fill: "#DBE1EC",
-            viewBox: "0 0 48 48"
-          }
-        }, [o("path", {
-          attrs: {
-            d: "M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"
-          }
-        })]), e._v(" "), o("div", {
-          staticClass: "title"
-        }, [e._v(e._s(e.message))]), e._v(" "), 404 === e.statusCode ? o("p", {
-          staticClass: "description"
-        }, [o("NuxtLink", {
-          staticClass: "error-link",
-          attrs: {
-            to: "/"
-          }
-        }, [e._v("Back to the home page")])], 1) : e._e(), e._v(" "), e._m(0)])])
-      }), [function() {
-        var e = this.$createElement;
-        var t = this._self._c || e;
-        return t("div", {
-          staticClass: "logo"
-        }, [t("a", {
-          attrs: {
-            href: "https://nuxtjs.org",
-            target: "_blank",
-            rel: "noopener"
-          }
-        }, [this._v("Nuxt.js")])])
-      }], !1, null, null, null).exports;
+      var e = this;
+      var t = e.$createElement;
+      var o = e._self._c || t;
+      return o("div", {
+        staticClass: "__nuxt-error-page"
+      }, [o("div", {
+        staticClass: "error"
+      }, [o("svg", {
+        attrs: {
+          xmlns: "http://www.w3.org/2000/svg",
+          width: "90",
+          height: "90",
+          fill: "#DBE1EC",
+          viewBox: "0 0 48 48"
+        }
+      }, [o("path", {
+        attrs: {
+          d: "M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"
+        }
+      })]), e._v(" "), o("div", {
+        staticClass: "title"
+      }, [e._v(e._s(e.message))]), e._v(" "), 404 === e.statusCode ? o("p", {
+        staticClass: "description"
+      }, [o("NuxtLink", {
+        staticClass: "error-link",
+        attrs: {
+          to: "/"
+        }
+      }, [e._v("Back to the home page")])], 1) : e._e(), e._v(" "), e._m(0)])])
+    }), [function() {
+      var e = this.$createElement;
+      var t = this._self._c || e;
+      return t("div", {
+        staticClass: "logo"
+      }, [t("a", {
+        attrs: {
+          href: "https://nuxtjs.org",
+          target: "_blank",
+          rel: "noopener"
+        }
+      }, [this._v("Nuxt.js")])])
+    }], !1, null, null, null).exports;
     var z = (o(90), o(91), o(200), o(26));
     var S = {
-        name: "Nuxt",
-        components: {
-          NuxtChild: M,
-          NuxtError: E
+      name: "Nuxt",
+      components: {
+        NuxtChild: M,
+        NuxtError: E
+      },
+      props: {
+        nuxtChildKey: {
+          type: String,
+          default: void 0
         },
-        props: {
-          nuxtChildKey: {
-            type: String,
-            default: void 0
-          },
-          keepAlive: Boolean,
-          keepAliveProps: {
-            type: Object,
-            default: void 0
-          },
-          name: {
-            type: String,
-            default: "default"
-          }
+        keepAlive: Boolean,
+        keepAliveProps: {
+          type: Object,
+          default: void 0
         },
-        errorCaptured: function(e) {
-          this.displayingNuxtError && (this.errorFromNuxtError = e, this.$forceUpdate())
-        },
-        computed: {
-          routerViewKey: function() {
-            if (void 0 !== this.nuxtChildKey || this.$route.matched.length > 1) {
-              return this.nuxtChildKey || Object(k.b)(this.$route.matched[0].path)(this.$route.params);
-            }
-            var e = Object(z.a)(this.$route.matched, 1)[0];
-            if (!e) {
-              return this.$route.path;
-            }
-            var t = e.components.default;
-            if (t && t.options) {
-              var o = t.options;
-              if (o.key) {
-                return "function" == typeof o.key ? o.key(this.$route) : o.key
-              }
-            }
-            return /\/$/.test(e.path) ? this.$route.path : this.$route.path.replace(/\/$/, "")
-          }
-        },
-        beforeCreate: function() {
-          c.a.util.defineReactive(this, "nuxt", this.$root.$options.nuxt)
-        },
-        render: function(e) {
-          var t = this;
-          return this.nuxt.err ? this.errorFromNuxtError ? (this.$nextTick((function() {
-            return t.errorFromNuxtError = !1
-          })), e("div", {}, [e("h2", "An error occured while showing the error page"), e("p", "Unfortunately an error occured and while showing the error page another error occured"), e("p", "Error details: ".concat(this.errorFromNuxtError.toString())), e("nuxt-link", {
-            props: {
-              to: "/"
-            }
-          }, "Go back to home")])) : (this.displayingNuxtError = !0, this.$nextTick((function() {
-            return t.displayingNuxtError = !1
-          })), e(E, {
-            props: {
-              error: this.nuxt.err
-            }
-          })) : e("NuxtChild", {
-            key: this.routerViewKey,
-            props: this.$props
-          })
+        name: {
+          type: String,
+          default: "default"
         }
-      };
+      },
+      errorCaptured: function(e) {
+        this.displayingNuxtError && (this.errorFromNuxtError = e, this.$forceUpdate())
+      },
+      computed: {
+        routerViewKey: function() {
+          if (void 0 !== this.nuxtChildKey || this.$route.matched.length > 1) {
+            return this.nuxtChildKey || Object(k.b)(this.$route.matched[0].path)(this.$route.params);
+          }
+          var e = Object(z.a)(this.$route.matched, 1)[0];
+          if (!e) {
+            return this.$route.path;
+          }
+          var t = e.components.default;
+          if (t && t.options) {
+            var o = t.options;
+            if (o.key) {
+              return "function" == typeof o.key ? o.key(this.$route) : o.key
+            }
+          }
+          return /\/$/.test(e.path) ? this.$route.path : this.$route.path.replace(/\/$/, "")
+        }
+      },
+      beforeCreate: function() {
+        c.a.util.defineReactive(this, "nuxt", this.$root.$options.nuxt)
+      },
+      render: function(e) {
+        var t = this;
+        return this.nuxt.err ? this.errorFromNuxtError ? (this.$nextTick((function() {
+          return t.errorFromNuxtError = !1
+        })), e("div", {}, [e("h2", "An error occured while showing the error page"), e("p", "Unfortunately an error occured and while showing the error page another error occured"), e("p", "Error details: ".concat(this.errorFromNuxtError.toString())), e("nuxt-link", {
+          props: {
+            to: "/"
+          }
+        }, "Go back to home")])) : (this.displayingNuxtError = !0, this.$nextTick((function() {
+          return t.displayingNuxtError = !1
+        })), e(E, {
+          props: {
+            error: this.nuxt.err
+          }
+        })) : e("NuxtChild", {
+          key: this.routerViewKey,
+          props: this.$props
+        })
+      }
+    };
     var I = (o(88), {
-        name: "NuxtLoading",
-        data: function() {
-          return {
-            percent: 0,
-            show: !1,
-            canSucceed: !0,
-            reversed: !1,
-            skipTimerCount: 0,
-            rtl: !1,
-            throttle: 200,
-            duration: 15e3,
-            continuous: !0
-          }
-        },
-        computed: {
-          left: function() {
-            return !(!this.continuous && !this.rtl) && (this.rtl ? this.reversed ? "0px" : "auto" : this.reversed ? "auto" : "0px")
-          }
-        },
-        beforeDestroy: function() {
-          this.clear()
-        },
-        methods: {
-          clear: function() {
-            clearInterval(this._timer), clearTimeout(this._throttle), this._timer = null
-          },
-          start: function() {
-            var e = this;
-            return this.clear(), this.percent = 0, this.reversed = !1, this.skipTimerCount = 0, this.canSucceed = !0, this.throttle ? this._throttle = setTimeout((function() {
-                return e.startTimer()
-              }), this.throttle) : this.startTimer(), this
-          },
-          set: function(e) {
-            return this.show = !0, this.canSucceed = !0, this.percent = Math.min(100, Math.max(0, Math.floor(e))), this
-          },
-          get: function() {
-            return this.percent
-          },
-          increase: function(e) {
-            return this.percent = Math.min(100, Math.floor(this.percent + e)), this
-          },
-          decrease: function(e) {
-            return this.percent = Math.max(0, Math.floor(this.percent - e)), this
-          },
-          pause: function() {
-            return clearInterval(this._timer), this
-          },
-          resume: function() {
-            return this.startTimer(), this
-          },
-          finish: function() {
-            return this.percent = this.reversed ? 0 : 100, this.hide(), this
-          },
-          hide: function() {
-            var e = this;
-            return this.clear(), setTimeout((function() {
-                e.show = !1, e.$nextTick((function() {
-                  e.percent = 0, e.reversed = !1
-                }))
-              }), 500), this
-          },
-          fail: function() {
-            return this.canSucceed = !1, this
-          },
-          startTimer: function() {
-            var e = this;
-            this.show || (this.show = !0), void 0 === this._cut && (this._cut = 1e4 / Math.floor(this.duration)), this._timer = setInterval((function() {
-              e.skipTimerCount > 0 ? e.skipTimerCount-- : (e.reversed ? e.decrease(e._cut) : e.increase(e._cut), e.continuous && (e.percent >= 100 ? (e.skipTimerCount = 1, e.reversed = !e.reversed) : e.percent <= 0 && (e.skipTimerCount = 1, e.reversed = !e.reversed)))
-            }), 100)
-          }
-        },
-        render: function(e) {
-          var t = e(!1);
-          return this.show && (t = e("div", {
-              staticClass: "nuxt-progress",
-              class: {
-                "nuxt-progress-notransition": this.skipTimerCount > 0,
-                "nuxt-progress-failed": !this.canSucceed
-              },
-              style: {
-                width: this.percent + "%",
-                left: this.left
-              }
-            })), t
+      name: "NuxtLoading",
+      data: function() {
+        return {
+          percent: 0,
+          show: !1,
+          canSucceed: !0,
+          reversed: !1,
+          skipTimerCount: 0,
+          rtl: !1,
+          throttle: 200,
+          duration: 15e3,
+          continuous: !0
         }
-      });
+      },
+      computed: {
+        left: function() {
+          return !(!this.continuous && !this.rtl) && (this.rtl ? this.reversed ? "0px" : "auto" : this.reversed ? "auto" : "0px")
+        }
+      },
+      beforeDestroy: function() {
+        this.clear()
+      },
+      methods: {
+        clear: function() {
+          clearInterval(this._timer), clearTimeout(this._throttle), this._timer = null
+        },
+        start: function() {
+          var e = this;
+          return this.clear(), this.percent = 0, this.reversed = !1, this.skipTimerCount = 0, this.canSucceed = !0, this.throttle ? this._throttle = setTimeout((function() {
+              return e.startTimer()
+            }), this.throttle) : this.startTimer(), this
+        },
+        set: function(e) {
+          return this.show = !0, this.canSucceed = !0, this.percent = Math.min(100, Math.max(0, Math.floor(e))), this
+        },
+        get: function() {
+          return this.percent
+        },
+        increase: function(e) {
+          return this.percent = Math.min(100, Math.floor(this.percent + e)), this
+        },
+        decrease: function(e) {
+          return this.percent = Math.max(0, Math.floor(this.percent - e)), this
+        },
+        pause: function() {
+          return clearInterval(this._timer), this
+        },
+        resume: function() {
+          return this.startTimer(), this
+        },
+        finish: function() {
+          return this.percent = this.reversed ? 0 : 100, this.hide(), this
+        },
+        hide: function() {
+          var e = this;
+          return this.clear(), setTimeout((function() {
+              e.show = !1, e.$nextTick((function() {
+                e.percent = 0, e.reversed = !1
+              }))
+            }), 500), this
+        },
+        fail: function() {
+          return this.canSucceed = !1, this
+        },
+        startTimer: function() {
+          var e = this;
+          this.show || (this.show = !0), void 0 === this._cut && (this._cut = 1e4 / Math.floor(this.duration)), this._timer = setInterval((function() {
+            e.skipTimerCount > 0 ? e.skipTimerCount-- : (e.reversed ? e.decrease(e._cut) : e.increase(e._cut), e.continuous && (e.percent >= 100 ? (e.skipTimerCount = 1, e.reversed = !e.reversed) : e.percent <= 0 && (e.skipTimerCount = 1, e.reversed = !e.reversed)))
+          }), 100)
+        }
+      },
+      render: function(e) {
+        var t = e(!1);
+        return this.show && (t = e("div", {
+            staticClass: "nuxt-progress",
+            class: {
+              "nuxt-progress-notransition": this.skipTimerCount > 0,
+              "nuxt-progress-failed": !this.canSucceed
+            },
+            style: {
+              width: this.percent + "%",
+              left: this.left
+            }
+          })), t
+      }
+    });
     var N = (o(707), Object(C.a)(I, void 0, void 0, !1, null, null, null).exports);
     var O = (o(709), Object(C.a)({}, (function() {
-        var e = this.$createElement;
-        var t = this._self._c || e;
-        return t("svg", {
-          staticClass: "multisender_logo",
-          attrs: {
-            xmlns: "http://www.w3.org/2000/svg",
-            viewBox: "0 0 157 34"
-          }
-        }, [t("path", {
-          attrs: {
-            fill: "#9CD8FF",
-            "fill-rule": "evenodd",
-            d: "M88.386 9.641l-3.134-4.065v4.065h-1.468V3.153h1.374l3.228 4.177V3.153h1.469v6.488h-1.469zM77.629 3.153h4.743v1.291h-3.275V5.78h2.946v1.234h-2.946V8.36h3.379v1.281h-4.847V3.153zm-.913 6.488h-1.713l-1.929-2.562-.659.724v1.838h-1.468V3.153h1.468v2.664l2.484-2.664h1.817L74.1 6.021c.225.31.643.887 1.251 1.731.609.845 1.064 1.475 1.365 1.889zm-10.466.065c-.973 0-1.791-.32-2.456-.961-.665-.64-.998-1.437-.998-2.389 0-.953.333-1.75.998-2.39.665-.641 1.483-.961 2.456-.961.973 0 1.791.32 2.457.961.665.64.997 1.437.997 2.39 0 .952-.332 1.749-.997 2.389-.666.641-1.484.961-2.457.961zm1.393-4.826a1.812 1.812 0 0 0-1.388-.613c-.549 0-1.012.204-1.388.613a2.103 2.103 0 0 0-.565 1.48c0 .579.188 1.071.565 1.476a1.82 1.82 0 0 0 1.388.608 1.82 1.82 0 0 0 1.388-.608c.377-.405.565-.897.565-1.476 0-.578-.188-1.072-.565-1.48zm-7.228 4.761h-1.468V4.406h-1.864V3.153h5.195v1.253h-1.863v5.235zM156.54 24.11c-.785 0-1.398.225-1.839.676-.442.451-.662 1.101-.662 1.949v4.121h-2.017v-8.497h1.92V23.6c.581-.891 1.603-1.336 3.066-1.336v1.893a2.664 2.664 0 0 0-.468-.047zm-13.246 3.134c.118.626.427 1.122.927 1.488.501.366 1.122.549 1.864.549.946 0 1.726-.308 2.34-.923l1.08 1.225a3.633 3.633 0 0 1-1.468 1.034c-.591.234-1.258.35-2 .35-.947 0-1.781-.185-2.501-.557a4.036 4.036 0 0 1-1.67-1.551c-.393-.663-.589-1.413-.589-2.251 0-.828.191-1.573.573-2.236a4.025 4.025 0 0 1 1.589-1.551c.678-.371 1.441-.557 2.291-.557.839 0 1.589.183 2.251.549.661.366 1.178.88 1.549 1.543.371.663.556 1.43.556 2.299 0 .138-.011.335-.032.589h-6.76zm4.082-2.816c-.441-.382-.99-.573-1.646-.573-.645 0-1.191.189-1.638.565-.446.377-.718.878-.814 1.503h4.888c-.086-.615-.349-1.113-.79-1.495zm-9.971 5.33a3.115 3.115 0 0 1-1.235.907 4.227 4.227 0 0 1-1.621.302c-.829 0-1.573-.18-2.235-.541a3.916 3.916 0 0 1-1.557-1.535c-.376-.663-.564-1.424-.564-2.283 0-.86.188-1.618.564-2.276a3.942 3.942 0 0 1 1.557-1.527c.662-.361 1.406-.541 2.235-.541.57 0 1.092.095 1.565.286.473.191.876.478 1.21.86v-4.36h2.017v11.806h-1.936v-1.098zm-.387-4.551a2.371 2.371 0 0 0-.92-.93 2.617 2.617 0 0 0-1.307-.326c-.484 0-.92.108-1.307.326a2.371 2.371 0 0 0-.92.93c-.226.404-.338.87-.338 1.401 0 .53.112.997.338 1.4.226.403.533.713.92.931.387.217.823.326 1.307.326s.92-.109 1.307-.326a2.38 2.38 0 0 0 .92-.931c.225-.403.338-.87.338-1.4 0-.531-.113-.997-.338-1.401zm-10.778 1.035c0-.743-.178-1.302-.533-1.679-.355-.376-.86-.565-1.516-.565-.742 0-1.329.221-1.759.661-.43.44-.645 1.074-.645 1.901v4.296h-2.017v-8.497h1.92v1.098a3.16 3.16 0 0 1 1.258-.891c.506-.201 1.076-.302 1.711-.302 1.086 0 1.957.313 2.613.939.656.626.985 1.554.985 2.784v4.869h-2.017v-4.614zm-15.199 1.002a2.31 2.31 0 0 0 .928 1.488c.5.366 1.121.549 1.864.549.946 0 1.726-.308 2.339-.923l1.081 1.225a3.64 3.64 0 0 1-1.468 1.034c-.592.234-1.259.35-2.001.35-.947 0-1.78-.185-2.501-.557a4.048 4.048 0 0 1-1.67-1.551c-.392-.663-.588-1.413-.588-2.251 0-.828.19-1.573.572-2.236a4.034 4.034 0 0 1 1.59-1.551c.677-.371 1.441-.557 2.291-.557.839 0 1.589.183 2.25.549a3.91 3.91 0 0 1 1.549 1.543c.371.663.557 1.43.557 2.299 0 .138-.011.335-.032.589h-6.761zm4.082-2.816c-.441-.382-.989-.573-1.645-.573-.646 0-1.192.189-1.638.565-.446.377-.718.878-.815 1.503h4.889c-.086-.615-.35-1.113-.791-1.495zm-12.746-.382c.355.117.839.249 1.452.398.839.191 1.527.39 2.065.596.538.207.998.523 1.38.947.382.425.573.997.573 1.719 0 .615-.17 1.172-.509 1.67-.338.499-.852.897-1.54 1.194-.689.296-1.528.445-2.517.445a8.723 8.723 0 0 1-2.525-.366c-.813-.244-1.455-.567-1.928-.97l.726-1.608c.462.361 1.029.656 1.702.884a6.267 6.267 0 0 0 2.025.342c.839 0 1.465-.133 1.879-.398.414-.265.621-.615.621-1.05a1.01 1.01 0 0 0-.346-.788 2.456 2.456 0 0 0-.88-.485 19.909 19.909 0 0 0-1.452-.398c-.86-.201-1.557-.403-2.089-.605a3.437 3.437 0 0 1-1.372-.946c-.382-.43-.572-1.011-.572-1.742 0-.616.169-1.175.508-1.679.339-.504.849-.904 1.533-1.201.683-.297 1.519-.446 2.509-.446.688 0 1.365.085 2.032.255.667.169 1.243.413 1.727.732l-.662 1.607a6.574 6.574 0 0 0-1.549-.653 5.889 5.889 0 0 0-1.565-.223c-.828 0-1.444.139-1.847.414-.403.276-.605.642-.605 1.098 0 .318.115.578.347.78.231.201.524.36.879.477zm-6.244-3.087c-.366 0-.672-.114-.919-.342a1.108 1.108 0 0 1-.372-.851c0-.339.124-.623.372-.851.247-.228.553-.342.919-.342s.672.108.92.326c.247.217.371.491.371.819 0 .35-.121.645-.363.883-.242.239-.551.358-.928.358zm-4.614 10.008c-.947 0-1.678-.244-2.194-.732-.517-.487-.775-1.198-.775-2.132v-4.089h-1.42v-1.591h1.42v-1.941h2.017v1.941h2.307v1.591h-2.307v4.042c0 .413.102.729.306.946.205.218.501.326.888.326.452 0 .828-.116 1.129-.35l.565 1.417c-.237.19-.524.334-.863.429a3.922 3.922 0 0 1-1.073.143zM83.194 19.05h2.017v11.806h-2.017V19.05zm-4.566 10.724a3.21 3.21 0 0 1-1.21.883 3.938 3.938 0 0 1-1.565.31c-1.151 0-2.057-.315-2.719-.946-.661-.631-.992-1.568-.992-2.809v-4.853h2.017v4.583c0 .764.174 1.334.524 1.71.349.377.847.565 1.492.565.721 0 1.294-.22 1.719-.66.425-.44.637-1.074.637-1.902v-4.296h2.017v8.497h-1.92v-1.082zM67.35 23.473l-3.711 6.11h-.936l-3.711-6.014v7.287h-2V19.718h1.726l4.486 7.383 4.404-7.383h1.727l.016 11.138h-1.985l-.016-7.383zm29.784 7.383h-2.017v-8.497h2.017v8.497zM37 33.021l-.069-19.591L21 21.847v.025L5.069 13.474 5 33.021 0 30.27V5.076l21 10.86v-.039L42 5.014v25.25l-5 2.757z"
-          }
-        }), this._v(" "), t("path", {
-          attrs: {
-            fill: "#10B3FF",
-            "fill-rule": "evenodd",
-            d: "M21 11.021L4.004 2.409l4.609-2.4L21 6.221 33.387.009l4.609 2.4L21 11.021zM12.005 29.5l-3.011 2.522V20.005l3.011 1.756V29.5zm21.001 2.522L29.995 29.5v-7.739l3.011-1.756v12.017z"
-          }
-        })])
-      }), [], !1, null, null, null).exports);
+      var e = this.$createElement;
+      var t = this._self._c || e;
+      return t("svg", {
+        staticClass: "multisender_logo",
+        attrs: {
+          xmlns: "http://www.w3.org/2000/svg",
+          viewBox: "0 0 157 34"
+        }
+      }, [t("path", {
+        attrs: {
+          fill: "#9CD8FF",
+          "fill-rule": "evenodd",
+          d: "M88.386 9.641l-3.134-4.065v4.065h-1.468V3.153h1.374l3.228 4.177V3.153h1.469v6.488h-1.469zM77.629 3.153h4.743v1.291h-3.275V5.78h2.946v1.234h-2.946V8.36h3.379v1.281h-4.847V3.153zm-.913 6.488h-1.713l-1.929-2.562-.659.724v1.838h-1.468V3.153h1.468v2.664l2.484-2.664h1.817L74.1 6.021c.225.31.643.887 1.251 1.731.609.845 1.064 1.475 1.365 1.889zm-10.466.065c-.973 0-1.791-.32-2.456-.961-.665-.64-.998-1.437-.998-2.389 0-.953.333-1.75.998-2.39.665-.641 1.483-.961 2.456-.961.973 0 1.791.32 2.457.961.665.64.997 1.437.997 2.39 0 .952-.332 1.749-.997 2.389-.666.641-1.484.961-2.457.961zm1.393-4.826a1.812 1.812 0 0 0-1.388-.613c-.549 0-1.012.204-1.388.613a2.103 2.103 0 0 0-.565 1.48c0 .579.188 1.071.565 1.476a1.82 1.82 0 0 0 1.388.608 1.82 1.82 0 0 0 1.388-.608c.377-.405.565-.897.565-1.476 0-.578-.188-1.072-.565-1.48zm-7.228 4.761h-1.468V4.406h-1.864V3.153h5.195v1.253h-1.863v5.235zM156.54 24.11c-.785 0-1.398.225-1.839.676-.442.451-.662 1.101-.662 1.949v4.121h-2.017v-8.497h1.92V23.6c.581-.891 1.603-1.336 3.066-1.336v1.893a2.664 2.664 0 0 0-.468-.047zm-13.246 3.134c.118.626.427 1.122.927 1.488.501.366 1.122.549 1.864.549.946 0 1.726-.308 2.34-.923l1.08 1.225a3.633 3.633 0 0 1-1.468 1.034c-.591.234-1.258.35-2 .35-.947 0-1.781-.185-2.501-.557a4.036 4.036 0 0 1-1.67-1.551c-.393-.663-.589-1.413-.589-2.251 0-.828.191-1.573.573-2.236a4.025 4.025 0 0 1 1.589-1.551c.678-.371 1.441-.557 2.291-.557.839 0 1.589.183 2.251.549.661.366 1.178.88 1.549 1.543.371.663.556 1.43.556 2.299 0 .138-.011.335-.032.589h-6.76zm4.082-2.816c-.441-.382-.99-.573-1.646-.573-.645 0-1.191.189-1.638.565-.446.377-.718.878-.814 1.503h4.888c-.086-.615-.349-1.113-.79-1.495zm-9.971 5.33a3.115 3.115 0 0 1-1.235.907 4.227 4.227 0 0 1-1.621.302c-.829 0-1.573-.18-2.235-.541a3.916 3.916 0 0 1-1.557-1.535c-.376-.663-.564-1.424-.564-2.283 0-.86.188-1.618.564-2.276a3.942 3.942 0 0 1 1.557-1.527c.662-.361 1.406-.541 2.235-.541.57 0 1.092.095 1.565.286.473.191.876.478 1.21.86v-4.36h2.017v11.806h-1.936v-1.098zm-.387-4.551a2.371 2.371 0 0 0-.92-.93 2.617 2.617 0 0 0-1.307-.326c-.484 0-.92.108-1.307.326a2.371 2.371 0 0 0-.92.93c-.226.404-.338.87-.338 1.401 0 .53.112.997.338 1.4.226.403.533.713.92.931.387.217.823.326 1.307.326s.92-.109 1.307-.326a2.38 2.38 0 0 0 .92-.931c.225-.403.338-.87.338-1.4 0-.531-.113-.997-.338-1.401zm-10.778 1.035c0-.743-.178-1.302-.533-1.679-.355-.376-.86-.565-1.516-.565-.742 0-1.329.221-1.759.661-.43.44-.645 1.074-.645 1.901v4.296h-2.017v-8.497h1.92v1.098a3.16 3.16 0 0 1 1.258-.891c.506-.201 1.076-.302 1.711-.302 1.086 0 1.957.313 2.613.939.656.626.985 1.554.985 2.784v4.869h-2.017v-4.614zm-15.199 1.002a2.31 2.31 0 0 0 .928 1.488c.5.366 1.121.549 1.864.549.946 0 1.726-.308 2.339-.923l1.081 1.225a3.64 3.64 0 0 1-1.468 1.034c-.592.234-1.259.35-2.001.35-.947 0-1.78-.185-2.501-.557a4.048 4.048 0 0 1-1.67-1.551c-.392-.663-.588-1.413-.588-2.251 0-.828.19-1.573.572-2.236a4.034 4.034 0 0 1 1.59-1.551c.677-.371 1.441-.557 2.291-.557.839 0 1.589.183 2.25.549a3.91 3.91 0 0 1 1.549 1.543c.371.663.557 1.43.557 2.299 0 .138-.011.335-.032.589h-6.761zm4.082-2.816c-.441-.382-.989-.573-1.645-.573-.646 0-1.192.189-1.638.565-.446.377-.718.878-.815 1.503h4.889c-.086-.615-.35-1.113-.791-1.495zm-12.746-.382c.355.117.839.249 1.452.398.839.191 1.527.39 2.065.596.538.207.998.523 1.38.947.382.425.573.997.573 1.719 0 .615-.17 1.172-.509 1.67-.338.499-.852.897-1.54 1.194-.689.296-1.528.445-2.517.445a8.723 8.723 0 0 1-2.525-.366c-.813-.244-1.455-.567-1.928-.97l.726-1.608c.462.361 1.029.656 1.702.884a6.267 6.267 0 0 0 2.025.342c.839 0 1.465-.133 1.879-.398.414-.265.621-.615.621-1.05a1.01 1.01 0 0 0-.346-.788 2.456 2.456 0 0 0-.88-.485 19.909 19.909 0 0 0-1.452-.398c-.86-.201-1.557-.403-2.089-.605a3.437 3.437 0 0 1-1.372-.946c-.382-.43-.572-1.011-.572-1.742 0-.616.169-1.175.508-1.679.339-.504.849-.904 1.533-1.201.683-.297 1.519-.446 2.509-.446.688 0 1.365.085 2.032.255.667.169 1.243.413 1.727.732l-.662 1.607a6.574 6.574 0 0 0-1.549-.653 5.889 5.889 0 0 0-1.565-.223c-.828 0-1.444.139-1.847.414-.403.276-.605.642-.605 1.098 0 .318.115.578.347.78.231.201.524.36.879.477zm-6.244-3.087c-.366 0-.672-.114-.919-.342a1.108 1.108 0 0 1-.372-.851c0-.339.124-.623.372-.851.247-.228.553-.342.919-.342s.672.108.92.326c.247.217.371.491.371.819 0 .35-.121.645-.363.883-.242.239-.551.358-.928.358zm-4.614 10.008c-.947 0-1.678-.244-2.194-.732-.517-.487-.775-1.198-.775-2.132v-4.089h-1.42v-1.591h1.42v-1.941h2.017v1.941h2.307v1.591h-2.307v4.042c0 .413.102.729.306.946.205.218.501.326.888.326.452 0 .828-.116 1.129-.35l.565 1.417c-.237.19-.524.334-.863.429a3.922 3.922 0 0 1-1.073.143zM83.194 19.05h2.017v11.806h-2.017V19.05zm-4.566 10.724a3.21 3.21 0 0 1-1.21.883 3.938 3.938 0 0 1-1.565.31c-1.151 0-2.057-.315-2.719-.946-.661-.631-.992-1.568-.992-2.809v-4.853h2.017v4.583c0 .764.174 1.334.524 1.71.349.377.847.565 1.492.565.721 0 1.294-.22 1.719-.66.425-.44.637-1.074.637-1.902v-4.296h2.017v8.497h-1.92v-1.082zM67.35 23.473l-3.711 6.11h-.936l-3.711-6.014v7.287h-2V19.718h1.726l4.486 7.383 4.404-7.383h1.727l.016 11.138h-1.985l-.016-7.383zm29.784 7.383h-2.017v-8.497h2.017v8.497zM37 33.021l-.069-19.591L21 21.847v.025L5.069 13.474 5 33.021 0 30.27V5.076l21 10.86v-.039L42 5.014v25.25l-5 2.757z"
+        }
+      }), this._v(" "), t("path", {
+        attrs: {
+          fill: "#10B3FF",
+          "fill-rule": "evenodd",
+          d: "M21 11.021L4.004 2.409l4.609-2.4L21 6.221 33.387.009l4.609 2.4L21 11.021zM12.005 29.5l-3.011 2.522V20.005l3.011 1.756V29.5zm21.001 2.522L29.995 29.5v-7.739l3.011-1.756v12.017z"
+        }
+      })])
+    }), [], !1, null, null, null).exports);
     var L = o(74);
     var P = {
-        props: {
-          value: {
-            type: String,
-            required: !0
-          }
-        },
-        data: function() {
-          return {
-            selectedNetwork: this.value,
-            networkConfig: L.a
-          }
-        },
-        computed: {
-          networks: function() {
-            var e = Object.assign({}, this.networkConfig);
-            return delete e.netId333
-              , e
-          }
-        },
-        methods: {
-          updateNetwork: function() {
-            this.$emit("input", this.selectedNetwork)
-          }
+      props: {
+        value: {
+          type: String,
+          required: !0
         }
-      };
+      },
+      data: function() {
+        return {
+          selectedNetwork: this.value,
+          networkConfig: L.a
+        }
+      },
+      computed: {
+        networks: function() {
+          var e = Object.assign({}, this.networkConfig);
+          return delete e.netId333
+            , e
+        }
+      },
+      methods: {
+        updateNetwork: function() {
+          this.$emit("input", this.selectedNetwork)
+        }
+      }
+    };
     var D = {
-        components: {
-          NetworkSelect: Object(C.a)(P, (function() {
-            var e = this;
-            var t = e.$createElement;
-            var o = e._self._c || t;
-            return o("b-select", {
-              staticClass: "network-select",
-              attrs: {
-                placeholder: "Select a network",
-                size: "is-small",
-                expanded: ""
-              },
-              on: {
-                input: function(t) {
-                  return e.updateNetwork()
-                }
-              },
-              model: {
-                value: e.selectedNetwork,
-                callback: function(t) {
-                  e.selectedNetwork = t
-                },
-                expression: "selectedNetwork"
+      components: {
+        NetworkSelect: Object(C.a)(P, (function() {
+          var e = this;
+          var t = e.$createElement;
+          var o = e._self._c || t;
+          return o("b-select", {
+            staticClass: "network-select",
+            attrs: {
+              placeholder: "Select a network",
+              size: "is-small",
+              expanded: ""
+            },
+            on: {
+              input: function(t) {
+                return e.updateNetwork()
               }
-            }, e._l(e.networks, (function(t) {
-              return o("option", {
-                key: t.networkName,
-                domProps: {
-                  value: t.networkName.toLowerCase()
+            },
+            model: {
+              value: e.selectedNetwork,
+              callback: function(t) {
+                e.selectedNetwork = t
+              },
+              expression: "selectedNetwork"
+            }
+          }, e._l(e.networks, (function(t) {
+            return o("option", {
+              key: t.networkName,
+              domProps: {
+                value: t.networkName.toLowerCase()
+              }
+            }, [e._v("\n    " + e._s(t.networkName) + "\n  ")])
+          })), 0)
+        }), [], !1, null, null, null).exports
+      },
+      data: function() {
+        return {
+          isBackuped: !1,
+          preparingModal: null,
+          loading: !1,
+          message: "Loading",
+          portisNetwork: "mainnet",
+          squarelinkNetwork: "mainnet",
+          fortmaticNetwork: "mainnet",
+          authereumNetwork: "mainnet"
+        }
+      },
+      computed: {
+        isMetamask: function() {
+          return window.web3 && window.web3.currentProvider.isMetaMask
+        },
+        isTrust: function() {
+          return window.web3 && window.web3.currentProvider.isTrust
+        },
+        isImToken: function() {
+          return window.ethereum && window.ethereum.isImToken
+        },
+        isAlphaWallet: function() {
+          return window.web3 && window.web3.currentProvider.isAlphaWallet
+        },
+        isUnknownWallet: function() {
+          return !this.isMetamask && !this.isTrust && !this.isImToken && !this.isAlphaWallet && (window.ethereum || window.web3)
+        }
+      },
+      methods: {
+        _web3Connect: function(e, t) {
+          var o = this;
+          return Object(r.a)(regeneratorRuntime.mark((function r() {
+            return regeneratorRuntime.wrap((function(r) {
+              for (;;) {
+                switch (
+                r.prev = r.next) {
+                  case 0:
+                    return o.loading = !0, r.next = 3, o.$store.dispatch("metamask/initialize", {
+                        providerName: e,
+                        networkName: t
+                      });case 3:
+                    o.$parent.close();case 4:
+                  case "end":
+                    return r.stop()
                 }
-              }, [e._v("\n    " + e._s(t.networkName) + "\n  ")])
-            })), 0)
-          }), [], !1, null, null, null).exports
-        },
-        data: function() {
-          return {
-            isBackuped: !1,
-            preparingModal: null,
-            loading: !1,
-            message: "Loading",
-            portisNetwork: "mainnet",
-            squarelinkNetwork: "mainnet",
-            fortmaticNetwork: "mainnet",
-            authereumNetwork: "mainnet"
-          }
-        },
-        computed: {
-          isMetamask: function() {
-            return window.web3 && window.web3.currentProvider.isMetaMask
-          },
-          isTrust: function() {
-            return window.web3 && window.web3.currentProvider.isTrust
-          },
-          isImToken: function() {
-            return window.ethereum && window.ethereum.isImToken
-          },
-          isAlphaWallet: function() {
-            return window.web3 && window.web3.currentProvider.isAlphaWallet
-          },
-          isUnknownWallet: function() {
-            return !this.isMetamask && !this.isTrust && !this.isImToken && !this.isAlphaWallet && (window.ethereum || window.web3)
-          }
-        },
-        methods: {
-          _web3Connect: function(e, t) {
-            var o = this;
-            return Object(r.a)(regeneratorRuntime.mark((function r() {
-              return regeneratorRuntime.wrap((function(r) {
-                for (;;) {
-                  switch (r.prev = r.next) {
-                    case 0:
-                      return o.loading = !0, r.next = 3, o.$store.dispatch("metamask/initialize", {
-                          providerName: e,
-                          networkName: t
-                        });case 3:
-                      o.$parent.close();case 4:
-                    case "end":
-                      return r.stop()
-                  }
-                }
-              }), r)
-            })))()
+              }
+            }), r)
+          })))()
+        }
+      }
+    };
+    var R = Object(C.a)(D, (function() {
+      var e = this;
+      var t = e.$createElement;
+      var o = e._self._c || t;
+      return o("div", {
+        staticClass: "modal-card"
+      }, [e._m(0), e._v(" "), o("section", {
+        staticClass: "modal-card-body"
+      }, [o("div", {
+        staticClass: "field is-grouped is-grouped-centered is-grouped-multiline wallets"
+      }, [o("div", {
+        staticClass: "control"
+      }, [o("button", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: e.isMetamask,
+          expression: "isMetamask"
+        }],
+        staticClass: "button is-small is-dark is-metamask",
+        on: {
+          click: function(t) {
+            return e._web3Connect("metamask")
           }
         }
-      };
-    var R = Object(C.a)(D, (function() {
-        var e = this;
-        var t = e.$createElement;
-        var o = e._self._c || t;
-        return o("div", {
-          staticClass: "modal-card"
-        }, [e._m(0), e._v(" "), o("section", {
-          staticClass: "modal-card-body"
-        }, [o("div", {
-          staticClass: "field is-grouped is-grouped-centered is-grouped-multiline wallets"
-        }, [o("div", {
-          staticClass: "control"
-        }, [o("button", {
-          directives: [{
-            name: "show",
-            rawName: "v-show",
-            value: e.isMetamask,
-            expression: "isMetamask"
-          }],
-          staticClass: "button is-small is-dark is-metamask",
-          on: {
-            click: function(t) {
-              return e._web3Connect("metamask")
-            }
+      }, [e._v("\n          Metamask\n        ")]), e._v(" "), o("button", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: e.isTrust,
+          expression: "isTrust"
+        }],
+        staticClass: "button is-small is-dark is-trustwallet",
+        on: {
+          click: function(t) {
+            return e._web3Connect("trustwallet")
           }
-        }, [e._v("\n          Metamask\n        ")]), e._v(" "), o("button", {
-          directives: [{
-            name: "show",
-            rawName: "v-show",
-            value: e.isTrust,
-            expression: "isTrust"
-          }],
-          staticClass: "button is-small is-dark is-trustwallet",
-          on: {
-            click: function(t) {
-              return e._web3Connect("trustwallet")
-            }
+        }
+      }, [e._v("\n          Trust Wallet\n        ")]), e._v(" "), o("button", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: e.isImToken,
+          expression: "isImToken"
+        }],
+        staticClass: "button is-small is-dark is-imtoken",
+        on: {
+          click: function(t) {
+            return e._web3Connect("imtoken")
           }
-        }, [e._v("\n          Trust Wallet\n        ")]), e._v(" "), o("button", {
-          directives: [{
-            name: "show",
-            rawName: "v-show",
-            value: e.isImToken,
-            expression: "isImToken"
-          }],
-          staticClass: "button is-small is-dark is-imtoken",
-          on: {
-            click: function(t) {
-              return e._web3Connect("imtoken")
-            }
+        }
+      }, [e._v("\n          imToken\n        ")]), e._v(" "), o("button", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: e.isAlphaWallet,
+          expression: "isAlphaWallet"
+        }],
+        staticClass: "button is-small is-dark is-alphawallet",
+        on: {
+          click: function(t) {
+            return e._web3Connect("alphawallet")
           }
-        }, [e._v("\n          imToken\n        ")]), e._v(" "), o("button", {
-          directives: [{
-            name: "show",
-            rawName: "v-show",
-            value: e.isAlphaWallet,
-            expression: "isAlphaWallet"
-          }],
-          staticClass: "button is-small is-dark is-alphawallet",
-          on: {
-            click: function(t) {
-              return e._web3Connect("alphawallet")
-            }
+        }
+      }, [e._v("\n          AlphaWallet\n        ")]), e._v(" "), o("button", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: e.isUnknownWallet,
+          expression: "isUnknownWallet"
+        }],
+        staticClass: "button is-small is-dark is-genericWeb3",
+        on: {
+          click: function(t) {
+            return e._web3Connect("genericWeb3")
           }
-        }, [e._v("\n          AlphaWallet\n        ")]), e._v(" "), o("button", {
-          directives: [{
-            name: "show",
-            rawName: "v-show",
-            value: e.isUnknownWallet,
-            expression: "isUnknownWallet"
-          }],
-          staticClass: "button is-small is-dark is-genericWeb3",
-          on: {
-            click: function(t) {
-              return e._web3Connect("genericWeb3")
-            }
+        }
+      }, [e._v("\n          Current wallet\n        ")])]), e._v(" "), o("div", {
+        staticClass: "control control-with-select"
+      }, [o("button", {
+        staticClass: "button is-small is-dark is-authereum",
+        on: {
+          click: function(t) {
+            return e._web3Connect("authereum", e.authereumNetwork)
           }
-        }, [e._v("\n          Current wallet\n        ")])]), e._v(" "), o("div", {
-          staticClass: "control control-with-select"
-        }, [o("button", {
-          staticClass: "button is-small is-dark is-authereum",
-          on: {
-            click: function(t) {
-              return e._web3Connect("authereum", e.authereumNetwork)
-            }
-          }
-        }, [e._v("\n          Authereum\n        ")]), e._v(" "), o("NetworkSelect", {
-          model: {
-            value: e.authereumNetwork,
-            callback: function(t) {
-              e.authereumNetwork = t
-            },
-            expression: "authereumNetwork"
-          }
-        })], 1), e._v(" "), o("div", {
-          staticClass: "control control-with-select"
-        }, [o("button", {
-          staticClass: "button is-small is-dark is-portis",
-          on: {
-            click: function(t) {
-              return e._web3Connect("portis", e.portisNetwork)
-            }
-          }
-        }, [e._v("\n          Portis\n        ")]), e._v(" "), o("NetworkSelect", {
-          model: {
-            value: e.portisNetwork,
-            callback: function(t) {
-              e.portisNetwork = t
-            },
-            expression: "portisNetwork"
-          }
-        })], 1), e._v(" "), o("div", {
-          staticClass: "control control-with-select"
-        }, [o("button", {
-          staticClass: "button is-small is-dark is-squarelink",
-          on: {
-            click: function(t) {
-              return e._web3Connect("squarelink", e.squarelinkNetwork)
-            }
-          }
-        }, [e._v("\n          Squarelink\n        ")]), e._v(" "), o("NetworkSelect", {
-          model: {
-            value: e.squarelinkNetwork,
-            callback: function(t) {
-              e.squarelinkNetwork = t
-            },
-            expression: "squarelinkNetwork"
-          }
-        })], 1), e._v(" "), o("div", {
-          staticClass: "control control-with-select"
-        }, [o("button", {
-          staticClass: "button is-small is-dark is-fortmatic",
-          on: {
-            click: function(t) {
-              return e._web3Connect("fortmatic", e.fortmaticNetwork)
-            }
-          }
-        }, [e._v("\n          Fortmatic\n        ")]), e._v(" "), o("NetworkSelect", {
-          model: {
-            value: e.fortmaticNetwork,
-            callback: function(t) {
-              e.fortmaticNetwork = t
-            },
-            expression: "fortmaticNetwork"
-          }
-        })], 1)])]), e._v(" "), o("b-loading", {
-          attrs: {
-            active: e.loading
+        }
+      }, [e._v("\n          Authereum\n        ")]), e._v(" "), o("NetworkSelect", {
+        model: {
+          value: e.authereumNetwork,
+          callback: function(t) {
+            e.authereumNetwork = t
           },
-          on: {
-            "update:active": function(t) {
-              e.loading = t
-            }
+          expression: "authereumNetwork"
+        }
+      })], 1), e._v(" "), o("div", {
+        staticClass: "control control-with-select"
+      }, [o("button", {
+        staticClass: "button is-small is-dark is-portis",
+        on: {
+          click: function(t) {
+            return e._web3Connect("portis", e.portisNetwork)
           }
-        }, [o("div", {
-          staticClass: "loading-container"
-        }, [o("div", {
-          staticClass: "loading-icon"
-        }), e._v(" "), o("div", {
-          staticClass: "loading-message"
-        }, [e._v(e._s(e.message) + "...")])])])], 1)
-      }), [function() {
-        var e = this.$createElement;
-        var t = this._self._c || e;
-        return t("header", {
-          staticClass: "modal-card-head"
-        }, [t("p", {
-          staticClass: "modal-card-title"
-        }, [this._v("\n      Please select your Web3 Wallet\n    ")])])
-      }], !1, null, null, null).exports;
+        }
+      }, [e._v("\n          Portis\n        ")]), e._v(" "), o("NetworkSelect", {
+        model: {
+          value: e.portisNetwork,
+          callback: function(t) {
+            e.portisNetwork = t
+          },
+          expression: "portisNetwork"
+        }
+      })], 1), e._v(" "), o("div", {
+        staticClass: "control control-with-select"
+      }, [o("button", {
+        staticClass: "button is-small is-dark is-squarelink",
+        on: {
+          click: function(t) {
+            return e._web3Connect("squarelink", e.squarelinkNetwork)
+          }
+        }
+      }, [e._v("\n          Squarelink\n        ")]), e._v(" "), o("NetworkSelect", {
+        model: {
+          value: e.squarelinkNetwork,
+          callback: function(t) {
+            e.squarelinkNetwork = t
+          },
+          expression: "squarelinkNetwork"
+        }
+      })], 1), e._v(" "), o("div", {
+        staticClass: "control control-with-select"
+      }, [o("button", {
+        staticClass: "button is-small is-dark is-fortmatic",
+        on: {
+          click: function(t) {
+            return e._web3Connect("fortmatic", e.fortmaticNetwork)
+          }
+        }
+      }, [e._v("\n          Fortmatic\n        ")]), e._v(" "), o("NetworkSelect", {
+        model: {
+          value: e.fortmaticNetwork,
+          callback: function(t) {
+            e.fortmaticNetwork = t
+          },
+          expression: "fortmaticNetwork"
+        }
+      })], 1)])]), e._v(" "), o("b-loading", {
+        attrs: {
+          active: e.loading
+        },
+        on: {
+          "update:active": function(t) {
+            e.loading = t
+          }
+        }
+      }, [o("div", {
+        staticClass: "loading-container"
+      }, [o("div", {
+        staticClass: "loading-icon"
+      }), e._v(" "), o("div", {
+        staticClass: "loading-message"
+      }, [e._v(e._s(e.message) + "...")])])])], 1)
+    }), [function() {
+      var e = this.$createElement;
+      var t = this._self._c || e;
+      return t("header", {
+        staticClass: "modal-card-head"
+      }, [t("p", {
+        staticClass: "modal-card-title"
+      }, [this._v("\n      Please select your Web3 Wallet\n    ")])])
+    }], !1, null, null, null).exports;
     var B = o(75);
     function G(object, e) {
       var t = Object.keys(object);
@@ -2996,215 +3024,215 @@
       return t
     }
     var F = {
-        components: {
-          Logo: O
-        },
-        props: {
-          snackbar: {
-            type: Object,
-            default: function() {}
-          }
-        },
-        data: function() {
-          return {
-            isMenuActive: !1,
-            localSnackbar: !1
-          }
-        },
-        computed: function(e) {
-          for (var i = 1; i < arguments.length; i++) {
-            var source = null != arguments[i] ? arguments[i] : {};
-            i % 2 ? G(Object(source), !0).forEach((function(t) {
-              Object(n.a)(e, t, source[t])
-            })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(source)) : G(Object(source)).forEach((function(t) {
-              Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(source, t))
-            }))
-          }
-          return e
-        }({}, Object(B.d)("metamask", ["providerName"]), {
-          isLoggedIn: function() {
-            return !!this.providerName
-          },
-          isDefaultLayout: function() {
-            return "default" === this.$nuxt.$data.layoutName
-          }
-        }),
-        watch: {
-          $route: "closeMenu"
-        },
-        methods: {
-          closeMenu: function() {
-            this.isMenuActive = !1
-          },
-          onLogoClick: function() {
-            this.$router.go()
-          },
-          onLogOut: function() {
-            window.localStorage.removeItem("provider"), this.$router.go({
-              path: "/",
-              force: !0
-            })
-          },
-          onLogIn: function() {
-            this.snackbar.close(), this.localSnackbar && this.localSnackbar.close(), this.$buefy.modal.open({
-              parent: this,
-              component: R,
-              hasModalCard: !0,
-              width: 440,
-              onCancel: this.callConnectSnackbar
-            })
-          },
-          callConnectSnackbar: function() {
-            this.localSnackbar = this.$buefy.snackbar.open({
-              message: this.$t("web3ConnectMessage"),
-              type: "is-success",
-              position: "is-top",
-              actionText: this.$t("connnectButtonText"),
-              indefinite: !0,
-              onAction: this.onLogIn
-            })
-          }
+      components: {
+        Logo: O
+      },
+      props: {
+        snackbar: {
+          type: Object,
+          default: function() {}
         }
-      };
+      },
+      data: function() {
+        return {
+          isMenuActive: !1,
+          localSnackbar: !1
+        }
+      },
+      computed: function(e) {
+        for (var i = 1; i < arguments.length; i++) {
+          var source = null != arguments[i] ? arguments[i] : {};
+          i % 2 ? G(Object(source), !0).forEach((function(t) {
+            Object(n.a)(e, t, source[t])
+          })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(source)) : G(Object(source)).forEach((function(t) {
+            Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(source, t))
+          }))
+        }
+        return e
+      }({}, Object(B.d)("metamask", ["providerName"]), {
+        isLoggedIn: function() {
+          return !!this.providerName
+        },
+        isDefaultLayout: function() {
+          return "default" === this.$nuxt.$data.layoutName
+        }
+      }),
+      watch: {
+        $route: "closeMenu"
+      },
+      methods: {
+        closeMenu: function() {
+          this.isMenuActive = !1
+        },
+        onLogoClick: function() {
+          this.$router.go()
+        },
+        onLogOut: function() {
+          window.localStorage.removeItem("provider"), this.$router.go({
+            path: "/",
+            force: !0
+          })
+        },
+        onLogIn: function() {
+          this.snackbar.close(), this.localSnackbar && this.localSnackbar.close(), this.$buefy.modal.open({
+            parent: this,
+            component: R,
+            hasModalCard: !0,
+            width: 440,
+            onCancel: this.callConnectSnackbar
+          })
+        },
+        callConnectSnackbar: function() {
+          this.localSnackbar = this.$buefy.snackbar.open({
+            message: this.$t("web3ConnectMessage"),
+            type: "is-success",
+            position: "is-top",
+            actionText: this.$t("connnectButtonText"),
+            indefinite: !0,
+            onAction: this.onLogIn
+          })
+        }
+      }
+    };
     var H = Object(C.a)(F, (function() {
-        var e = this;
-        var t = e.$createElement;
-        var o = e._self._c || t;
-        return o("nav", {
-          staticClass: "navbar header",
-          attrs: {
-            role: "navigation",
-            "aria-label": "main navigation"
-          }
-        }, [o("div", {
-          staticClass: "container"
-        }, [o("div", {
-          staticClass: "navbar-brand"
-        }, [o("nuxt-link", {
-          staticClass: "navbar-item logo",
-          attrs: {
-            to: "/",
-            "active-class": ""
-          },
-          nativeOn: {
-            click: function(t) {
-              return e.onLogoClick(t)
-            }
-          }
-        }, [o("Logo")], 1), e._v(" "), o("div", {
-          staticClass: "navbar-burger burger",
-          class: {
-            "is-active": e.isMenuActive
-          },
-          on: {
-            click: function(t) {
-              e.isMenuActive = !e.isMenuActive
-            }
-          }
-        }, [o("span"), e._v(" "), o("span"), e._v(" "), o("span")])], 1), e._v(" "), o("div", {
-          staticClass: "navbar-menu",
-          class: {
-            "is-active": e.isMenuActive
-          }
-        }, [o("div", {
-          staticClass: "navbar-end"
-        }, [o("nuxt-link", {
-          staticClass: "navbar-item",
-          attrs: {
-            to: "/vip"
-          }
-        }, [e._v("\n          " + e._s(e.$t("vip")) + "\n        ")]), e._v(" "), o("nuxt-link", {
-          staticClass: "navbar-item",
-          attrs: {
-            to: "/tutorial"
-          }
-        }, [e._v("\n          " + e._s(e.$t("tutorial")) + "\n        ")]), e._v(" "), o("a", {
-          staticClass: "navbar-item",
-          attrs: {
-            href: "https://peppersec.github.io/erc20faucet/",
-            target: "_blank"
-          }
-        }, [e._v("\n          " + e._s(e.$t("erc20TokenFaucet")) + "\n        ")]), e._v(" "), o("nuxt-link", {
-          staticClass: "navbar-item",
-          attrs: {
-            to: "/analytics"
-          }
-        }, [e._v("\n          " + e._s(e.$t("analytics")) + "\n        ")]), e._v(" "), o("nuxt-link", {
-          staticClass: "navbar-item",
-          attrs: {
-            to: "/profile"
-          }
-        }, [e._v("\n          " + e._s(e.$t("profile")) + "\n        ")]), e._v(" "), o("div", {
-          staticClass: "navbar-item"
-        }, [o("div", {
-          staticClass: "buttons buttons__social"
-        }, [o("b-button", {
-          attrs: {
-            tag: "a",
-            href: "https://github.com/rstormsf/multisender/issues",
-            target: "_blank",
-            "icon-left": "github-circle"
-          }
-        }), e._v(" "), o("b-button", {
-          attrs: {
-            tag: "a",
-            href: "https://t.me/MultiSender",
-            target: "_blank",
-            "icon-left": "telegram"
-          }
-        })], 1)]), e._v(" "), o("div", {
-          directives: [{
-            name: "show",
-            rawName: "v-show",
-            value: e.isDefaultLayout,
-            expression: "isDefaultLayout"
-          }],
-          staticClass: "navbar-item"
-        }, [e.isLoggedIn ? o("b-button", {
-          attrs: {
-            type: "is-primary",
-            size: "is-small",
-            outlined: ""
-          },
-          nativeOn: {
-            click: function(t) {
-              return e.onLogOut(t)
-            }
-          }
-        }, [e._v(e._s(e.$t("logout")))]) : o("b-button", {
-          attrs: {
-            type: "is-primary",
-            size: "is-small",
-            outlined: ""
-          },
-          nativeOn: {
-            click: function(t) {
-              return e.onLogIn(t)
-            }
-          }
-        }, [e._v(e._s(e.$t("connnectButtonText")))])], 1)], 1)])])])
-      }), [], !1, null, null, null).exports;
-    var U = {
-        name: "FlagIcon",
-        props: {
-          code: {
-            type: String,
-            default: null
-          }
+      var e = this;
+      var t = e.$createElement;
+      var o = e._self._c || t;
+      return o("nav", {
+        staticClass: "navbar header",
+        attrs: {
+          role: "navigation",
+          "aria-label": "main navigation"
+        }
+      }, [o("div", {
+        staticClass: "container"
+      }, [o("div", {
+        staticClass: "navbar-brand"
+      }, [o("nuxt-link", {
+        staticClass: "navbar-item logo",
+        attrs: {
+          to: "/",
+          "active-class": ""
         },
-        computed: {
-          flagIconClass: function() {
-            var code = this.code;
-            switch (code) {
-              case "zh":
-                code = "cn";
-                break;case "en":
-                code = "gb"
-            }
-            return "flag-icon-" + code
+        nativeOn: {
+          click: function(t) {
+            return e.onLogoClick(t)
           }
         }
-      };
+      }, [o("Logo")], 1), e._v(" "), o("div", {
+        staticClass: "navbar-burger burger",
+        class: {
+          "is-active": e.isMenuActive
+        },
+        on: {
+          click: function(t) {
+            e.isMenuActive = !e.isMenuActive
+          }
+        }
+      }, [o("span"), e._v(" "), o("span"), e._v(" "), o("span")])], 1), e._v(" "), o("div", {
+        staticClass: "navbar-menu",
+        class: {
+          "is-active": e.isMenuActive
+        }
+      }, [o("div", {
+        staticClass: "navbar-end"
+      }, [o("nuxt-link", {
+        staticClass: "navbar-item",
+        attrs: {
+          to: "/vip"
+        }
+      }, [e._v("\n          " + e._s(e.$t("vip")) + "\n        ")]), e._v(" "), o("nuxt-link", {
+        staticClass: "navbar-item",
+        attrs: {
+          to: "/tutorial"
+        }
+      }, [e._v("\n          " + e._s(e.$t("tutorial")) + "\n        ")]), e._v(" "), o("a", {
+        staticClass: "navbar-item",
+        attrs: {
+          href: "https://peppersec.github.io/erc20faucet/",
+          target: "_blank"
+        }
+      }, [e._v("\n          " + e._s(e.$t("erc20TokenFaucet")) + "\n        ")]), e._v(" "), o("nuxt-link", {
+        staticClass: "navbar-item",
+        attrs: {
+          to: "/analytics"
+        }
+      }, [e._v("\n          " + e._s(e.$t("analytics")) + "\n        ")]), e._v(" "), o("nuxt-link", {
+        staticClass: "navbar-item",
+        attrs: {
+          to: "/profile"
+        }
+      }, [e._v("\n          " + e._s(e.$t("profile")) + "\n        ")]), e._v(" "), o("div", {
+        staticClass: "navbar-item"
+      }, [o("div", {
+        staticClass: "buttons buttons__social"
+      }, [o("b-button", {
+        attrs: {
+          tag: "a",
+          href: "https://github.com/rstormsf/multisender/issues",
+          target: "_blank",
+          "icon-left": "github-circle"
+        }
+      }), e._v(" "), o("b-button", {
+        attrs: {
+          tag: "a",
+          href: "https://t.me/MultiSender",
+          target: "_blank",
+          "icon-left": "telegram"
+        }
+      })], 1)]), e._v(" "), o("div", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: e.isDefaultLayout,
+          expression: "isDefaultLayout"
+        }],
+        staticClass: "navbar-item"
+      }, [e.isLoggedIn ? o("b-button", {
+        attrs: {
+          type: "is-primary",
+          size: "is-small",
+          outlined: ""
+        },
+        nativeOn: {
+          click: function(t) {
+            return e.onLogOut(t)
+          }
+        }
+      }, [e._v(e._s(e.$t("logout")))]) : o("b-button", {
+        attrs: {
+          type: "is-primary",
+          size: "is-small",
+          outlined: ""
+        },
+        nativeOn: {
+          click: function(t) {
+            return e.onLogIn(t)
+          }
+        }
+      }, [e._v(e._s(e.$t("connnectButtonText")))])], 1)], 1)])])])
+    }), [], !1, null, null, null).exports;
+    var U = {
+      name: "FlagIcon",
+      props: {
+        code: {
+          type: String,
+          default: null
+        }
+      },
+      computed: {
+        flagIconClass: function() {
+          var code = this.code;
+          switch (code) {
+            case "zh":
+              code = "cn";
+              break;case "en":
+              code = "gb"
+          }
+          return "flag-icon-" + code
+        }
+      }
+    };
     o(740);
     function V(object, e) {
       var t = Object.keys(object);
@@ -3217,400 +3245,401 @@
       return t
     }
     var $ = {
-        components: {
-          Logo: O,
-          FlagIcon: Object(C.a)(U, (function() {
-            var e = this.$createElement;
-            var t = this._self._c || e;
-            return this.code ? t("i", {
-              staticClass: "flag-icon",
-              class: this.flagIconClass
-            }) : this._e()
-          }), [], !1, null, null, null).exports
-        },
-        computed: function(e) {
-          for (var i = 1; i < arguments.length; i++) {
-            var source = null != arguments[i] ? arguments[i] : {};
-            i % 2 ? V(Object(source), !0).forEach((function(t) {
-              Object(n.a)(e, t, source[t])
-            })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(source)) : V(Object(source)).forEach((function(t) {
-              Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(source, t))
-            }))
-          }
-          return e
-        }({}, Object(B.c)("metamask", ["networkConfig"]), {
-          explorerBaseUrl: function() {
-            return new window.URL(this.networkConfig.explorerUrl.tx).origin
-          },
-          locales: function() {
-            return this.$i18n.availableLocales
-          }
-        }),
-        methods: {
-          langChange: function(e) {
-            localStorage.setItem("lang", e)
-          },
-          printLang: function(e) {
-            var code = e;
-            switch (code) {
-              case "zh":
-                code = "cn"
-            }
-            return code.toUpperCase()
-          }
+      components: {
+        Logo: O,
+        FlagIcon: Object(C.a)(U, (function() {
+          var e = this.$createElement;
+          var t = this._self._c || e;
+          return this.code ? t("i", {
+            staticClass: "flag-icon",
+            class: this.flagIconClass
+          }) : this._e()
+        }), [], !1, null, null, null).exports
+      },
+      computed: function(e) {
+        for (var i = 1; i < arguments.length; i++) {
+          var source = null != arguments[i] ? arguments[i] : {};
+          i % 2 ? V(Object(source), !0).forEach((function(t) {
+            Object(n.a)(e, t, source[t])
+          })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(source)) : V(Object(source)).forEach((function(t) {
+            Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(source, t))
+          }))
         }
-      };
+        return e
+      }({}, Object(B.c)("metamask", ["networkConfig"]), {
+        explorerBaseUrl: function() {
+          return new window.URL(this.networkConfig.explorerUrl.tx).origin
+        },
+        locales: function() {
+          return this.$i18n.availableLocales
+        }
+      }),
+      methods: {
+        langChange: function(e) {
+          localStorage.setItem("lang", e)
+        },
+        printLang: function(e) {
+          var code = e;
+          switch (code) {
+            case "zh":
+              code = "cn"
+          }
+          return code.toUpperCase()
+        }
+      }
+    };
     var W = Object(C.a)($, (function() {
+      var e = this;
+      var t = e.$createElement;
+      var o = e._self._c || t;
+      return o("footer", {
+        staticClass: "footer"
+      }, [o("div", {
+        staticClass: "container"
+      }, [o("div", {
+        staticClass: "level"
+      }, [o("div", {
+        staticClass: "level-left"
+      }, [o("div", {
+        staticClass: "level-item footer__copyright"
+      }, [o("Logo"), e._v("\n          v2.09.01 " + e._s((new Date).getFullYear()) + "\n        ")], 1)]), e._v(" "), o("div", {
+        staticClass: "level-right"
+      }, [o("div", {
+        staticClass: "level-item multi-addresses"
+      }, [o("div", {
+        staticClass: "multi-address"
+      }, [o("div", {
+        staticClass: "multi-address__name"
+      }, [e._v("\n              MultiSender Addresses (" + e._s(e.networkConfig.networkName) + "):\n            ")]), e._v(" "), o("a", {
+        staticClass: "multi-address__value",
+        attrs: {
+          target: "_blank",
+          href: e.explorerBaseUrl + "/address/" + e.networkConfig.multisenderContractAddress
+        }
+      }, [e._v("\n              " + e._s(e.networkConfig.multisenderContractAddress) + "\n            ")])]), e._v(" "), o("div", {
+        staticClass: "multi-address"
+      }, [o("a", {
+        staticClass: "multi-address__value",
+        attrs: {
+          target: "_blank",
+          href: e.explorerBaseUrl + "/address/" + e.networkConfig.multisenderMerkleContractAddress
+        }
+      }, [e._v("\n              " + e._s(e.networkConfig.multisenderMerkleContractAddress) + "\n            ")])])]), e._v(" "), o("div", {
+        staticClass: "level-item lang"
+      }, [o("b-dropdown", {
+        staticClass: "dropdown-langs",
+        attrs: {
+          position: "is-top-left",
+          "aria-role": "list"
+        },
+        on: {
+          change: e.langChange
+        },
+        model: {
+          value: e.$i18n.locale,
+          callback: function(t) {
+            e.$set(e.$i18n, "locale", t)
+          },
+          expression: "$i18n.locale"
+        }
+      }, [o("b-button", {
+        attrs: {
+          slot: "trigger",
+          type: "is-text-link",
+          outlined: ""
+        },
+        slot: "trigger"
+      }, [o("FlagIcon", {
+        class: "is-active-locale-" + e.$i18n.locale,
+        attrs: {
+          code: e.$i18n.locale
+        }
+      })], 1), e._v(" "), e._l(e.locales, (function(t) {
+        return o("b-dropdown-item", {
+          key: t,
+          attrs: {
+            value: t,
+            "aria-role": "listitem"
+          }
+        }, [o("FlagIcon", {
+          attrs: {
+            code: t
+          }
+        }), e._v(" " + e._s(e.printLang(t)) + "\n            ")], 1)
+      }))], 2)], 1)])])])])
+    }), [], !1, null, null, null).exports;
+    var Z = {
+      components: {
+        Navbar: H,
+        Footer: W
+      }
+    };
+    var Y = {
+      components: {
+        Navbar: H,
+        Footer: W
+      },
+      data: function() {
+        return {
+          snackbar: null
+        }
+      },
+      mounted: function() {
         var e = this;
-        var t = e.$createElement;
-        var o = e._self._c || t;
-        return o("footer", {
-          staticClass: "footer"
-        }, [o("div", {
+        this.$preventMultitabs(), window.onNuxtReady((function() {
+          setTimeout((function() {
+            try {
+              var t = window.localStorage.getItem("provider");
+              var o = window.localStorage.getItem("network");
+              if (!t) {
+                throw new Error("select provider");
+              }
+              e.$store.dispatch("metamask/initialize", {
+                providerName: t,
+                networkName: o
+              })
+            } catch ( t ) {
+              console.log(t), e.callConnectSnackbar()
+            }
+          }), 500)
+        }))
+      },
+      methods: {
+        callConnectSnackbar: function() {
+          this.snackbar = this.$buefy.snackbar.open({
+            message: this.$t("web3ConnectMessage"),
+            type: "is-success",
+            position: "is-top",
+            actionText: this.$t("connnectButtonText"),
+            indefinite: !0,
+            onAction: this.openConnectModal
+          })
+        },
+        openConnectModal: function() {
+          this.$buefy.modal.open({
+            parent: this,
+            component: R,
+            hasModalCard: !0,
+            width: 440,
+            onCancel: this.callConnectSnackbar
+          })
+        }
+      }
+    };
+    var Q = {
+      _deadend: Object(C.a)(Z, (function() {
+        var e = this.$createElement;
+        var t = this._self._c || e;
+        return t("div", {
+          staticClass: "wrapper"
+        }, [t("Navbar"), this._v(" "), t("section", {
+          staticClass: "main-content section"
+        }, [t("div", {
           staticClass: "container"
-        }, [o("div", {
-          staticClass: "level"
-        }, [o("div", {
-          staticClass: "level-left"
-        }, [o("div", {
-          staticClass: "level-item footer__copyright"
-        }, [o("Logo"), e._v("\n          v2.09.01 " + e._s((new Date).getFullYear()) + "\n        ")], 1)]), e._v(" "), o("div", {
-          staticClass: "level-right"
-        }, [o("div", {
-          staticClass: "level-item multi-addresses"
-        }, [o("div", {
-          staticClass: "multi-address"
-        }, [o("div", {
-          staticClass: "multi-address__name"
-        }, [e._v("\n              MultiSender Addresses (" + e._s(e.networkConfig.networkName) + "):\n            ")]), e._v(" "), o("a", {
-          staticClass: "multi-address__value",
+        }, [t("nuxt")], 1)]), this._v(" "), t("Footer")], 1)
+      }), [], !1, null, null, null).exports,
+      _default: Object(C.a)(Y, (function() {
+        var e = this.$createElement;
+        var t = this._self._c || e;
+        return t("div", {
+          staticClass: "wrapper"
+        }, [t("Navbar", {
           attrs: {
-            target: "_blank",
-            href: e.explorerBaseUrl + "/address/" + e.networkConfig.multisenderContractAddress
+            snackbar: this.snackbar
           }
-        }, [e._v("\n              " + e._s(e.networkConfig.multisenderContractAddress) + "\n            ")])]), e._v(" "), o("div", {
-          staticClass: "multi-address"
-        }, [o("a", {
-          staticClass: "multi-address__value",
-          attrs: {
-            target: "_blank",
-            href: e.explorerBaseUrl + "/address/" + e.networkConfig.multisenderMerkleContractAddress
-          }
-        }, [e._v("\n              " + e._s(e.networkConfig.multisenderMerkleContractAddress) + "\n            ")])])]), e._v(" "), o("div", {
-          staticClass: "level-item lang"
-        }, [o("b-dropdown", {
-          staticClass: "dropdown-langs",
-          attrs: {
-            position: "is-top-left",
-            "aria-role": "list"
+        }), this._v(" "), t("section", {
+          staticClass: "main-content section"
+        }, [t("div", {
+          staticClass: "container"
+        }, [t("nuxt")], 1)]), this._v(" "), t("Footer")], 1)
+      }), [], !1, null, null, null).exports
+    };
+    var K = {
+      head: {
+        title: "Token MultiSender",
+        meta: [{
+          charset: "utf-8"
+        }, {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1"
+        }, {
+          name: "theme-color",
+          content: "#0b152d"
+        }, {
+          name: "fortmatic-site-verification",
+          content: "HbSl9A5TLCKxXib5"
+        }, {
+          hid: "og:title",
+          property: "og:title",
+          content: "Token MultiSender Dapp Smart Contract"
+        }, {
+          hid: "og:description",
+          property: "og:description",
+          content: "Send ERC20 token or ETH. Batch sender. Bulk Sender. Token Multisender allows you to airdrop tokens in a few transactions in trustless way. Batch sending ERC20, Ethereum tokens."
+        }, {
+          hid: "og:url",
+          property: "og:url",
+          content: "https://multisender.app"
+        }, {
+          hid: "og:type",
+          property: "og:type",
+          content: "website"
+        }, {
+          hid: "og:image",
+          property: "og:image",
+          content: "https://multisender.app/fb.png"
+        }, {
+          hid: "description",
+          name: "description",
+          content: "Send ERC20 Token or ETH to thousands of addresses out in 1 single transaction with Token Multisender. batch transferring erc20"
+        }, {
+          hid: "keywords",
+          name: "keywords",
+          content: "token multi sender,erc20 sender,bounty manager,token bulksender,token multisender,batch sender,batch transfer,bulk sender,multi sender, multisender 批量转币工具,ETH批量转币工具,代币批量发送,批量发送代币,空投,airdrop,批量发币,MultiSender,ERC20,批量发送以太币,批量发送ETH,代币工具,批量发送,Token,decentralized,metamask"
+        }, {
+          hid: "mobile-web-app-capable",
+          name: "mobile-web-app-capable",
+          content: "yes"
+        }, {
+          hid: "apple-mobile-web-app-title",
+          name: "apple-mobile-web-app-title",
+          content: "multisender.app"
+        }, {
+          hid: "author",
+          name: "author",
+          content: "Roman Storm"
+        }, {
+          hid: "og:site_name",
+          name: "og:site_name",
+          property: "og:site_name",
+          content: "multisender.app"
+        }],
+        link: [{
+          rel: "manifest",
+          href: "manifest.json"
+        }, {
+          rel: "shortcut icon",
+          type: "image/x-icon",
+          href: "/favicon/favicon.ico"
+        }, {
+          rel: "apple-touch-icon",
+          href: "/favicon/apple-touch-icon.png"
+        }, {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css?family=Montserrat:400,600,700"
+        }],
+        style: [],
+        script: [],
+        htmlAttrs: {
+          lang: "en"
+        }
+      },
+      render: function(e, t) {
+        var o = e("NuxtLoading", {
+          ref: "loading"
+        });
+        var r = e(this.layout || "nuxt");
+        var n = e("div", {
+          domProps: {
+            id: "__layout"
+          },
+          key: this.layoutName
+        }, [r]);
+        var c = e("transition", {
+          props: {
+            name: "layout",
+            mode: "out-in"
           },
           on: {
-            change: e.langChange
-          },
-          model: {
-            value: e.$i18n.locale,
-            callback: function(t) {
-              e.$set(e.$i18n, "locale", t)
-            },
-            expression: "$i18n.locale"
-          }
-        }, [o("b-button", {
-          attrs: {
-            slot: "trigger",
-            type: "is-text-link",
-            outlined: ""
-          },
-          slot: "trigger"
-        }, [o("FlagIcon", {
-          class: "is-active-locale-" + e.$i18n.locale,
-          attrs: {
-            code: e.$i18n.locale
-          }
-        })], 1), e._v(" "), e._l(e.locales, (function(t) {
-          return o("b-dropdown-item", {
-            key: t,
-            attrs: {
-              value: t,
-              "aria-role": "listitem"
+            beforeEnter: function(e) {
+              window.$nuxt.$nextTick((function() {
+                window.$nuxt.$emit("triggerScroll")
+              }))
             }
-          }, [o("FlagIcon", {
-            attrs: {
-              code: t
-            }
-          }), e._v(" " + e._s(e.printLang(t)) + "\n            ")], 1)
-        }))], 2)], 1)])])])])
-      }), [], !1, null, null, null).exports;
-    var Z = {
-        components: {
-          Navbar: H,
-          Footer: W
+          }
+        }, [n]);
+        return e("div", {
+          domProps: {
+            id: "__nuxt"
+          }
+        }, [o, c])
+      },
+      data: function() {
+        return {
+          isOnline: !0,
+          layout: null,
+          layoutName: ""
         }
-      };
-    var Y = {
-        components: {
-          Navbar: H,
-          Footer: W
+      },
+      beforeCreate: function() {
+        c.a.util.defineReactive(this, "nuxt", this.$options.nuxt)
+      },
+      created: function() {
+        c.a.prototype.$nuxt = this, window.$nuxt = this, this.refreshOnlineStatus(), window.addEventListener("online", this.refreshOnlineStatus), window.addEventListener("offline", this.refreshOnlineStatus), this.error = this.nuxt.error, this.context = this.$options.context
+      },
+      mounted: function() {
+        this.$loading = this.$refs.loading
+      },
+      watch: {
+        "nuxt.err": "errorChanged"
+      },
+      computed: {
+        isOffline: function() {
+          return !this.isOnline
+        }
+      },
+      methods: {
+        refreshOnlineStatus: function() {
+          void 0 === window.navigator.onLine ? this.isOnline = !0 : this.isOnline = window.navigator.onLine
         },
-        data: function() {
-          return {
-            snackbar: null
-          }
-        },
-        mounted: function() {
+        refresh: function() {
           var e = this;
-          this.$preventMultitabs(), window.onNuxtReady((function() {
-            setTimeout((function() {
-              try {
-                var t = window.localStorage.getItem("provider");
-                var o = window.localStorage.getItem("network");
-                if (!t) {
-                  throw new Error("select provider");
-                }
-                e.$store.dispatch("metamask/initialize", {
-                  providerName: t,
-                  networkName: o
-                })
-              } catch ( t ) {
-                console.log(t), e.callConnectSnackbar()
-              }
-            }), 500)
-          }))
-        },
-        methods: {
-          callConnectSnackbar: function() {
-            this.snackbar = this.$buefy.snackbar.open({
-              message: this.$t("web3ConnectMessage"),
-              type: "is-success",
-              position: "is-top",
-              actionText: this.$t("connnectButtonText"),
-              indefinite: !0,
-              onAction: this.openConnectModal
-            })
-          },
-          openConnectModal: function() {
-            this.$buefy.modal.open({
-              parent: this,
-              component: R,
-              hasModalCard: !0,
-              width: 440,
-              onCancel: this.callConnectSnackbar
-            })
-          }
-        }
-      };
-    var Q = {
-        _deadend: Object(C.a)(Z, (function() {
-          var e = this.$createElement;
-          var t = this._self._c || e;
-          return t("div", {
-            staticClass: "wrapper"
-          }, [t("Navbar"), this._v(" "), t("section", {
-            staticClass: "main-content section"
-          }, [t("div", {
-            staticClass: "container"
-          }, [t("nuxt")], 1)]), this._v(" "), t("Footer")], 1)
-        }), [], !1, null, null, null).exports,
-        _default: Object(C.a)(Y, (function() {
-          var e = this.$createElement;
-          var t = this._self._c || e;
-          return t("div", {
-            staticClass: "wrapper"
-          }, [t("Navbar", {
-            attrs: {
-              snackbar: this.snackbar
-            }
-          }), this._v(" "), t("section", {
-            staticClass: "main-content section"
-          }, [t("div", {
-            staticClass: "container"
-          }, [t("nuxt")], 1)]), this._v(" "), t("Footer")], 1)
-        }), [], !1, null, null, null).exports
-      };
-    var K = {
-        head: {
-          title: "Token MultiSender",
-          meta: [{
-            charset: "utf-8"
-          }, {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1"
-          }, {
-            name: "theme-color",
-            content: "#0b152d"
-          }, {
-            name: "fortmatic-site-verification",
-            content: "HbSl9A5TLCKxXib5"
-          }, {
-            hid: "og:title",
-            property: "og:title",
-            content: "Token MultiSender Dapp Smart Contract"
-          }, {
-            hid: "og:description",
-            property: "og:description",
-            content: "Send ERC20 token or ETH. Batch sender. Bulk Sender. Token Multisender allows you to airdrop tokens in a few transactions in trustless way. Batch sending ERC20, Ethereum tokens."
-          }, {
-            hid: "og:url",
-            property: "og:url",
-            content: "https://multisender.app"
-          }, {
-            hid: "og:type",
-            property: "og:type",
-            content: "website"
-          }, {
-            hid: "og:image",
-            property: "og:image",
-            content: "https://multisender.app/fb.png"
-          }, {
-            hid: "description",
-            name: "description",
-            content: "Send ERC20 Token or ETH to thousands of addresses out in 1 single transaction with Token Multisender. batch transferring erc20"
-          }, {
-            hid: "keywords",
-            name: "keywords",
-            content: "token multi sender,erc20 sender,bounty manager,token bulksender,token multisender,batch sender,batch transfer,bulk sender,multi sender, multisender 批量转币工具,ETH批量转币工具,代币批量发送,批量发送代币,空投,airdrop,批量发币,MultiSender,ERC20,批量发送以太币,批量发送ETH,代币工具,批量发送,Token,decentralized,metamask"
-          }, {
-            hid: "mobile-web-app-capable",
-            name: "mobile-web-app-capable",
-            content: "yes"
-          }, {
-            hid: "apple-mobile-web-app-title",
-            name: "apple-mobile-web-app-title",
-            content: "multisender.app"
-          }, {
-            hid: "author",
-            name: "author",
-            content: "Roman Storm"
-          }, {
-            hid: "og:site_name",
-            name: "og:site_name",
-            property: "og:site_name",
-            content: "multisender.app"
-          }],
-          link: [{
-            rel: "manifest",
-            href: "manifest.json"
-          }, {
-            rel: "shortcut icon",
-            type: "image/x-icon",
-            href: "/favicon/favicon.ico"
-          }, {
-            rel: "apple-touch-icon",
-            href: "/favicon/apple-touch-icon.png"
-          }, {
-            rel: "stylesheet",
-            href: "https://fonts.googleapis.com/css?family=Montserrat:400,600,700"
-          }],
-          style: [],
-          script: [],
-          htmlAttrs: {
-            lang: "en"
-          }
-        },
-        render: function(e, t) {
-          var o = e("NuxtLoading", {
-              ref: "loading"
-            });
-          var r = e(this.layout || "nuxt");
-          var n = e("div", {
-              domProps: {
-                id: "__layout"
-              },
-              key: this.layoutName
-            }, [r]);
-          var c = e("transition", {
-              props: {
-                name: "layout",
-                mode: "out-in"
-              },
-              on: {
-                beforeEnter: function(e) {
-                  window.$nuxt.$nextTick((function() {
-                    window.$nuxt.$emit("triggerScroll")
-                  }))
+          return Object(r.a)(regeneratorRuntime.mark((function t() {
+            var o;
+            var r;
+            return regeneratorRuntime.wrap((function(t) {
+              for (;;) {
+                switch (
+                t.prev = t.next) {
+                  case 0:
+                    if ((o = Object(k.f)(e.$route)).length) {
+                      t.next = 3;
+                      break
+                    }
+                    return t.abrupt("return");case 3:
+                    return e.$loading.start(), r = o.map((function(t) {
+                        var p = [];
+                        return t.$options.fetch && p.push(Object(k.m)(t.$options.fetch, e.context)), t.$options.asyncData && p.push(Object(k.m)(t.$options.asyncData, e.context).then((function(e) {
+                            for (var o in e) {
+                              c.a.set(t.$data, o, e[o])
+                            }
+                          }))), Promise.all(p)
+                      })), t.prev = 5, t.next = 8, Promise.all(r);case 8:
+                    t.next = 15;
+                    break;case 10:
+                    t.prev = 10, t.t0 = t.catch(5), e.$loading.fail(), Object(k.i)(t.t0), e.error(t.t0);case 15:
+                    e.$loading.finish();case 16:
+                  case "end":
+                    return t.stop()
                 }
               }
-            }, [n]);
-          return e("div", {
-            domProps: {
-              id: "__nuxt"
-            }
-          }, [o, c])
+            }), t, null, [[5, 10]])
+          })))()
         },
-        data: function() {
-          return {
-            isOnline: !0,
-            layout: null,
-            layoutName: ""
-          }
+        errorChanged: function() {
+          this.nuxt.err && this.$loading && (this.$loading.fail && this.$loading.fail(), this.$loading.finish && this.$loading.finish())
         },
-        beforeCreate: function() {
-          c.a.util.defineReactive(this, "nuxt", this.$options.nuxt)
+        setLayout: function(e) {
+          return e && Q["_" + e] || (e = "default"), this.layoutName = e, this.layout = Q["_" + e], this.layout
         },
-        created: function() {
-          c.a.prototype.$nuxt = this, window.$nuxt = this, this.refreshOnlineStatus(), window.addEventListener("online", this.refreshOnlineStatus), window.addEventListener("offline", this.refreshOnlineStatus), this.error = this.nuxt.error, this.context = this.$options.context
-        },
-        mounted: function() {
-          this.$loading = this.$refs.loading
-        },
-        watch: {
-          "nuxt.err": "errorChanged"
-        },
-        computed: {
-          isOffline: function() {
-            return !this.isOnline
-          }
-        },
-        methods: {
-          refreshOnlineStatus: function() {
-            void 0 === window.navigator.onLine ? this.isOnline = !0 : this.isOnline = window.navigator.onLine
-          },
-          refresh: function() {
-            var e = this;
-            return Object(r.a)(regeneratorRuntime.mark((function t() {
-              var o;
-              var r;
-              return regeneratorRuntime.wrap((function(t) {
-                for (;;) {
-                  switch (t.prev = t.next) {
-                    case 0:
-                      if ((o = Object(k.f)(e.$route)).length) {
-                        t.next = 3;
-                        break
-                      }
-                      return t.abrupt("return");case 3:
-                      return e.$loading.start(), r = o.map((function(t) {
-                          var p = [];
-                          return t.$options.fetch && p.push(Object(k.m)(t.$options.fetch, e.context)), t.$options.asyncData && p.push(Object(k.m)(t.$options.asyncData, e.context).then((function(e) {
-                              for (var o in e) {
-                                c.a.set(t.$data, o, e[o])
-                              }
-                            }))), Promise.all(p)
-                        })), t.prev = 5, t.next = 8, Promise.all(r);case 8:
-                      t.next = 15;
-                      break;case 10:
-                      t.prev = 10, t.t0 = t.catch(5), e.$loading.fail(), Object(k.i)(t.t0), e.error(t.t0);case 15:
-                      e.$loading.finish();case 16:
-                    case "end":
-                      return t.stop()
-                  }
-                }
-              }), t, null, [[5, 10]])
-            })))()
-          },
-          errorChanged: function() {
-            this.nuxt.err && this.$loading && (this.$loading.fail && this.$loading.fail(), this.$loading.finish && this.$loading.finish())
-          },
-          setLayout: function(e) {
-            return e && Q["_" + e] || (e = "default"), this.layoutName = e, this.layout = Q["_" + e], this.layout
-          },
-          loadLayout: function(e) {
-            return e && Q["_" + e] || (e = "default"), Promise.resolve(Q["_" + e])
-          }
-        },
-        components: {
-          NuxtLoading: N
+        loadLayout: function(e) {
+          return e && Q["_" + e] || (e = "default"), Promise.resolve(Q["_" + e])
         }
-      };
+      },
+      components: {
+        NuxtLoading: N
+      }
+    };
     o(125), o(117), o(199);c.a.use(B.a);
     var X = ["state", "getters", "actions", "mutations"];
     var J = {};
@@ -3634,8 +3663,8 @@
     }
     function ie(e, t) {
       e = e.default || e;var o = t.replace(/\.(js|mjs)$/, "").split("/");
-var r = o[o.length - 1];
-var n = "store/".concat(t);
+      var r = o[o.length - 1];
+      var n = "store/".concat(t);
       if (e = "state" === r ? function(e, t) {
           if ("function" != typeof e) {
             console.warn("".concat(t, " should export a method that returns an object"));
@@ -3715,37 +3744,38 @@ var n = "store/".concat(t);
       return e
     }
     var le = function() {
-        var e = Object(r.a)(regeneratorRuntime.mark((function e(t, o) {
-          var r;
-          return regeneratorRuntime.wrap((function(e) {
-            for (;;) {
-              switch (e.prev = e.next) {
-                case 0:
-                  if ("function" != typeof (r = {
-                      dev: !0,
-                      debug: {
-                        sendHitTask: !0
-                      },
-                      id: "UA-61981520-5"
-                    }).asyncID) {
-                    e.next = 5;
-                    break
-                  }
-                  return e.next = 4, r.asyncID(t);case 4:
-                  r.id = e.sent;case 5:
-                  c.a.use(ne.a, ce({}, {
-                    router: t.app.router
-                  }, {}, r)), t.$ga = c.a.$ga, o("ga", c.a.$ga);case 8:
-                case "end":
-                  return e.stop()
-              }
+      var e = Object(r.a)(regeneratorRuntime.mark((function e(t, o) {
+        var r;
+        return regeneratorRuntime.wrap((function(e) {
+          for (;;) {
+            switch (
+            e.prev = e.next) {
+              case 0:
+                if ("function" != typeof (r = {
+                    dev: !0,
+                    debug: {
+                      sendHitTask: !0
+                    },
+                    id: "UA-61981520-5"
+                  }).asyncID) {
+                  e.next = 5;
+                  break
+                }
+                return e.next = 4, r.asyncID(t);case 4:
+                r.id = e.sent;case 5:
+                c.a.use(ne.a, ce({}, {
+                  router: t.app.router
+                }, {}, r)), t.$ga = c.a.$ga, o("ga", c.a.$ga);case 8:
+              case "end":
+                return e.stop()
             }
-          }), e)
-        })));
-        return function(t, o) {
-          return e.apply(this, arguments)
-        }
-      }();
+          }
+        }), e)
+      })));
+      return function(t, o) {
+        return e.apply(this, arguments)
+      }
+    }();
     var de = o(668);
     c.a.use(de.a, {
       css: !1,
@@ -3824,88 +3854,88 @@ var n = "store/".concat(t);
       he();
     }
     var ke = function(e) {
-        var t = ue.a.create(e);
-        return t.CancelToken = ue.a.CancelToken, t.isCancel = ue.a.isCancel, function(e) {
-            for (var t in me) {
-              e[t] = me[t].bind(e)
-            }
-          }(t), xe(t), t
-      };
+      var t = ue.a.create(e);
+      return t.CancelToken = ue.a.CancelToken, t.isCancel = ue.a.isCancel, function(e) {
+          for (var t in me) {
+            e[t] = me[t].bind(e)
+          }
+        }(t), xe(t), t
+    };
     var xe = function(e) {
-        var t = {
-            finish: function() {},
-            start: function() {},
-            fail: function() {},
-            set: function() {}
-          };
-        var o = function() {
-            return window.$nuxt && window.$nuxt.$loading && window.$nuxt.$loading.set ? window.$nuxt.$loading : t
-          };
-        var r = 0;
-        e.onRequest((function(e) {
-          e && !1 === e.progress || r++
-        })), e.onResponse((function(e) {
-          e && e.config && !1 === e.config.progress || --r <= 0 && (r = 0, o().finish())
-        })), e.onError((function(e) {
-          e && e.config && !1 === e.config.progress || (r--, ue.a.isCancel(e) || (o().fail(), o().finish()))
-        }));
-        var n = function(e) {
-          if (r) {
-            var progress = 100 * e.loaded / (e.total * r);
-            o().set(Math.min(100, progress))
-          }
-        };
-        e.defaults.onUploadProgress = n, e.defaults.onDownloadProgress = n
+      var t = {
+        finish: function() {},
+        start: function() {},
+        fail: function() {},
+        set: function() {}
       };
+      var o = function() {
+        return window.$nuxt && window.$nuxt.$loading && window.$nuxt.$loading.set ? window.$nuxt.$loading : t
+      };
+      var r = 0;
+      e.onRequest((function(e) {
+        e && !1 === e.progress || r++
+      })), e.onResponse((function(e) {
+        e && e.config && !1 === e.config.progress || --r <= 0 && (r = 0, o().finish())
+      })), e.onError((function(e) {
+        e && e.config && !1 === e.config.progress || (r--, ue.a.isCancel(e) || (o().fail(), o().finish()))
+      }));
+      var n = function(e) {
+        if (r) {
+          var progress = 100 * e.loaded / (e.total * r);
+          o().set(Math.min(100, progress))
+        }
+      };
+      e.defaults.onUploadProgress = n, e.defaults.onDownloadProgress = n
+    };
     var we = function(e, t) {
-        var o = {
-          baseURL: "http://localhost:3000/",
-          headers: {
-            common: {
-              Accept: "application/json, text/plain, */*"
-            },
-            delete: {},
-            get: {},
-            head: {},
-            post: {},
-            put: {},
-            patch: {}
-          }
-        };
-        o.headers.common = e.req && e.req.headers ? Object.assign({}, e.req.headers) : {},
-        delete o.headers.common.accept
-        ,
-        delete o.headers.common.host
-        ,
-        delete o.headers.common["cf-ray"]
-        ,
-        delete o.headers.common["cf-connecting-ip"]
-        ,
-        delete o.headers.common["content-length"]
-        ,
-        delete o.headers.common["content-md5"]
-        ,
-        delete o.headers.common["content-type"];
-        var r = ke(o);
-        e.$axios = r, t("axios", r)
+      var o = {
+        baseURL: "http://localhost:3000/",
+        headers: {
+          common: {
+            Accept: "application/json, text/plain, */*"
+          },
+          delete: {},
+          get: {},
+          head: {},
+          post: {},
+          put: {},
+          patch: {}
+        }
       };
+      o.headers.common = e.req && e.req.headers ? Object.assign({}, e.req.headers) : {},
+      delete o.headers.common.accept
+      ,
+      delete o.headers.common.host
+      ,
+      delete o.headers.common["cf-ray"]
+      ,
+      delete o.headers.common["cf-connecting-ip"]
+      ,
+      delete o.headers.common["content-length"]
+      ,
+      delete o.headers.common["content-md5"]
+      ,
+      delete o.headers.common["content-type"];
+      var r = ke(o);
+      e.$axios = r, t("axios", r)
+    };
     var ye = o(660);
     var je = o.n(ye);
     o(1455), o(1456), c.a.use(je.a);
     var Me = o(661);
     var Ae = function(e) {
-        var t = e.store;
-        var o = e.isHMR;
-        window.onNuxtReady((function() {
-          o || Object(Me.a)({
-            key: "multisender",
-            paths: ["txStorage"]
-          })(t)
-        }))
-      };
+      var t = e.store;
+      var o = e.isHMR;
+      window.onNuxtReady((function() {
+        o || Object(Me.a)({
+          key: "multisender",
+          paths: ["txStorage"]
+        })(t)
+      }))
+    };
     var _e = function(e, t) {
-        e.store, e.isHMR, e.app;t("preventMultitabs", main)
-      };
+      e.store, e.isHMR, e.app;t("preventMultitabs", main)
+    };
     function main(e) {
       var t = Date.now();
       window.id = t, window.localStorage.multisenderKey = t;window.addEventListener("storage", (function(e) {
@@ -3917,58 +3947,58 @@ var n = "store/".concat(t);
     var Ce = o(279);
     var Ee = o(280);
     var ze = {
-        en: o(665),
-        ru: o(666),
-        zh: o(667)
-      };
+      en: o(665),
+      ru: o(666),
+      zh: o(667)
+    };
     c.a.use(Ee.a);
     var Se = "en";
     var Ie = localStorage.getItem("lang") || navigator.language.substr(0, 2).toLowerCase();
     Se = ze[Ie] ? Ie : "en";
     var Ne = {
-        en: {
-          long: {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-            weekday: "long",
-            hour: "numeric",
-            minute: "numeric",
-            hour12: !0
-          }
-        },
-        ru: {
-          long: {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-            hour: "numeric",
-            minute: "numeric"
-          }
-        },
-        zh: {
-          long: {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-            weekday: "long",
-            hour: "numeric",
-            minute: "numeric",
-            hour12: !0
-          }
+      en: {
+        long: {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          weekday: "long",
+          hour: "numeric",
+          minute: "numeric",
+          hour12: !0
         }
-      };
+      },
+      ru: {
+        long: {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "numeric",
+          minute: "numeric"
+        }
+      },
+      zh: {
+        long: {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          weekday: "long",
+          hour: "numeric",
+          minute: "numeric",
+          hour12: !0
+        }
+      }
+    };
     var Oe = function(e) {
-        var t = e.app;
-        e.route, e.store;
-        t.i18n = new Ee.a({
-          locale: Se,
-          fallbackLocale: "en",
-          messages: ze,
-          silentFallbackWarn: !0,
-          dateTimeFormats: Ne
-        })
-      };
+      var t = e.app;
+      e.route, e.store;
+      t.i18n = new Ee.a({
+        locale: Se,
+        fallbackLocale: "en",
+        messages: ze,
+        silentFallbackWarn: !0,
+        dateTimeFormats: Ne
+      })
+    };
     function Le(object, e) {
       var t = Object.keys(object);
       if (Object.getOwnPropertySymbols) {
@@ -4027,7 +4057,8 @@ var n = "store/".concat(t);
         var m;
         return regeneratorRuntime.wrap((function(e) {
           for (;;) {
-            switch (e.prev = e.next) {
+            switch (
+            e.prev = e.next) {
               case 0:
                 return e.next = 2, j();case 2:
                 return o = e.sent, (r = ee(t)).$router = o, n = r.registerModule, r.registerModule = function(path, e, t) {
@@ -4205,7 +4236,8 @@ var n = "store/".concat(t);
           var m = this;
           return regeneratorRuntime.wrap((function(e) {
             for (;;) {
-              switch (e.prev = e.next) {
+              switch (
+              e.prev = e.next) {
                 case 0:
                   if (this._pathChanged = Boolean(h.nuxt.err) || o.path !== t.path, this._queryChanged = JSON.stringify(t.query) !== JSON.stringify(o.query), this._diffQuery = this._queryChanged ? Object(d.g)(t.query, o.query) : [], this._pathChanged && this.$loading.start && !this.$loading.manual && this.$loading.start(), e.prev = 4, this._pathChanged || !this._queryChanged) {
                     e.next = 11;
@@ -4253,7 +4285,8 @@ var n = "store/".concat(t);
             var l;
             return regeneratorRuntime.wrap((function(e) {
               for (;;) {
-                switch (e.prev = e.next) {
+                switch (
+                e.prev = e.next) {
                   case 0:
                     if ("function" != typeof t || t.options) {
                       e.next = 4;
@@ -4314,7 +4347,8 @@ var n = "store/".concat(t);
           var L = this;
           return regeneratorRuntime.wrap((function(e) {
             for (;;) {
-              switch (e.prev = e.next) {
+              switch (
+              e.prev = e.next) {
                 case 0:
                   if (!1 !== this._pathChanged || !1 !== this._queryChanged) {
                     e.next = 2;
@@ -4511,7 +4545,8 @@ var n = "store/".concat(t);
           var f;
           return regeneratorRuntime.wrap((function(e) {
             for (;;) {
-              switch (e.prev = e.next) {
+              switch (
+              e.prev = e.next) {
                 case 0:
                   return h = t.app, v = t.router, t.store, o = new n.a(h), r = x.layout || "default", e.next = 7, o.loadLayout(r);case 7:
                   return o.setLayout(r), c = function() {
@@ -4609,8 +4644,8 @@ var n = "store/".concat(t);
     t = r(!1);
     var F = n(c);
     var H = n(c, {
-        hash: "?#iefix"
-      });
+      hash: "?#iefix"
+    });
     var U = n(l);
     var V = n(d);
     var $ = n(f);
@@ -4979,18 +5014,18 @@ var n = "store/".concat(t);
       return n
     }));
     var r = function() {
-        return {
-          data: [],
-          config: {}
-        }
+      return {
+        data: [],
+        config: {}
       }
+    }
     var n = {
-        SET_DATA: function(e, data) {
-          e.data = data
-        },
-        SET_CONFIG: function(e, t) {
-          e.config = t
-        }
+      SET_DATA: function(e, data) {
+        e.data = data
+      },
+      SET_CONFIG: function(e, t) {
+        e.config = t
+      }
     }
   },
   746: function(e, t, o) {
@@ -5046,1725 +5081,1751 @@ var n = "store/".concat(t);
         })
       }
       var P = {
-          multisenderInstance: function(e, t, o, r) {
-            var n = r["metamask/web3"];
-            var c = r["metamask/networkConfig"].multisenderContractAddress;
-            return console.log("multisenderContractAddress", c), new n.eth.Contract(j, c)
-          },
-          multisenderMerkleInstance: function(e, t, o, r) {
-            var n = r["metamask/web3"];
-            var c = r["metamask/networkConfig"].multisenderMerkleContractAddress;
-            return new n.eth.Contract(M, c)
-          },
-          contractAddress: function(e, t, o, r) {
-            var n = r["metamask/networkConfig"];
-            var c = n.multisenderContractAddress;
-            var l = n.multisenderMerkleContractAddress;
-            return "push" === e.strategy ? c : l
-          },
-          hasEnoughApprovedTokens: function(e, t, o, r) {
-            return new N(r["token/allowance"]).gte(new N(e.totalTokens))
-          },
-          approximateTxCost: function(e, t, o, r) {
-            var n = new N(r["metamask/gasPrice"]);
-            if ("push" === e.strategy) {
-              var c = e.txs.reduce((function(e, t) {
-                return e += t.gas
-              }), 0);
-              c = new N(c);
-              var l = new N(t.customerFee).multipliedBy(e.txs.length);
-              return c.multipliedBy(n).plus(l).toString()
-            }
-            return new N(e.estimatedAirdropTxGasLimit).multipliedBy(n).plus(new N(t.customerFee)).toString()
-          },
-          totalEthToSend: function(e, t, o, r) {
-            return r["token/isNative"] ? e.txs.reduce((function(e, t) {
-              return e = e.plus(t.total)
-            }), N(0)).plus(N(t.approximateTxCost)).toString() : t.approximateTxCost
-          },
-          airDropList: function(e) {
-            return function() {
-              var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0;
-              var o = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 1 / 0;
-              return e.list.slice(t, o).reduce((function(e, t) {
-                return e.addresses.push(t[0]), e.balances.push(t[1]), e.total = e.total.plus(t[1]), e
-              }), {
-                addresses: [],
-                balances: [],
-                total: new N(0)
-              })
-            }
-          },
-          extraGas: function() {
-            return 1e5
-          },
-          preparedAirdropElements: function(e, t, o, r) {
-            return function(e) {
-              var t = r["metamask/web3"];
-              return e.map((function(e) {
-                var o = t.eth.abi.encodeParameters(["address", "uint256"], e);
-                return Object(m.soliditySha3)(o)
-              }))
-            }
-          },
-          customerFee: function(e) {
-            var t = new N(e.customerFees[e.strategy]);
-            var o = new N(e.extraFee);
-            if (t.gt("0") && o.gt("0") && e.txs.length > 0) {
-              var r = o.div(e.txs.length);
-              return console.log("spreadedFee", r.toString(10)), t.plus(r).toString(10)
-            }
-            return console.log("contractFee ", t.toString()), t
-          },
-          contractMethodToCall: function(e, t, o, r) {
-            var n = {
-                findBadAddresses: "tokenFindBadAddresses",
-                method: "multisendToken"
-              };
-            var c = r["token/isNative"];
-            return e.isDeflationary && (n = {
-                findBadAddresses: "findBadAddressesForBurners",
-                method: "multisendTokenForBurners"
-              }), c && (n = {
-                findBadAddresses: "etherFindBadAddresses",
-                method: "multisendEther"
-              }), n
+        multisenderInstance: function(e, t, o, r) {
+          var n = r["metamask/web3"];
+          var c = r["metamask/networkConfig"].multisenderContractAddress;
+          return console.log("multisenderContractAddress", c), new n.eth.Contract(j, c)
+        },
+        multisenderMerkleInstance: function(e, t, o, r) {
+          var n = r["metamask/web3"];
+          var c = r["metamask/networkConfig"].multisenderMerkleContractAddress;
+          return new n.eth.Contract(M, c)
+        },
+        contractAddress: function(e, t, o, r) {
+          var n = r["metamask/networkConfig"];
+          var c = n.multisenderContractAddress;
+          var l = n.multisenderMerkleContractAddress;
+          return "push" === e.strategy ? c : l
+        },
+        hasEnoughApprovedTokens: function(e, t, o, r) {
+          return new N(r["token/allowance"]).gte(new N(e.totalTokens))
+        },
+        approximateTxCost: function(e, t, o, r) {
+          var n = new N(r["metamask/gasPrice"]);
+          if ("push" === e.strategy) {
+            var c = e.txs.reduce((function(e, t) {
+              return e += t.gas
+            }), 0);
+            c = new N(c);
+            var l = new N(t.customerFee).multipliedBy(e.txs.length);
+            return c.multipliedBy(n).plus(l).toString()
           }
-        };
+          return new N(e.estimatedAirdropTxGasLimit).multipliedBy(n).plus(new N(t.customerFee)).toString()
+        },
+        totalEthToSend: function(e, t, o, r) {
+          return r["token/isNative"] ? e.txs.reduce((function(e, t) {
+            return e = e.plus(t.total)
+          }), N(0)).plus(N(t.approximateTxCost)).toString() : t.approximateTxCost
+        },
+        airDropList: function(e) {
+          return function() {
+            var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0;
+            var o = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 1 / 0;
+            return e.list.slice(t, o).reduce((function(e, t) {
+              return e.addresses.push(t[0]), e.balances.push(t[1]), e.total = e.total.plus(t[1]), e
+            }), {
+              addresses: [],
+              balances: [],
+              total: new N(0)
+            })
+          }
+        },
+        extraGas: function() {
+          return 1e5
+        },
+        preparedAirdropElements: function(e, t, o, r) {
+          return function(e) {
+            var t = r["metamask/web3"];
+            return e.map((function(e) {
+              var o = t.eth.abi.encodeParameters(["address", "uint256"], e);
+              return Object(m.soliditySha3)(o)
+            }))
+          }
+        },
+        customerFee: function(e) {
+          var t = new N(e.customerFees[e.strategy]);
+          var o = new N(e.extraFee);
+          if (t.gt("0") && o.gt("0") && e.txs.length > 0) {
+            var r = o.div(e.txs.length);
+            return console.log("spreadedFee", r.toString(10)), t.plus(r).toString(10)
+          }
+          return console.log("contractFee ", t.toString()), t
+        },
+        contractMethodToCall: function(e, t, o, r) {
+          var n = {
+            findBadAddresses: "tokenFindBadAddresses",
+            method: "multisendToken"
+          };
+          var c = r["token/isNative"];
+          return e.isDeflationary && (n = {
+              findBadAddresses: "findBadAddressesForBurners",
+              method: "multisendTokenForBurners"
+            }), c && (n = {
+              findBadAddresses: "etherFindBadAddresses",
+              method: "multisendEther"
+            }), n
+        }
+      };
       var D = {
-          checkList: function(e, t) {
-            var o = this;
-            var r = e.state;
-            var n = e.commit;
-            var c = e.rootState;
-            var d = e.dispatch;
-            var f = e.rootGetters;
-            var m = t.editor;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var t;
-              var h;
-              var k;
-              var x;
-              var i;
-              var w;
-              var y;
-              var j;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      if (t = !1, n("CLEAN_ERRORS"), n("SET_ALREADY_PRESSED", !0), m.markers && m.markers.forEach((function(marker) {
-                          return marker.clear()
-                        })), m.markers = [], e.prev = 5, null !== (h = c.token.decimals)) {
-                        e.next = 9;
-                        break
-                      }
-                      throw new Error(o.app.i18n.t("selectTokenFirst"));
-                    case 9:
-                      k = new N("0"), x = v()(r.rawList, {
-                        ltrim: !0,
-                        rtrim: !0,
-                        quote: !1,
-                        skip_empty_lines: !0,
-                        trim: !0,
-                        cast: function() {
-                          var e = Object(l.a)(regeneratorRuntime.mark((function e(r, c) {
-                            var l;
-                            var f;
-                            var address;
-                            var v;
-                            var x;
-                            var marker;
-                            return regeneratorRuntime.wrap((function(e) {
-                              for (;;) {
-                                switch (e.prev = e.next) {
-                                  case 0:
-                                    if (e.prev = 0, l = new N("0"), f = ".eth" === r.slice(-4), address = r, 0 !== c.column) {
-                                      e.next = 19;break
-                                    }
-                                    if ("0x0000000000000000000000000000000000000000" !== address) {
-                                      e.next = 7;
-                                      break
-                                    }
-                                    throw new Error(o.app.i18n.t("wrongAddress"));
-                                  case 7:
-                                    if (!f) {
-                                      e.next = 14;
-                                      break
-                                    }
-                                    return e.next = 10, d("ENS/resolve", {
-                                        name: r
-                                      }, {
-                                        root: !0
-                                      });case 10:
-                                    address = e.sent, n("ENS/SAVE_ENS_RECORD", {
-                                      name: r,
-                                      address: address,
-                                      position: c.lines - 1
-                                    }, {
-                                      root: !0
-                                    }), e.next = 16;
-                                    break;case 14:
-                                    if ("0" === address[0] || "x" === address[1]) {
-                                      e.next = 16;
-                                      break
-                                    }
-                                    throw new Error(o.app.i18n.t("wrongAddress"));
-                                  case 16:
-                                    return e.abrupt("return", E(address));case 19:
-                                    if (1 !== c.column) {
-                                      e.next = 36;break
-                                    }
-                                    if (!((v = r.split(".")).length > 2)) {
-                                      e.next = 23;
-                                      break
-                                    }
-                                    throw new Error(o.app.i18n.t("wrongAmount"));
-                                  case 23:
-                                    if ("" !== v[0]) {
-                                      e.next = 25;
-                                      break
-                                    }
-                                    throw new Error(o.app.i18n.t("wrongAmount"));
-                                  case 25:
-                                    if (!v[1]) {
-                                      e.next = 29;break
-                                    }
-                                    if (!(v[1].length > h)) {
-                                      e.next = 28;
-                                      break
-                                    }
-                                    throw new Error(o.app.i18n.t("wrongDecimalAmount"));
-                                  case 28:
-                                    l = new N("10").pow(new N(h - v[1].length)).times(new N(v[1].toString()));case 29:
-                                    if (!(x = new N("10").pow(new N(h.toString())).times(new N(v[0])).plus(l)).isNaN()) {
-                                      e.next = 32;
-                                      break
-                                    }
-                                    throw new Error(o.app.i18n.t("wrongAmount"));
-                                  case 32:
-                                    return k = k.plus(x), e.abrupt("return", x.toString(10));case 36:
-                                    throw new Error(o.app.i18n.t("manyColumns"));
-                                  case 37:
-                                    e.next = 45;
-                                    break;case 39:
-                                    e.prev = 39, e.t0 = e.catch(0), t = !0, marker = m.markText({
-                                      line: c.records - 1
-                                    }, {
-                                      line: c.records
-                                    }, {
-                                      className: "cm-error",
-                                      clearOnEnter: !1,
-                                      addToHistory: !0
-                                    }), m.markers.push(marker), n("SAVE_ERROR", "".concat(o.app.i18n.t("line", {
-                                      num: c.records + 1
-                                    }), " ").concat(e.t0.message));case 45:
-                                  case "end":
-                                    return e.stop()
-                                }
-                              }
-                            }), e, null, [[0, 39]])
-                          })));
-                          return function(t, o) {
-                            return e.apply(this, arguments)
-                          }
-                        }()
-                      }), i = 0;case 12:
-                      if (!(i < x.length)) {
-                        e.next = 19;
-                        break
-                      }
-                      return e.next = 15, Promise.all(x[i]);case 15:
-                      x[i] = e.sent;case 16:
-                      i++, e.next = 12;
-                      break;case 19:
-                      if (n("SAVE_LIST", x), !(x.length < 2)) {
-                        e.next = 22;
-                        break
-                      }
-                      throw new Error(o.app.i18n.t("pleaseProvide"));
-                    case 22:
-                      if (t) {
-                        e.next = 26;
-                        break
-                      }
-                      return e.next = 25, d("findDuplicates", {
-                          records: x,
-                          editor: m
-                        });case 25:
-                      t = e.sent;case 26:
-                      if (!t) {
-                        e.next = 29;
-                        break
-                      }
-                      return n("SET_ALREADY_PRESSED", !1), e.abrupt("return", !1);case 29:
-                      return n("SAVE_TOTAL_TOKENS", k.toString(10)), e.next = 32, d("calculateTotalUSD");case 32:
-                      if (w = new N(f["token/allowance"]).gte(k), y = new N(c.token.tokenBalance).gte(k), j = "approve", !w || !y) {
-                        e.next = 52;break
-                      }
-                      if ("push" !== r.strategy) {
-                        e.next = 49;
-                        break
-                      }
-                      return e.next = 39, d("findBadAddresses", {});case 39:
-                      if (!e.sent) {
-                        e.next = 44;break
-                      }
-                      j = "badAddresses", e.next = 47;
-                      break;case 44:
-                      return j = "summary", e.next = 47, d("prepareTxs");case 47:
-                      e.next = 52;
-                      break;case 49:
-                      return e.next = 51, d("prepareAirdropCreating");case 51:
-                      j = "summary";case 52:
-                      return d("router/setNextPageAndGo", {
-                          nextPage: j
-                        }, {
-                          root: !0
-                        }), e.abrupt("return", !0);case 56:
-                      return e.prev = 56, e.t0 = e.catch(5), console.error(e.t0), n("SET_ALREADY_PRESSED", !1), n("SAVE_ERROR", "".concat(e.t0.message)), e.abrupt("return", !1);case 62:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e, null, [[5, 56]])
-            })))()
-          },
-          calculateTotalUSD: function(e) {
-            var t = e.rootState;
-            var o = e.state;
-            var r = e.rootGetters;
-            var n = e.commit;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var c;
-              var l;
-              var d;
-              var f;
-              var m;
-              var h;
-              var v;
-              var data;
-              var k;
-              var x;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return c = E(t.token.address.value), l = r["token/toDecimals"](o.totalTokens), d = new y.a, e.next = 5, d.simple.price({
-                          ids: ["ethereum"],
-                          vs_currencies: ["usd"]
-                        });case 5:
-                      if (m = e.sent, h = m.data.ethereum.usd, "0x000000000000000000000000000000000000bEEF" !== c) {
-                        e.next = 11;break
-                      }
-                      f = h, e.next = 16;
-                      break;case 11:
-                      return e.next = 13, d.simple.fetchTokenPrice({
-                          contract_addresses: [c],
-                          vs_currencies: "usd",
-                          include_market_cap: !1,
-                          include_24hr_vol: !1
-                        });case 13:
-                      v = e.sent, data = v.data, f = data.hasOwnProperty(c) ? data[c].usd : data.hasOwnProperty(c.toLowerCase()) ? data[c.toLowerCase()].usd : 0;case 16:
-                      k = Number(l) * Number(f), x = 0, k >= 2e4 && (x = .005 * k / h), n("SAVE_EXTRA_FEE", I(x.toString(10)));case 20:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e)
-            })))()
-          },
-          findDuplicates: function(e, t) {
-            var o = this;
-            var r = e.commit;
-            var n = e.rootGetters;
-            var l = t.records;
-            var d = t.editor;
-            return new Promise((function(e, t) {
-              var f = l.slice().sort();
-              var m = [];
-              var h = {
-                  indexes: []
-                };
-              var v = !1;
-              f.forEach((function(e, i) {
-                var t = Object(c.a)(e, 2);
-                var address = t[0];
-                t[1];i === f.length - 1 || address !== f[i + 1][0] || m.includes(address) || m.push(address)
-              })), m.forEach((function(e) {
-                l.forEach((function(t, i) {
-                  var l = Object(c.a)(t, 2);
-                  var address = l[0];
-                  var f = l[1];
-                  if (address === e) {
-                    v = !0;
-                    var marker = d.markText({
-                      line: i - 1
-                    }, {
-                      line: i
-                    }, {
-                      className: "cm-error",
-                      clearOnEnter: !1,
-                      addToHistory: !0
-                    });
-                    if (h.indexes.push(i), h[e]) {
-                      var m = h[e].balance;
-                      h[e].balance = new N(f).plus(m).toString()
-                    } else {
-                      h[e] = {
-                        balance: f
-                      };
-                    }
-                    d.markers.push(marker);
-                    var k = n["ENS/getENSNameByAddress"](address);
-                    var x = k ? "".concat(address, " (").concat(k, ")") : address;
-                    r("SAVE_ERROR", "".concat(o.app.i18n.t("line", {
-                      num: i + 1
-                    }), " ").concat(o.app.i18n.t("duplicateAddress"), " ").concat(x))
-                  }
-                }))
-              })), r("SAVE_DUPS", h), e(v)
-            }))
-          },
-          mergeDups: function(e) {
+        checkList: function(e, t) {
+          var o = this;
+          var r = e.state;
+          var n = e.commit;
+          var c = e.rootState;
+          var d = e.dispatch;
+          var f = e.rootGetters;
+          var m = t.editor;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
             var t;
-            var o = e.state;
-            var r = e.rootState;
-            var l = e.commit;
-            var d = e.rootGetters;
-            Array.prototype.multisplice = function() {
-              var e = Array.apply(null, arguments);
-              e.sort((function(a, b) {
-                return a - b
-              }));
-              for (var i = 0; i < e.length; i++) {
-                var t = e[i] - i;
-                this.splice(t, 1)
-              }
-            };
-            var f = o.list;
-            var m = o.dups;
-            var h = JSON.parse(JSON.stringify(f));
-            (t = h).multisplice.apply(t, Object(n.a)(m.indexes)), Object.entries(m).forEach((function(e) {
-              var t = Object(c.a)(e, 2);
-              var address = t[0];
-              var o = t[1];
-              var r = (o.indexes, o.balance);
-              if (r) {
-                var n = d["ENS/getENSNameByAddress"](address);
-                h.push([n || address, r])
-              }
-            })), l("SET_RAWLIST", (h = h.map((function(e) {
-              var t = Object(c.a)(e, 2);
-              var address = t[0];
-              var o = t[1];
-              return [d["ENS/getENSNameByAddress"](address) || address, new N(o).div(new N("10").pow(new N(r.token.decimals))).toString(10)]
-            }))).join("\n")), l("CLEAN_ERRORS"), l("SAVE_DUPS", {})
-          },
-          askContract: function(e, t) {
-            var o;
-            var r = e.dispatch;
-            var c = (e.getters, t.contractInstance);
-            var l = t.method;
-            var d = t.params;
-            var f = void 0 === d ? [] : d;
-            var m = t.web3Method;
-            var h = t.value;
-            var v = t.gas;
-            var k = t.from;
-            var data = (o = c.methods)[l].apply(o, Object(n.a)(f)).encodeABI();
-            try {
-              return r("metamask/callWeb3", {
-                data: data,
-                to: c._address,
-                web3Method: m,
-                value: h,
-                gas: v,
-                from: k
-              }, {
-                root: !0
-              })
-            } catch ( e ) {
-              throw Error(e)
-            }
-          },
-          askMultisender: function(e, data) {
-            return (0, e.dispatch)("askContract", _({
-              contractInstance: e.getters.multisenderInstance
-            }, data))
-          },
-          askMultisenderMerkle: function(e, data) {
-            return (0, e.dispatch)("askContract", _({
-              contractInstance: e.getters.multisenderMerkleInstance
-            }, data))
-          },
-          fetchFee: function(e) {
-            var t = e.rootState;
-            var o = e.dispatch;
-            var r = e.commit;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var n;
-              var l;
-              var d;
-              var f;
-              var m;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return n = t.metamask.ethAccount, e.next = 3, Promise.all([o("askMultisender", {
-                          method: "currentFee",
-                          params: [n],
-                          web3Method: "call"
-                        }), o("askMultisenderMerkle", {
-                          method: "fee",
-                          web3Method: "call"
-                        })]);case 3:
-                      l = e.sent, d = Object(c.a)(l, 2), f = d[0], m = d[1], r("SET_CUSTOMER_FEE", {
-                        push: C(f),
-                        pull: C(m)
-                      });case 8:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e)
-            })))()
-          },
-          fetchVipPrices: function(e) {
-            var t = e.dispatch;
-            var o = e.commit;
-            var r = e.rootGetters;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var n;
-              var c;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return n = r["metamask/web3"], e.next = 3, t("askMultisender", {
-                          method: "getAllVipPrices",
-                          web3Method: "call"
-                        });case 3:
-                      c = e.sent, c = n.eth.abi.decodeParameters(["uint256", "uint256", "uint256"], c), o("SAVE_VIP_PRICE", {
-                        tier: 0,
-                        price: c[0].toString(10)
-                      }), o("SAVE_VIP_PRICE", {
-                        tier: 1,
-                        price: c[1].toString(10)
-                      }), o("SAVE_VIP_PRICE", {
-                        tier: 2,
-                        price: c[2].toString(10)
-                      });case 8:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e)
-            })))()
-          },
-          organiseAddresses: function(e) {
-            e.state;
-            var t = e.getters;
-            var o = (e.commit, e.dispatch);
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var r;
-              var n;
-              var c;
-              var l;
-              var d;
-              var f;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return r = t.airDropList(), n = r.addresses, c = r.balances, e.next = 3, o("exploreBalances", {
-                          addresses: n
-                        });case 3:
-                      return l = e.sent, d = [], f = l.reduce((function(e, t, o) {
-                          return (t = new N(t)).isZero() ? d.push([n[o], c[o]]) : e.push([n[o], c[o]]), e
-                        }), []), e.abrupt("return", {
-                          freshAddressesList: d,
-                          existingAddressesList: f
-                        });case 7:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e)
-            })))()
-          },
-          multisendWithSignature: function(e, t) {
-            var o = this;
-            var r = e.state;
-            var c = e.rootState;
-            var d = e.rootGetters;
-            var f = e.dispatch;
-            var m = e.commit;
-            var h = e.getters;
-            var v = t.retryAttempt;
-            var k = void 0 === v ? 0 : v;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var t;
-              var l;
-              var v;
-              var x;
-              var address;
-              var w;
-              var y;
-              var j;
-              var M;
-              var A;
-              var _;
-              var T;
-              var C;
-              var E;
-              var S;
-              var I;
-              var O;
-              var L;
-              var P;
-              var D;
-              var R;
-              var B;
-              var G;
-              var F;
-              var data;
-              var H;
-              var U;
-              var V;
-              var $;
-              var W;
-              var Z;
-              var Y;
-              var Q;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return t = [], k++, e.prev = 2, l = d["txStorage/accountSender"], v = l.expiration, x = l.signature, address = l.address, w = l.privateKey, "getApprover", y = [v, x], e.next = 9, f("askMultisender", {
-                          method: "getApprover",
-                          params: y,
-                          web3Method: "call",
-                          from: address
-                        });case 9:
-                      if (j = e.sent, M = d["metamask/web3"], (j = M.eth.abi.decodeParameter("address", j)) === c.metamask.ethAccount) {
-                        e.next = 14;
-                        break
-                      }
-                      throw Error(o.app.i18n.t("signatureIsInvalid"));
-                    case 14:
-                      A = d["token/isNative"], _ = h.multisenderInstance, T = d["metamask/gasPrice"], C = M.eth.accounts.wallet.add(w), E = 0, S = c.metamask.netId, I = !0, O = !1, L = void 0, e.prev = 23, P = r.txs[Symbol.iterator]();case 25:
-                      if (I = (D = P.next()).done) {
-                        e.next = 44;
-                        break
-                      }
-                      return R = D.value, B = R.params, G = R.gas, F = R.total, data = void 0, A ? data = (H = _.methods).multisendEther.apply(H, Object(n.a)(B)).encodeABI() : (B = B.concat([x, v]), data = (U = _.methods).multisendTokenWithSignature.apply(U, Object(n.a)(B)).encodeABI(), r.isDeflationary && (data = (V = _.methods).multisendTokenForBurnersWithSignature.apply(V, Object(n.a)(B)).encodeABI())), $ = A ? F : 0, e.next = 32, C.signTransaction({
-                          to: _._address,
-                          gas: z(G + h.extraGas),
-                          gasPrice: T,
-                          value: z(new N(h.customerFee).plus($).toString(10)),
-                          data: data,
-                          chainId: S,
-                          nonce: E
-                        });case 32:
-                      return W = e.sent, E++, Z = {
-                          method: "eth_sendRawTransaction",
-                          params: [W.rawTransaction],
-                          from: address
-                        }, e.next = 37, f("metamask/sendAsync", Z, {
-                          root: !0
-                        });case 37:
-                      Y = e.sent, m("txStorage/SAVE_TX", {
-                        txHash: Y,
-                        params: B,
-                        gas: G,
-                        total: F
-                      }, {
-                        root: !0
-                      }), Q = f("txStorage/runTxWatcher", {
-                        txHash: Y
-                      }, {
-                        root: !0
-                      }), t.push(Q);case 41:
-                      I = !0, e.next = 25;
-                      break;case 44:
-                      e.next = 50;
-                      break;case 46:
-                      e.prev = 46, e.t0 = e.catch(23), O = !0, L = e.t0;case 50:
-                      e.prev = 50, e.prev = 51, I || null == P.return || P.return();case 53:
-                      if (e.prev = 53, !O) {
-                        e.next = 56;
-                        break
-                      }
-                      throw L;
-                    case 56:
-                      return e.finish(53);case 57:
-                      return e.finish(50);case 58:
-                      f("txStorage/runSenderKeyDestroyer", {
-                        txsPromisesBucket: t
-                      }, {
-                        root: !0
-                      }), e.next = 64;
-                      break;case 61:
-                      e.prev = 61, e.t1 = e.catch(2), k < 3 ? f("multisendWithSignature", {
-                        retryAttempt: k
-                      }) : (console.error("_multisendWithSignature", e.t1), f("txStorage/runSenderKeyDestroyer", {
-                        txsPromisesBucket: t
-                      }, {
-                        root: !0
-                      }));case 64:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e, null, [[2, 61], [23, 46, 50, 58], [51,, 53, 57]])
-            })))()
-          },
-          sendEthLeftOversToUser: function(e) {
-            var t = this;
-            var o = e.commit;
-            var r = e.dispatch;
-            var n = e.rootState;
-            var c = e.rootGetters;
-            window.onbeforeunload = null;
-            var d = c["metamask/web3"];
-            var f = c["metamask/lowGasPrice"];
-            var m = c["txStorage/accountSender"];
-            var address = m.address;
-            var h = m.privateKey;
-            var v = d.eth.accounts.wallet.add(h);
-            var k = n.metamask.netId;
-            var x = c["metamask/networkConfig"].rpcCallRetryAttempt;
-            return new Promise((function(e, c) {
-              var m = function() {
-                var h = Object(l.a)(regeneratorRuntime.mark((function l(h) {
-                  var w;
-                  var y;
-                  var j;
-                  var M;
-                  var A;
-                  var _;
-                  var T;
-                  return regeneratorRuntime.wrap((function(l) {
-                    for (;;) {
-                      switch (l.prev = l.next) {
-                        case 0:
-                          return w = h.retryAttempt, y = void 0 === w ? 0 : w, l.prev = 1, l.next = 4, d.eth.getTransactionCount(address);case 4:
-                          return j = l.sent, l.next = 7, d.eth.getBalance(address);case 7:
-                          if (M = l.sent, !(M = N(M).minus(N(21e3).multipliedBy(f))).isPositive()) {
-                            l.next = 20;
-                            break
-                          }
-                          return l.next = 12, v.signTransaction({
-                              to: n.metamask.ethAccount,
-                              gas: z(21e3),
-                              gasPrice: f,
-                              value: M,
-                              chainId: k,
-                              nonce: j
-                            });case 12:
-                          return A = l.sent, console.log("rawTx", A.rawTransaction), _ = {
-                              method: "eth_sendRawTransaction",
-                              params: [A.rawTransaction],
-                              from: address
-                            }, l.next = 17, r("metamask/sendAsync", _, {
-                              root: !0
-                            });case 17:
-                          T = l.sent, o("txHashKeeper/SAVE_TX_HASH", {
-                            txName: "leftOversTx",
-                            txHash: T
-                          }, {
-                            root: !0
-                          }), r("txHashKeeper/runTxWatcher", {
-                            txName: "leftOversTx",
-                            txHash: T
-                          }, {
-                            root: !0
-                          });case 20:
-                          e(!0), l.next = 32;
-                          break;case 23:
-                          if (l.prev = 23, l.t0 = l.catch(1), !(y <= x)) {
-                            l.next = 31;break
-                          }
-                          console.error("sendEthLeftOversToUser.refund", l.t0.message), y++, setTimeout((function() {
-                            m({
-                              retryAttempt: y
-                            })
-                          }), 1e3 * y), l.next = 32;
-                          break;case 31:
-                          return l.abrupt("return", c(new Error(t.app.i18n.t("rpcFailed"))));case 32:
-                        case "end":
-                          return l.stop()
-                      }
+            var h;
+            var k;
+            var x;
+            var i;
+            var w;
+            var y;
+            var j;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    if (t = !1, n("CLEAN_ERRORS"), n("SET_ALREADY_PRESSED", !0), m.markers && m.markers.forEach((function(marker) {
+                        return marker.clear()
+                      })), m.markers = [], e.prev = 5, null !== (h = c.token.decimals)) {
+                      e.next = 9;
+                      break
                     }
-                  }), l, null, [[1, 23]])
-                })));
-                return function(e) {
-                  return h.apply(this, arguments)
-                }
-              }();
-              m({})
-            }))
-          },
-          multisend: function(e) {
-            var t = e.state;
-            var o = e.getters;
-            var r = e.rootGetters;
-            var c = e.rootState;
-            var d = e.dispatch;
-            var m = e.commit;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return e.prev = 0, e.delegateYield(regeneratorRuntime.mark((function e() {
+                    throw new Error(o.app.i18n.t("selectTokenFirst"));
+                  case 9:
+                    k = new N("0"), x = v()(r.rawList, {
+                      ltrim: !0,
+                      rtrim: !0,
+                      quote: !1,
+                      skip_empty_lines: !0,
+                      trim: !0,
+                      cast: function() {
+                        var e = Object(l.a)(regeneratorRuntime.mark((function e(r, c) {
                           var l;
-                          var h;
+                          var f;
+                          var address;
                           var v;
-                          var k;
                           var x;
-                          var w;
-                          var y;
-                          var j;
-                          var M;
-                          var A;
-                          var _;
-                          var T;
-                          var C;
-                          var E;
-                          var S;
-                          var I;
-                          var O;
-                          var L;
-                          var P;
-                          var D;
-                          var R;
-                          var B;
-                          var G;
+                          var marker;
                           return regeneratorRuntime.wrap((function(e) {
                             for (;;) {
-                              switch (e.prev = e.next) {
+                              switch (
+                              e.prev = e.next) {
                                 case 0:
-                                  for (l = r["metamask/injectedProvider"], h = new f.a(l), v = r["metamask/gasPrice"], k = c.metamask.ethAccount, x = o.multisenderInstance, w = c.token.address.value, y = "0x000000000000000000000000000000000000bEEF" === w, j = new h.BatchRequest, M = o.contractMethodToCall.method, A = [], _ = !0, T = !1, C = void 0, e.prev = 13, E = function() {
-                                      var e;
-                                      var t = I.value;
-                                      var r = t.params;
-                                      var c = t.gas;
-                                      var l = t.total;
-                                      var data = (e = x.methods)[M].apply(e, Object(n.a)(r)).encodeABI();
-                                      var d = y ? l : 0;
-                                      var f = new Promise((function(e, t) {
-                                          var r = h.eth.sendTransaction.request({
-                                            from: k,
-                                            to: x._address,
-                                            gas: z(c + 1e5),
-                                            gasPrice: v,
-                                            value: z(new N(o.customerFee).plus(d).toString(10)),
-                                            data: data
-                                          }, (function(o, r) {
-                                            o ? t(o) : e(r)
-                                          }));
-                                          j.add(r)
-                                        }));
-                                      A.push(f)
-                                    }, S = t.txs[Symbol.iterator]();!(_ = (I = S.next()).done); _ = !0) {
-                                    E();
+                                  if (e.prev = 0, l = new N("0"), f = ".eth" === r.slice(-4), address = r, 0 !== c.column) {
+                                    e.next = 19;break
                                   }
-                                  e.next = 22;
-                                  break;case 18:
-                                  e.prev = 18, e.t0 = e.catch(13), T = !0, C = e.t0;case 22:
-                                  e.prev = 22, e.prev = 23, _ || null == S.return || S.return();case 25:
-                                  if (e.prev = 25, !T) {
+                                  if ("0x0000000000000000000000000000000000000000" !== address) {
+                                    e.next = 7;
+                                    break
+                                  }
+                                  throw new Error(o.app.i18n.t("wrongAddress"));
+                                case 7:
+                                  if (!f) {
+                                    e.next = 14;
+                                    break
+                                  }
+                                  return e.next = 10, d("ENS/resolve", {
+                                      name: r
+                                    }, {
+                                      root: !0
+                                    });case 10:
+                                  address = e.sent, n("ENS/SAVE_ENS_RECORD", {
+                                    name: r,
+                                    address: address,
+                                    position: c.lines - 1
+                                  }, {
+                                    root: !0
+                                  }), e.next = 16;
+                                  break;case 14:
+                                  if ("0" === address[0] || "x" === address[1]) {
+                                    e.next = 16;
+                                    break
+                                  }
+                                  throw new Error(o.app.i18n.t("wrongAddress"));
+                                case 16:
+                                  return e.abrupt("return", E(address));case 19:
+                                  if (1 !== c.column) {
+                                    e.next = 36;break
+                                  }
+                                  if (!((v = r.split(".")).length > 2)) {
+                                    e.next = 23;
+                                    break
+                                  }
+                                  throw new Error(o.app.i18n.t("wrongAmount"));
+                                case 23:
+                                  if ("" !== v[0]) {
+                                    e.next = 25;
+                                    break
+                                  }
+                                  throw new Error(o.app.i18n.t("wrongAmount"));
+                                case 25:
+                                  if (!v[1]) {
+                                    e.next = 29;break
+                                  }
+                                  if (!(v[1].length > h)) {
                                     e.next = 28;
                                     break
                                   }
-                                  throw C;
+                                  throw new Error(o.app.i18n.t("wrongDecimalAmount"));
                                 case 28:
-                                  return e.finish(25);case 29:
-                                  return e.finish(22);case 30:
-                                  return j.execute(), e.next = 33, Promise.all(A);case 33:
-                                  for (O = e.sent, console.log("response", O), L = !0, P = !1, D = void 0, e.prev = 38, R = O[Symbol.iterator](); !(L = (B = R.next()).done); L = !0) {
-                                    (G = B.value) && (m("txStorage/SAVE_TX", {
-                                      txHash: G,
-                                      isMetamask: !0
-                                    }, {
-                                      root: !0
-                                    }), d("txStorage/runTxWatcher", {
-                                      txHash: G
-                                    }, {
-                                      root: !0
-                                    }));
-                                  }
-                                  e.next = 46;
-                                  break;case 42:
-                                  e.prev = 42, e.t1 = e.catch(38), P = !0, D = e.t1;case 46:
-                                  e.prev = 46, e.prev = 47, L || null == R.return || R.return();case 49:
-                                  if (e.prev = 49, !P) {
-                                    e.next = 52;
+                                  l = new N("10").pow(new N(h - v[1].length)).times(new N(v[1].toString()));case 29:
+                                  if (!(x = new N("10").pow(new N(h.toString())).times(new N(v[0])).plus(l)).isNaN()) {
+                                    e.next = 32;
                                     break
                                   }
-                                  throw D;
-                                case 52:
-                                  return e.finish(49);case 53:
-                                  return e.finish(46);case 54:
-                                  d("txStorage/runSenderKeyDestroyer", {
-                                    txsPromisesBucket: A
+                                  throw new Error(o.app.i18n.t("wrongAmount"));
+                                case 32:
+                                  return k = k.plus(x), e.abrupt("return", x.toString(10));case 36:
+                                  throw new Error(o.app.i18n.t("manyColumns"));
+                                case 37:
+                                  e.next = 45;
+                                  break;case 39:
+                                  e.prev = 39, e.t0 = e.catch(0), t = !0, marker = m.markText({
+                                    line: c.records - 1
                                   }, {
-                                    root: !0
-                                  });case 55:
+                                    line: c.records
+                                  }, {
+                                    className: "cm-error",
+                                    clearOnEnter: !1,
+                                    addToHistory: !0
+                                  }), m.markers.push(marker), n("SAVE_ERROR", "".concat(o.app.i18n.t("line", {
+                                    num: c.records + 1
+                                  }), " ").concat(e.t0.message));case 45:
                                 case "end":
                                   return e.stop()
                               }
                             }
-                          }), e, null, [[13, 18, 22, 30], [23,, 25, 29], [38, 42, 46, 54], [47,, 49, 53]])
-                        }))(), "t0", 2);case 2:
-                      e.next = 8;
-                      break;case 4:
-                      throw e.prev = 4, e.t1 = e.catch(0), console.error("multisend", e.t1), new Error(e.t1);
-                    case 8:
-                    case "end":
-                      return e.stop()
-                  }
+                          }), e, null, [[0, 39]])
+                        })));
+                        return function(t, o) {
+                          return e.apply(this, arguments)
+                        }
+                      }()
+                    }), i = 0;case 12:
+                    if (!(i < x.length)) {
+                      e.next = 19;
+                      break
+                    }
+                    return e.next = 15, Promise.all(x[i]);case 15:
+                    x[i] = e.sent;case 16:
+                    i++, e.next = 12;
+                    break;case 19:
+                    if (n("SAVE_LIST", x), !(x.length < 2)) {
+                      e.next = 22;
+                      break
+                    }
+                    throw new Error(o.app.i18n.t("pleaseProvide"));
+                  case 22:
+                    if (t) {
+                      e.next = 26;
+                      break
+                    }
+                    return e.next = 25, d("findDuplicates", {
+                        records: x,
+                        editor: m
+                      });case 25:
+                    t = e.sent;case 26:
+                    if (!t) {
+                      e.next = 29;
+                      break
+                    }
+                    return n("SET_ALREADY_PRESSED", !1), e.abrupt("return", !1);case 29:
+                    return n("SAVE_TOTAL_TOKENS", k.toString(10)), e.next = 32, d("calculateTotalUSD");case 32:
+                    if (w = new N(f["token/allowance"]).gte(k), y = new N(c.token.tokenBalance).gte(k), j = "approve", !w || !y) {
+                      e.next = 52;break
+                    }
+                    if ("push" !== r.strategy) {
+                      e.next = 49;
+                      break
+                    }
+                    return e.next = 39, d("findBadAddresses", {});case 39:
+                    if (!e.sent) {
+                      e.next = 44;break
+                    }
+                    j = "badAddresses", e.next = 47;
+                    break;case 44:
+                    return j = "summary", e.next = 47, d("prepareTxs");case 47:
+                    e.next = 52;
+                    break;case 49:
+                    return e.next = 51, d("prepareAirdropCreating");case 51:
+                    j = "summary";case 52:
+                    return d("router/setNextPageAndGo", {
+                        nextPage: j
+                      }, {
+                        root: !0
+                      }), e.abrupt("return", !0);case 56:
+                    return e.prev = 56, e.t0 = e.catch(5), console.error(e.t0), n("SET_ALREADY_PRESSED", !1), n("SAVE_ERROR", "".concat(e.t0.message)), e.abrupt("return", !1);case 62:
+                  case "end":
+                    return e.stop()
                 }
-              }), e, null, [[0, 4]])
-            })))()
-          },
-          buyVip: function(e, t) {
-            var o = this;
-            var r = e.state;
-            var n = e.dispatch;
-            var c = e.getters;
-            var d = e.rootGetters;
-            var f = e.rootState;
-            var m = e.commit;
-            var h = t.tier;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var t;
-              var l;
-              var v;
-              var data;
-              var k;
-              var x;
-              var w;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return e.prev = 0, t = d["metamask/gasPrice"], l = f.metamask.ethAccount, v = c.multisenderInstance, data = v.methods.buyVip(h).encodeABI(), e.next = 7, v.methods.buyVip(h).estimateGas({
-                          from: l,
-                          value: z(r.vipCost[h])
-                        });case 7:
-                      return k = e.sent, x = {
-                          method: "eth_sendTransaction",
-                          params: [{
-                            from: l,
-                            to: v._address,
-                            gas: z(k + 1e4),
-                            gasPrice: t,
-                            value: z(r.vipCost[h]),
-                            data: data
-                          }],
-                          from: l
-                        }, e.next = 11, n("metamask/sendAsync", x, {
-                          root: !0
-                        });case 11:
-                      if (w = e.sent, m("txHashKeeper/SAVE_TX_HASH", {
-                          txName: "vipTx",
-                          txHash: w
-                        }, {
-                          root: !0
-                        }), !n("txHashKeeper/runTxWatcher", {
-                          txName: "vipTx",
-                          txHash: w
-                        }, {
-                          root: !0
-                        })) {
-                        e.next = 18;break
-                      }
-                      m("SET_CUSTOMER_FEE", {
-                        push: 0,
-                        pull: 0
-                      }), e.next = 19;
-                      break;case 18:
-                      throw new Error(o.app.i18n.t("vipBuyingFailed"));
-                    case 19:
-                      e.next = 24;
-                      break;case 21:
-                      e.prev = 21, e.t0 = e.catch(0), console.error(e.t0);case 24:
-                    case "end":
-                      return e.stop()
-                  }
+              }
+            }), e, null, [[5, 56]])
+          })))()
+        },
+        calculateTotalUSD: function(e) {
+          var t = e.rootState;
+          var o = e.state;
+          var r = e.rootGetters;
+          var n = e.commit;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var c;
+            var l;
+            var d;
+            var f;
+            var m;
+            var h;
+            var v;
+            var data;
+            var k;
+            var x;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return c = E(t.token.address.value), l = r["token/toDecimals"](o.totalTokens), d = new y.a, e.next = 5, d.simple.price({
+                        ids: ["ethereum"],
+                        vs_currencies: ["usd"]
+                      });case 5:
+                    if (m = e.sent, h = m.data.ethereum.usd, "0x000000000000000000000000000000000000bEEF" !== c) {
+                      e.next = 11;break
+                    }
+                    f = h, e.next = 16;
+                    break;case 11:
+                    return e.next = 13, d.simple.fetchTokenPrice({
+                        contract_addresses: [c],
+                        vs_currencies: "usd",
+                        include_market_cap: !1,
+                        include_24hr_vol: !1
+                      });case 13:
+                    v = e.sent, data = v.data, f = data.hasOwnProperty(c) ? data[c].usd : data.hasOwnProperty(c.toLowerCase()) ? data[c.toLowerCase()].usd : 0;case 16:
+                    k = Number(l) * Number(f), x = 0, k >= 2e4 && (x = .005 * k / h), n("SAVE_EXTRA_FEE", I(x.toString(10)));case 20:
+                  case "end":
+                    return e.stop()
                 }
-              }), e, null, [[0, 21]])
-            })))()
-          },
-          exploreBalances: function(e, t) {
-            var o = e.rootState;
-            var r = e.dispatch;
-            var n = e.rootGetters;
-            var c = e.commit;
-            var d = t.addresses;
-            var f = t.txCountPerCall;
-            var m = void 0 === f ? 1e3 : f;
-            return new Promise(function() {
-              var e = Object(l.a)(regeneratorRuntime.mark((function e(t, l) {
-                var f;
-                var h;
-                var v;
-                var k;
-                var x;
-                var i;
+              }
+            }), e)
+          })))()
+        },
+        findDuplicates: function(e, t) {
+          var o = this;
+          var r = e.commit;
+          var n = e.rootGetters;
+          var l = t.records;
+          var d = t.editor;
+          return new Promise((function(e, t) {
+            var f = l.slice().sort();
+            var m = [];
+            var h = {
+              indexes: []
+            };
+            var v = !1;
+            f.forEach((function(e, i) {
+              var t = Object(c.a)(e, 2);
+              var address = t[0];
+              t[1];i === f.length - 1 || address !== f[i + 1][0] || m.includes(address) || m.push(address)
+            })), m.forEach((function(e) {
+              l.forEach((function(t, i) {
+                var l = Object(c.a)(t, 2);
+                var address = l[0];
+                var f = l[1];
+                if (address === e) {
+                  v = !0;
+                  var marker = d.markText({
+                    line: i - 1
+                  }, {
+                    line: i
+                  }, {
+                    className: "cm-error",
+                    clearOnEnter: !1,
+                    addToHistory: !0
+                  });
+                  if (h.indexes.push(i), h[e]) {
+                    var m = h[e].balance;
+                    h[e].balance = new N(f).plus(m).toString()
+                  } else {
+                    h[e] = {
+                      balance: f
+                    };
+                  }
+                  d.markers.push(marker);
+                  var k = n["ENS/getENSNameByAddress"](address);
+                  var x = k ? "".concat(address, " (").concat(k, ")") : address;
+                  r("SAVE_ERROR", "".concat(o.app.i18n.t("line", {
+                    num: i + 1
+                  }), " ").concat(o.app.i18n.t("duplicateAddress"), " ").concat(x))
+                }
+              }))
+            })), r("SAVE_DUPS", h), e(v)
+          }))
+        },
+        mergeDups: function(e) {
+          var t;
+          var o = e.state;
+          var r = e.rootState;
+          var l = e.commit;
+          var d = e.rootGetters;
+          Array.prototype.multisplice = function() {
+            var e = Array.apply(null, arguments);
+            e.sort((function(a, b) {
+              return a - b
+            }));
+            for (var i = 0; i < e.length; i++) {
+              var t = e[i] - i;
+              this.splice(t, 1)
+            }
+          };
+          var f = o.list;
+          var m = o.dups;
+          var h = JSON.parse(JSON.stringify(f));
+          (t = h).multisplice.apply(t, Object(n.a)(m.indexes)), Object.entries(m).forEach((function(e) {
+            var t = Object(c.a)(e, 2);
+            var address = t[0];
+            var o = t[1];
+            var r = (o.indexes, o.balance);
+            if (r) {
+              var n = d["ENS/getENSNameByAddress"](address);
+              h.push([n || address, r])
+            }
+          })), l("SET_RAWLIST", (h = h.map((function(e) {
+            var t = Object(c.a)(e, 2);
+            var address = t[0];
+            var o = t[1];
+            return [d["ENS/getENSNameByAddress"](address) || address, new N(o).div(new N("10").pow(new N(r.token.decimals))).toString(10)]
+          }))).join("\n")), l("CLEAN_ERRORS"), l("SAVE_DUPS", {})
+        },
+        askContract: function(e, t) {
+          var o;
+          var r = e.dispatch;
+          var c = (e.getters, t.contractInstance);
+          var l = t.method;
+          var d = t.params;
+          var f = void 0 === d ? [] : d;
+          var m = t.web3Method;
+          var h = t.value;
+          var v = t.gas;
+          var k = t.from;
+          var data = (o = c.methods)[l].apply(o, Object(n.a)(f)).encodeABI();
+          try {
+            return r("metamask/callWeb3", {
+              data: data,
+              to: c._address,
+              web3Method: m,
+              value: h,
+              gas: v,
+              from: k
+            }, {
+              root: !0
+            })
+          } catch ( e ) {
+            throw Error(e)
+          }
+        },
+        askMultisender: function(e, data) {
+          return (0, e.dispatch)("askContract", _({
+            contractInstance: e.getters.multisenderInstance
+          }, data))
+        },
+        askMultisenderMerkle: function(e, data) {
+          return (0, e.dispatch)("askContract", _({
+            contractInstance: e.getters.multisenderMerkleInstance
+          }, data))
+        },
+        fetchFee: function(e) {
+          var t = e.rootState;
+          var o = e.dispatch;
+          var r = e.commit;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var n;
+            var l;
+            var d;
+            var f;
+            var m;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return n = t.metamask.ethAccount, e.next = 3, Promise.all([o("askMultisender", {
+                        method: "currentFee",
+                        params: [n],
+                        web3Method: "call"
+                      }), o("askMultisenderMerkle", {
+                        method: "fee",
+                        web3Method: "call"
+                      })]);case 3:
+                    l = e.sent, d = Object(c.a)(l, 2), f = d[0], m = d[1], r("SET_CUSTOMER_FEE", {
+                      push: C(f),
+                      pull: C(m)
+                    });case 8:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e)
+          })))()
+        },
+        fetchVipPrices: function(e) {
+          var t = e.dispatch;
+          var o = e.commit;
+          var r = e.rootGetters;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var n;
+            var c;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return n = r["metamask/web3"], e.next = 3, t("askMultisender", {
+                        method: "getAllVipPrices",
+                        web3Method: "call"
+                      });case 3:
+                    c = e.sent, c = n.eth.abi.decodeParameters(["uint256", "uint256", "uint256"], c), o("SAVE_VIP_PRICE", {
+                      tier: 0,
+                      price: c[0].toString(10)
+                    }), o("SAVE_VIP_PRICE", {
+                      tier: 1,
+                      price: c[1].toString(10)
+                    }), o("SAVE_VIP_PRICE", {
+                      tier: 2,
+                      price: c[2].toString(10)
+                    });case 8:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e)
+          })))()
+        },
+        organiseAddresses: function(e) {
+          e.state;
+          var t = e.getters;
+          var o = (e.commit, e.dispatch);
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var r;
+            var n;
+            var c;
+            var l;
+            var d;
+            var f;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return r = t.airDropList(), n = r.addresses, c = r.balances, e.next = 3, o("exploreBalances", {
+                        addresses: n
+                      });case 3:
+                    return l = e.sent, d = [], f = l.reduce((function(e, t, o) {
+                        return (t = new N(t)).isZero() ? d.push([n[o], c[o]]) : e.push([n[o], c[o]]), e
+                      }), []), e.abrupt("return", {
+                        freshAddressesList: d,
+                        existingAddressesList: f
+                      });case 7:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e)
+          })))()
+        },
+        multisendWithSignature: function(e, t) {
+          var o = this;
+          var r = e.state;
+          var c = e.rootState;
+          var d = e.rootGetters;
+          var f = e.dispatch;
+          var m = e.commit;
+          var h = e.getters;
+          var v = t.retryAttempt;
+          var k = void 0 === v ? 0 : v;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var t;
+            var l;
+            var v;
+            var x;
+            var address;
+            var w;
+            var y;
+            var j;
+            var M;
+            var A;
+            var _;
+            var T;
+            var C;
+            var E;
+            var S;
+            var I;
+            var O;
+            var L;
+            var P;
+            var D;
+            var R;
+            var B;
+            var G;
+            var F;
+            var data;
+            var H;
+            var U;
+            var V;
+            var $;
+            var W;
+            var Z;
+            var Y;
+            var Q;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return t = [], k++, e.prev = 2, l = d["txStorage/accountSender"], v = l.expiration, x = l.signature, address = l.address, w = l.privateKey, "getApprover", y = [v, x], e.next = 9, f("askMultisender", {
+                        method: "getApprover",
+                        params: y,
+                        web3Method: "call",
+                        from: address
+                      });case 9:
+                    if (j = e.sent, M = d["metamask/web3"], (j = M.eth.abi.decodeParameter("address", j)) === c.metamask.ethAccount) {
+                      e.next = 14;
+                      break
+                    }
+                    throw Error(o.app.i18n.t("signatureIsInvalid"));
+                  case 14:
+                    A = d["token/isNative"], _ = h.multisenderInstance, T = d["metamask/gasPrice"], C = M.eth.accounts.wallet.add(w), E = 0, S = c.metamask.netId, I = !0, O = !1, L = void 0, e.prev = 23, P = r.txs[Symbol.iterator]();case 25:
+                    if (I = (D = P.next()).done) {
+                      e.next = 44;
+                      break
+                    }
+                    return R = D.value, B = R.params, G = R.gas, F = R.total, data = void 0, A ? data = (H = _.methods).multisendEther.apply(H, Object(n.a)(B)).encodeABI() : (B = B.concat([x, v]), data = (U = _.methods).multisendTokenWithSignature.apply(U, Object(n.a)(B)).encodeABI(), r.isDeflationary && (data = (V = _.methods).multisendTokenForBurnersWithSignature.apply(V, Object(n.a)(B)).encodeABI())), $ = A ? F : 0, e.next = 32, C.signTransaction({
+                        to: _._address,
+                        gas: z(G + h.extraGas),
+                        gasPrice: T,
+                        value: z(new N(h.customerFee).plus($).toString(10)),
+                        data: data,
+                        chainId: S,
+                        nonce: E
+                      });case 32:
+                    return W = e.sent, E++, Z = {
+                        method: "eth_sendRawTransaction",
+                        params: [W.rawTransaction],
+                        from: address
+                      }, e.next = 37, f("metamask/sendAsync", Z, {
+                        root: !0
+                      });case 37:
+                    Y = e.sent, m("txStorage/SAVE_TX", {
+                      txHash: Y,
+                      params: B,
+                      gas: G,
+                      total: F
+                    }, {
+                      root: !0
+                    }), Q = f("txStorage/runTxWatcher", {
+                      txHash: Y
+                    }, {
+                      root: !0
+                    }), t.push(Q);case 41:
+                    I = !0, e.next = 25;
+                    break;case 44:
+                    e.next = 50;
+                    break;case 46:
+                    e.prev = 46, e.t0 = e.catch(23), O = !0, L = e.t0;case 50:
+                    e.prev = 50, e.prev = 51, I || null == P.return || P.return();case 53:
+                    if (e.prev = 53, !O) {
+                      e.next = 56;
+                      break
+                    }
+                    throw L;
+                  case 56:
+                    return e.finish(53);case 57:
+                    return e.finish(50);case 58:
+                    f("txStorage/runSenderKeyDestroyer", {
+                      txsPromisesBucket: t
+                    }, {
+                      root: !0
+                    }), e.next = 64;
+                    break;case 61:
+                    e.prev = 61, e.t1 = e.catch(2), k < 3 ? f("multisendWithSignature", {
+                      retryAttempt: k
+                    }) : (console.error("_multisendWithSignature", e.t1), f("txStorage/runSenderKeyDestroyer", {
+                      txsPromisesBucket: t
+                    }, {
+                      root: !0
+                    }));case 64:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e, null, [[2, 61], [23, 46, 50, 58], [51,, 53, 57]])
+          })))()
+        },
+        sendEthLeftOversToUser: function(e) {
+          var t = this;
+          var o = e.commit;
+          var r = e.dispatch;
+          var n = e.rootState;
+          var c = e.rootGetters;
+          window.onbeforeunload = null;
+          var d = c["metamask/web3"];
+          var f = c["metamask/lowGasPrice"];
+          var m = c["txStorage/accountSender"];
+          var address = m.address;
+          var h = m.privateKey;
+          var v = d.eth.accounts.wallet.add(h);
+          var k = n.metamask.netId;
+          var x = c["metamask/networkConfig"].rpcCallRetryAttempt;
+          return new Promise((function(e, c) {
+            var m = function() {
+              var h = Object(l.a)(regeneratorRuntime.mark((function l(h) {
                 var w;
                 var y;
                 var j;
-                return regeneratorRuntime.wrap((function(e) {
+                var M;
+                var A;
+                var _;
+                var T;
+                return regeneratorRuntime.wrap((function(l) {
                   for (;;) {
-                    switch (e.prev = e.next) {
+                    switch (
+                    l.prev = l.next) {
                       case 0:
-                        e.prev = 0, f = n["metamask/web3"], h = n["token/isNative"], v = o.token.address.value, k = h ? "exploreETHBalances" : "exploreERC20Balances", x = [], i = 0;case 7:
-                        if (!(i < d.length / m)) {
-                          e.next = 20;
+                        return w = h.retryAttempt, y = void 0 === w ? 0 : w, l.prev = 1, l.next = 4, d.eth.getTransactionCount(address);case 4:
+                        return j = l.sent, l.next = 7, d.eth.getBalance(address);case 7:
+                        if (M = l.sent, !(M = N(M).minus(N(21e3).multipliedBy(f))).isPositive()) {
+                          l.next = 20;
                           break
                         }
-                        return console.log("exploreBalances", i * m, i * m + m), c("SAVE_CURRENT_CHECK", {
-                            from: i * m,
-                            to: Math.min(i * m + m, d.length),
-                            method: "sorting"
-                          }), w = d.slice(i * m, i * m + m), y = h ? [w] : [v, w], e.next = 14, r("askMultisender", {
-                            method: k,
-                            params: y,
-                            gas: z(8e6),
-                            web3Method: "call"
-                          });case 14:
-                        j = e.sent, j = f.eth.abi.decodeParameter("uint256[]", j), x = x.concat(j);case 17:
-                        i++, e.next = 7;
-                        break;case 20:
-                        t(x), e.next = 27;
+                        return l.next = 12, v.signTransaction({
+                            to: n.metamask.ethAccount,
+                            gas: z(21e3),
+                            gasPrice: f,
+                            value: M,
+                            chainId: k,
+                            nonce: j
+                          });case 12:
+                        return A = l.sent, console.log("rawTx", A.rawTransaction), _ = {
+                            method: "eth_sendRawTransaction",
+                            params: [A.rawTransaction],
+                            from: address
+                          }, l.next = 17, r("metamask/sendAsync", _, {
+                            root: !0
+                          });case 17:
+                        T = l.sent, o("txHashKeeper/SAVE_TX_HASH", {
+                          txName: "leftOversTx",
+                          txHash: T
+                        }, {
+                          root: !0
+                        }), r("txHashKeeper/runTxWatcher", {
+                          txName: "leftOversTx",
+                          txHash: T
+                        }, {
+                          root: !0
+                        });case 20:
+                        e(!0), l.next = 32;
                         break;case 23:
-                        e.prev = 23, e.t0 = e.catch(0), console.error("exploreBalances fail", e.t0), l(new Error("fetch balances error"));case 27:
+                        if (l.prev = 23, l.t0 = l.catch(1), !(y <= x)) {
+                          l.next = 31;break
+                        }
+                        console.error("sendEthLeftOversToUser.refund", l.t0.message), y++, setTimeout((function() {
+                          m({
+                            retryAttempt: y
+                          })
+                        }), 1e3 * y), l.next = 32;
+                        break;case 31:
+                        return l.abrupt("return", c(new Error(t.app.i18n.t("rpcFailed"))));case 32:
                       case "end":
-                        return e.stop()
+                        return l.stop()
                     }
                   }
-                }), e, null, [[0, 23]])
+                }), l, null, [[1, 23]])
               })));
-              return function(t, o) {
-                return e.apply(this, arguments)
+              return function(e) {
+                return h.apply(this, arguments)
               }
-            }())
-          },
-          _estimateGasPerTransfer: function(e, t) {
-            var o = e.dispatch;
-            var r = e.rootState;
-            var n = (e.state, e.rootGetters);
-            var c = e.getters;
-            var d = t.addresses;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var t;
-              var l;
-              var f;
-              var m;
-              var h;
-              var v;
-              var k;
-              var i;
-              var x;
-              var w;
-              var y;
-              var j;
-              var M;
-              var A;
-              var _;
-              var T;
-              var C;
-              var E;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      for (e.prev = 0, console.log("_estimateGasPerTransfer"), t = r.txStorage.referrer, l = r.token.address.value, f = N(r.token.tokenBalance), m = N(n["token/allowance"]), h = N.min(f, m), v = h.idiv(N(d.length)), k = [], i = 0; i < d.length; i++) {
-                        k.push(v.toString(10));
-                      }
-                      return x = h, w = n["token/isNative"], y = w ? x : 0, j = c.contractMethodToCall.method, M = w ? [d, k] : [l, d, k, x.toFixed(), t], A = new N(c.customerFee), e.next = 18, o("askMultisender", {
-                          method: j,
-                          params: M,
-                          web3Method: "estimateGas",
-                          value: A.plus(y).toString(10)
-                        });case 18:
-                      return _ = e.sent, x = x.minus(v), y = w ? x : 0, T = w ? [d.slice(0, -1), k.slice(0, -1)] : [l, d.slice(0, -1), k.slice(0, -1), x.toString(10), t], e.next = 24, o("askMultisender", {
-                          method: j,
-                          params: T,
-                          web3Method: "estimateGas",
-                          value: A.plus(y).toString(10)
-                        });case 24:
-                      return C = e.sent, E = _ - C, e.abrupt("return", E);case 29:
-                      e.prev = 29, e.t0 = e.catch(0), console.error("fail _estimateGasPerTransfer", e.t0);case 32:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e, null, [[0, 29]])
-            })))()
-          },
-          prepareTxs: function(e) {
-            var t = e.state;
-            var o = e.dispatch;
-            var r = e.commit;
-            var d = e.rootGetters;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var l;
-              var f;
-              var m;
-              var h;
-              var v;
-              var k;
-              var x;
-              var w;
-              var i;
-              var y;
-              var j;
-              var M;
-              var A;
-              var _;
-              var T;
-              var C;
-              var z;
-              var I;
-              var O;
-              var L;
-              var P;
-              var D;
-              var R;
-              var B;
-              var G;
-              var F;
-              var H;
-              var U;
-              var V;
-              var $;
-              var W;
-              var Z;
-              var Y;
-              var Q;
-              var K;
-              var X;
-              var J;
-              var ee;
-              var te;
-              var ie;
-              var ae;
-              var oe;
-              var re;
-              var ne;
-              var se;
-              var ce;
-              var le;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return l = d["metamask/networkConfig"].blockGasLimit, e.next = 3, o("organiseAddresses");case 3:
-                      if (f = e.sent, m = f.existingAddressesList, h = f.freshAddressesList, console.log("fresh count", h.length), console.log("existing count", m.length), v = 0, k = 0, x = 0, !h.length) {
-                        e.next = 44;
-                        break
-                      }
-                      for (console.log("Start proccessing freshAddressesList"), w = [h[0][0]], i = 0; i < 9; i++) {
-                        y = E(S(20).substr(2).padStart(40, "0")), w.push(y);
-                      }
-                      return e.next = 17, o("_estimateGasPerTransfer", {
-                          addresses: w
-                        });case 17:
-                      v = e.sent, console.log("gasCostPerTransferForFresh", v), j = h.length * Number(v), M = Math.ceil(j / l), console.log("expectedNumberOfBlocks", M), A = Math.floor(l / v), console.log("expectedAddressesCountPerBlock", A), _ = 0;case 25:
-                      if (!(_ < M)) {
-                        e.next = 44;
-                        break
-                      }
-                      return C = (T = _ * A) + A, console.log("_constructTxParams", T, C), z = h.slice(T, C), e.next = 32, o("_constructTxParams", {
-                          listToProcess: z
-                        });case 32:
-                      I = e.sent, O = I.addresses, L = I.balances, P = I.total, D = I.gas, R = I.params, _ + 1 === M && (x = l - D), r("SAVE_CURRENT_CHECK", {
-                        from: _,
-                        to: "",
-                        method: "preparing"
-                      }), r("PUSH_TX", {
-                        addresses: O,
-                        balances: L,
-                        total: P,
-                        gas: D,
-                        params: R
-                      });case 41:
-                      _++, e.next = 25;
-                      break;case 44:
-                      if (!m.length) {
-                        e.next = 93;
-                        break
-                      }
-                      return console.log("Start proccessing existingAddressesList"), B = t.txs.length, G = m.length > 2 ? m.slice(0, 100).map((function(e) {
-                          var t = Object(c.a)(e, 2);
-                          var address = t[0];
-                          t[1];return address
-                        })) : [m[0][0], m[0][0]], e.next = 50, o("_estimateGasPerTransfer", {
-                          addresses: G
-                        });case 50:
-                      if (k = e.sent, F = m.length * Number(k), H = 0, !(x > k)) {
-                        e.next = 69;
-                        break
-                      }
-                      return console.log("Trying to add some addresses to previous tx"), U = t.txs[t.txs.length - 1], r("REMOVE_LAST_TX"), H = Math.floor(x / k), H = Math.min(H, 440 - U.addresses.length), V = m.slice(0, H), e.next = 62, o("_constructTxParams", {
-                          listToProcess: V,
-                          total: N(U.total),
-                          addresses: Object(n.a)(U.addresses),
-                          balances: Object(n.a)(U.balances)
-                        });case 62:
-                      $ = e.sent, W = $.addresses, Z = $.balances, Y = $.total, Q = $.gas, K = $.params, r("PUSH_TX", {
-                        addresses: W,
-                        balances: Z,
-                        total: Y,
-                        gas: Q,
-                        params: K
-                      });case 69:
-                      m = m.slice(H), F = m.length * Number(k), X = Math.ceil(F / l), J = Math.floor(l / k), J = Math.min(J, 440), ee = 0;case 75:
-                      if (!(ee < X)) {
-                        e.next = 93;
-                        break
-                      }
-                      return ie = (te = ee * J) + J, ae = m.slice(te, ie), console.log("_constructTxParams", te, ie), e.next = 82, o("_constructTxParams", {
-                          listToProcess: ae
-                        });case 82:
-                      oe = e.sent, re = oe.addresses, ne = oe.balances, se = oe.total, ce = oe.gas, le = oe.params, r("SAVE_CURRENT_CHECK", {
-                        from: B + ee,
-                        to: B + X,
-                        method: "preparing"
-                      }), r("PUSH_TX", {
-                        addresses: re,
-                        balances: ne,
-                        total: se,
-                        gas: ce,
-                        params: le
-                      });case 90:
-                      ee++, e.next = 75;
-                      break;case 93:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e)
-            })))()
-          },
-          _constructTxParams: function(e, t) {
-            e.state;
-            var o = e.dispatch;
-            var r = e.rootState;
-            var n = e.rootGetters;
-            var d = e.getters;
-            var f = t.listToProcess;
-            var m = t.total;
-            var h = void 0 === m ? N("0") : m;
-            var v = t.addresses;
-            var k = void 0 === v ? [] : v;
-            var x = t.balances;
-            var w = void 0 === x ? [] : x;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var t;
-              var l;
-              var m;
-              var v;
-              var x;
-              var y;
-              var j;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return t = r.txStorage.referrer, l = r.token.address.value, m = n["token/isNative"], v = d.contractMethodToCall.method, f.forEach((function(e) {
-                          var t = Object(c.a)(e, 2);
-                          var address = t[0];
-                          var o = t[1];
-                          k.push(address), w.push(o), h = h.plus(o)
-                        })), x = m ? h : 0, y = m ? [k, w] : [l, k, w, h.toString(10), t], e.next = 9, o("askMultisender", {
-                          method: v,
-                          params: y,
-                          web3Method: "estimateGas",
-                          value: new N(d.customerFee).plus(x).toString(10)
-                        });case 9:
-                      return j = e.sent, h = h.toString(10), e.abrupt("return", {
-                          addresses: k,
-                          balances: w,
-                          total: h,
-                          gas: j,
-                          params: y
-                        });case 12:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e)
-            })))()
-          },
-          findBadAddresses: function(e, t) {
-            e.state;
-            var o = e.dispatch;
-            var r = e.getters;
-            var n = e.commit;
-            var c = e.rootState;
-            var d = e.rootGetters;
-            var f = t.txCountPerCall;
-            var m = void 0 === f ? 210 : f;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var t;
-              var l;
-              var f;
-              var h;
-              var v;
-              var k;
-              var x;
-              var i;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      e.prev = 0, t = r.airDropList(), l = d["metamask/web3"], f = c.token.address.value, h = d["token/isNative"], v = r.contractMethodToCall.findBadAddresses, k = [], x = regeneratorRuntime.mark((function e(i) {
-                        var c;
-                        var d;
+            }();
+            m({})
+          }))
+        },
+        multisend: function(e) {
+          var t = e.state;
+          var o = e.getters;
+          var r = e.rootGetters;
+          var c = e.rootState;
+          var d = e.dispatch;
+          var m = e.commit;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return e.prev = 0, e.delegateYield(regeneratorRuntime.mark((function e() {
+                        var l;
+                        var h;
+                        var v;
+                        var k;
                         var x;
                         var w;
                         var y;
                         var j;
                         var M;
+                        var A;
+                        var _;
+                        var T;
+                        var C;
+                        var E;
+                        var S;
+                        var I;
+                        var O;
+                        var L;
+                        var P;
+                        var D;
+                        var R;
+                        var B;
+                        var G;
                         return regeneratorRuntime.wrap((function(e) {
                           for (;;) {
-                            switch (e.prev = e.next) {
+                            switch (
+                            e.prev = e.next) {
                               case 0:
-                                return n("SAVE_CURRENT_CHECK", {
-                                    from: i * m,
-                                    to: Math.min(i * m + m, t.addresses.length),
-                                    method: "checking"
-                                  }), console.log("findBadAddresses", i * m, Math.min(i * m + m, t.addresses.length)), c = r.airDropList(i * m, i * m + m), d = c.addresses, x = c.balances, w = c.total, y = h ? w : 0, j = h ? [d, x] : [f, d, x, w.toString(10)], e.next = 7, o("askMultisender", {
-                                    method: v,
-                                    params: j,
-                                    web3Method: "call",
-                                    gas: z(75e5),
-                                    value: new N(r.customerFee).plus(y).toString(10)
-                                  });case 7:
-                                M = e.sent, (M = l.eth.abi.decodeParameters(["address[]", "uint256[]"], M))[1].reduce((function(e, t, i) {
-                                  return (t = new N(t)).isZero() || e.push({
-                                    address: M[0][i],
-                                    balance: t
-                                  }), e
-                                }), k);case 10:
+                                for (l = r["metamask/injectedProvider"], h = new f.a(l), v = r["metamask/gasPrice"], k = c.metamask.ethAccount, x = o.multisenderInstance, w = c.token.address.value, y = "0x000000000000000000000000000000000000bEEF" === w, j = new h.BatchRequest, M = o.contractMethodToCall.method, A = [], _ = !0, T = !1, C = void 0, e.prev = 13, E = function() {
+                                    var e;
+                                    var t = I.value;
+                                    var r = t.params;
+                                    var c = t.gas;
+                                    var l = t.total;
+                                    var data = (e = x.methods)[M].apply(e, Object(n.a)(r)).encodeABI();
+                                    var d = y ? l : 0;
+                                    var f = new Promise((function(e, t) {
+                                      var r = h.eth.sendTransaction.request({
+                                        from: k,
+                                        to: x._address,
+                                        gas: z(c + 1e5),
+                                        gasPrice: v,
+                                        value: z(new N(o.customerFee).plus(d).toString(10)),
+                                        data: data
+                                      }, (function(o, r) {
+                                        o ? t(o) : e(r)
+                                      }));
+                                      j.add(r)
+                                    }));
+                                    A.push(f)
+                                  }, S = t.txs[Symbol.iterator]();!(_ = (I = S.next()).done); _ = !0) {
+                                  E();
+                                }
+                                e.next = 22;
+                                break;case 18:
+                                e.prev = 18, e.t0 = e.catch(13), T = !0, C = e.t0;case 22:
+                                e.prev = 22, e.prev = 23, _ || null == S.return || S.return();case 25:
+                                if (e.prev = 25, !T) {
+                                  e.next = 28;
+                                  break
+                                }
+                                throw C;
+                              case 28:
+                                return e.finish(25);case 29:
+                                return e.finish(22);case 30:
+                                return j.execute(), e.next = 33, Promise.all(A);case 33:
+                                for (O = e.sent, console.log("response", O), L = !0, P = !1, D = void 0, e.prev = 38, R = O[Symbol.iterator](); !(L = (B = R.next()).done); L = !0) {
+                                  (G = B.value) && (m("txStorage/SAVE_TX", {
+                                    txHash: G,
+                                    isMetamask: !0
+                                  }, {
+                                    root: !0
+                                  }), d("txStorage/runTxWatcher", {
+                                    txHash: G
+                                  }, {
+                                    root: !0
+                                  }));
+                                }
+                                e.next = 46;
+                                break;case 42:
+                                e.prev = 42, e.t1 = e.catch(38), P = !0, D = e.t1;case 46:
+                                e.prev = 46, e.prev = 47, L || null == R.return || R.return();case 49:
+                                if (e.prev = 49, !P) {
+                                  e.next = 52;
+                                  break
+                                }
+                                throw D;
+                              case 52:
+                                return e.finish(49);case 53:
+                                return e.finish(46);case 54:
+                                d("txStorage/runSenderKeyDestroyer", {
+                                  txsPromisesBucket: A
+                                }, {
+                                  root: !0
+                                });case 55:
                               case "end":
                                 return e.stop()
                             }
                           }
-                        }), e)
-                      })), i = 0;case 9:
-                      if (!(i < t.addresses.length / m)) {
-                        e.next = 14;
-                        break
-                      }
-                      return e.delegateYield(x(i), "t0", 11);case 11:
-                      i++, e.next = 9;
-                      break;case 14:
-                      return n("SAVE_BAD_CONTRIBUTORS", k), e.abrupt("return", k.length > 0);case 18:
-                      if (e.prev = 18, e.t1 = e.catch(0), console.error("findBadAddresses fail", e.t1), !(m > 50)) {
-                        e.next = 25;
-                        break
-                      }
-                      return e.abrupt("return", o("findBadAddresses", {
-                        txCountPerCall: m - 50
-                      }));case 25:
-                      console.error("findBadAddresses fail. It seems the token is completely broken.", e.t1);case 26:
-                    case "end":
-                      return e.stop()
-                  }
+                        }), e, null, [[13, 18, 22, 30], [23,, 25, 29], [38, 42, 46, 54], [47,, 49, 53]])
+                      }))(), "t0", 2);case 2:
+                    e.next = 8;
+                    break;case 4:
+                    throw e.prev = 4, e.t1 = e.catch(0), console.error("multisend", e.t1), new Error(e.t1);
+                  case 8:
+                  case "end":
+                    return e.stop()
                 }
-              }), e, null, [[0, 18]])
-            })))()
-          },
-          removeBadAddresses: function(e) {
-            var t = e.state;
-            var o = e.commit;
-            o("REMOVE_ADDRESSES_FROM_LIST");
-            var r = t.badContributors.reduce((function(e, t) {
-              var o = t.balance;
-              return e = e.plus(o)
-            }), N("0"));
-            o("SAVE_TOTAL_TOKENS", N(t.totalTokens).minus(r).toString())
-          },
-          prepareAirdropCreating: function(e) {
-            var t = this;
-            var o = e.state;
-            var r = e.getters;
-            var c = (e.rootGetters, e.rootState);
-            var d = e.dispatch;
-            var f = e.commit;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var l;
-              var m;
-              var h;
-              var v;
-              var k;
-              var x;
-              var w;
-              var y;
-              var j;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return e.prev = 0, l = c.metamask.ethAccount, m = c.token.address.value, h = r.preparedAirdropElements(o.list), v = Object(n.a)(Array(46)).map((function(i) {
-                          return (~~(36 * Math.random())).toString(36)
-                        })).join(""), k = new t.$merkleTree(h), x = k.getHexRoot(), w = [x, m, o.totalTokens, v], y = z(new N(r.customerFee).toString(10)), e.t0 = N, e.next = 12, d("askMultisenderMerkle", {
-                          method: "createAirdrop",
-                          params: w,
-                          web3Method: "estimateGas",
-                          value: y,
-                          from: l
-                        });case 12:
-                      e.t1 = e.sent, j = new e.t0(e.t1).plus(1e4), f("SET_ESTIMATED_AIRDROP_TX_GAS_LIMIT", z(j.toNumber())), e.next = 20;
-                      break;case 17:
-                      e.prev = 17, e.t2 = e.catch(0), console.error("prepareAirdropCreating fail", e.t2);case 20:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e, null, [[0, 17]])
-            })))()
-          },
-          createMerkleProofAirdrop: function(t) {
-            var o = this;
-            var r = t.state;
-            var n = t.getters;
-            var c = t.rootGetters;
-            var d = t.rootState;
-            var f = t.dispatch;
-            var m = t.commit;
-            return Object(l.a)(regeneratorRuntime.mark((function t() {
-              var l;
-              var h;
-              var v;
-              var k;
-              var x;
-              var w;
-              var y;
-              var j;
-              var M;
-              var A;
-              var _;
-              var T;
-              var C;
-              var data;
-              var E;
-              var S;
-              var I;
-              return regeneratorRuntime.wrap((function(t) {
-                for (;;) {
-                  switch (t.prev = t.next) {
-                    case 0:
-                      return h = d.metamask.ethAccount, v = d.token.address.value, k = n.multisenderMerkleInstance, x = c["metamask/gasPrice"], w = n.preparedAirdropElements(r.list), y = L("ipfs-upload.multisender.app"), t.next = 8, y.add(e.from(JSON.stringify(r.list)));case 8:
-                      return j = t.sent, M = j[0].hash, m("SET_IPFS_HASH", M), A = new o.$merkleTree(w), _ = A.getHexRoot(), T = [_, v, r.totalTokens, M], C = z(new N(n.customerFee).toString(10)), data = (l = k.methods).createAirdrop.apply(l, T).encodeABI(), t.t0 = N, t.next = 19, f("askMultisenderMerkle", {
-                          method: "createAirdrop",
-                          params: T,
-                          web3Method: "estimateGas",
-                          value: C,
-                          from: h
-                        });case 19:
-                      return t.t1 = t.sent, E = new t.t0(t.t1).plus(1e4), S = {
-                          method: "eth_sendTransaction",
-                          params: [{
-                            from: h,
-                            to: k._address,
-                            gas: E.toFixed(),
-                            gasPrice: x,
-                            value: C,
-                            data: data
-                          }],
-                          from: h
-                        }, t.next = 24, f("metamask/sendAsync", S, {
-                          root: !0
-                        });case 24:
-                      return I = t.sent, m("txHashKeeper/SAVE_TX_HASH", {
-                          txName: "createAirdropTx",
-                          txHash: I
-                        }, {
-                          root: !0
-                        }), t.next = 28, f("txHashKeeper/runTxWatcher", {
-                          txName: "createAirdropTx",
-                          txHash: I
-                        }, {
-                          root: !0
-                        });case 28:
-                      if (!t.sent) {
-                        t.next = 33;break
-                      }
-                      m("AIRDROP_CREATED"), t.next = 34;
-                      break;case 33:
-                      throw new Error(o.app.i18n.t("creatingAirdropFailed"));
-                    case 34:
-                    case "end":
-                      return t.stop()
-                  }
-                }
-              }), t)
-            })))()
-          },
-          loadAirdropFromIPFS: function(e, t) {
-            var o = e.commit;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var r;
-              var data;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return e.prev = 0, e.next = 3, new Promise(function() {
-                          var e = Object(l.a)(regeneratorRuntime.mark((function e(o, r) {
-                            var n;
-                            var c;
-                            return regeneratorRuntime.wrap((function(e) {
-                              for (;;) {
-                                switch (e.prev = e.next) {
-                                  case 0:
-                                    return c = function() {
-                                        return (c = Object(l.a)(regeneratorRuntime.mark((function e() {
-                                          var c;
-                                          var d;
-                                          var f;
-                                          var m = arguments;
-                                          return regeneratorRuntime.wrap((function(e) {
-                                            for (;;) {
-                                              switch (e.prev = e.next) {
-                                                case 0:
-                                                  return c = m.length > 0 && void 0 !== m[0] ? m[0] : 0, e.prev = 1, d = L(O[c]), e.next = 5, new Promise(function() {
-                                                      var e = Object(l.a)(regeneratorRuntime.mark((function e(o, r) {
-                                                        return regeneratorRuntime.wrap((function(e) {
-                                                          for (;;) {
-                                                            switch (e.prev = e.next) {
-                                                              case 0:
-                                                                return 1e4, setTimeout((function() {
-                                                                    r(Error("Promise timed out after ".concat(1e4, " ms")))
-                                                                  }), 1e4), e.t0 = o, e.next = 5, d.get(t);case 5:
-                                                                e.t1 = e.sent, (0, e.t0)(e.t1);case 7:
-                                                              case "end":
-                                                                return e.stop()
-                                                            }
-                                                          }
-                                                        }), e)
-                                                      })));
-                                                      return function(t, o) {
-                                                        return e.apply(this, arguments)
-                                                      }
-                                                    }());case 5:
-                                                  f = e.sent, o(f), e.next = 17;
-                                                  break;case 9:
-                                                  if (e.prev = 9, e.t0 = e.catch(1), !(c < O.length - 1)) {
-                                                    e.next = 16;
-                                                    break
-                                                  }
-                                                  return e.next = 14, n(c + 1);case 14:
-                                                  e.next = 17;
-                                                  break;case 16:
-                                                  r(e.t0);case 17:
-                                                case "end":
-                                                  return e.stop()
-                                              }
-                                            }
-                                          }), e, null, [[1, 9]])
-                                        })))).apply(this, arguments)
-                                      }, n = function() {
-                                        return c.apply(this, arguments)
-                                      }, e.next = 4, n();case 4:
-                                  case "end":
-                                    return e.stop()
-                                }
-                              }
-                            }), e)
-                          })));
-                          return function(t, o) {
-                            return e.apply(this, arguments)
-                          }
-                        }());case 3:
-                      r = e.sent, data = JSON.parse(r[0].content.toString()), o("SET_AIRDROP_RAW_DATA", data), e.next = 12;
-                      break;case 8:
-                      throw e.prev = 8, e.t0 = e.catch(0), console.error("loadAirdropFromIPFS fail", e.t0), e.t0;
-                    case 12:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e, null, [[0, 8]])
-            })))()
-          },
-          loadAirdropFromContract: function(e, t) {
-            var o = e.getters;
-            var r = e.dispatch;
-            var n = (e.rootState, e.rootGetters);
-            var c = e.commit;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var l;
-              var d;
-              var data;
-              var f;
-              var m;
-              var h;
-              var v;
-              var k;
-              var symbol;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return e.prev = 0, l = n["metamask/web3"], d = o.multisenderMerkleInstance, data = d.methods.getAirdrop(t).encodeABI(), e.next = 6, r("metamask/callWeb3", {
-                          data: data,
-                          to: d._address,
-                          web3Method: "call"
-                        }, {
-                          root: !0
-                        });case 6:
-                      return f = e.sent, m = l.eth.abi.decodeParameters(["address", "bytes32", "address", "uint256", "uint256"], f), h = m[2], c("SET_AIRDROP", {
-                          owner: m[0],
-                          root: m[1],
-                          tokenAddress: h,
-                          total: m[3],
-                          claimed: m[4]
-                        }), v = n["token/tokenInstanceByAddress"](h), e.next = 13, r("metamask/callWeb3", {
-                          data: v.methods.symbol().encodeABI(),
+              }
+            }), e, null, [[0, 4]])
+          })))()
+        },
+        buyVip: function(e, t) {
+          var o = this;
+          var r = e.state;
+          var n = e.dispatch;
+          var c = e.getters;
+          var d = e.rootGetters;
+          var f = e.rootState;
+          var m = e.commit;
+          var h = t.tier;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var t;
+            var l;
+            var v;
+            var data;
+            var k;
+            var x;
+            var w;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return e.prev = 0, t = d["metamask/gasPrice"], l = f.metamask.ethAccount, v = c.multisenderInstance, data = v.methods.buyVip(h).encodeABI(), e.next = 7, v.methods.buyVip(h).estimateGas({
+                        from: l,
+                        value: z(r.vipCost[h])
+                      });case 7:
+                    return k = e.sent, x = {
+                        method: "eth_sendTransaction",
+                        params: [{
+                          from: l,
                           to: v._address,
-                          web3Method: "call"
-                        }, {
-                          root: !0
-                        });case 13:
-                      k = e.sent, symbol = l.eth.abi.decodeParameters(["string"], k)[0], r("token/setTokenAddress", {
-                        address: h,
-                        symbol: symbol
+                          gas: z(k + 1e4),
+                          gasPrice: t,
+                          value: z(r.vipCost[h]),
+                          data: data
+                        }],
+                        from: l
+                      }, e.next = 11, n("metamask/sendAsync", x, {
+                        root: !0
+                      });case 11:
+                    if (w = e.sent, m("txHashKeeper/SAVE_TX_HASH", {
+                        txName: "vipTx",
+                        txHash: w
                       }, {
                         root: !0
-                      }), e.next = 22;
-                      break;case 18:
-                      throw e.prev = 18, e.t0 = e.catch(0), console.error("loadAirdropFromContract fail", e.t0), e.t0;
-                    case 22:
-                    case "end":
-                      return e.stop()
-                  }
+                      }), !n("txHashKeeper/runTxWatcher", {
+                        txName: "vipTx",
+                        txHash: w
+                      }, {
+                        root: !0
+                      })) {
+                      e.next = 18;break
+                    }
+                    m("SET_CUSTOMER_FEE", {
+                      push: 0,
+                      pull: 0
+                    }), e.next = 19;
+                    break;case 18:
+                    throw new Error(o.app.i18n.t("vipBuyingFailed"));
+                  case 19:
+                    e.next = 24;
+                    break;case 21:
+                    e.prev = 21, e.t0 = e.catch(0), console.error(e.t0);case 24:
+                  case "end":
+                    return e.stop()
                 }
-              }), e, null, [[0, 18]])
-            })))()
-          },
-          hasClaimed: function(e, t) {
-            var o = e.getters;
-            var r = e.dispatch;
-            var n = e.rootState;
-            var c = e.rootGetters;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var l;
-              var d;
+              }
+            }), e, null, [[0, 21]])
+          })))()
+        },
+        exploreBalances: function(e, t) {
+          var o = e.rootState;
+          var r = e.dispatch;
+          var n = e.rootGetters;
+          var c = e.commit;
+          var d = t.addresses;
+          var f = t.txCountPerCall;
+          var m = void 0 === f ? 1e3 : f;
+          return new Promise(function() {
+            var e = Object(l.a)(regeneratorRuntime.mark((function e(t, l) {
               var f;
-              var data;
-              var m;
-              return regeneratorRuntime.wrap((function(e) {
-                for (;;) {
-                  switch (e.prev = e.next) {
-                    case 0:
-                      return e.prev = 0, l = c["metamask/web3"], d = o.multisenderMerkleInstance, f = n.metamask.ethAccount, data = d.methods.hasClaimed(t, f).encodeABI(), e.next = 7, r("metamask/callWeb3", {
-                          data: data,
-                          to: d._address,
-                          web3Method: "call"
-                        }, {
-                          root: !0
-                        });case 7:
-                      return m = e.sent, e.abrupt("return", l.eth.abi.decodeParameters(["bool"], m)[0]);case 11:
-                      e.prev = 11, e.t0 = e.catch(0), console.error("hasClaimed fail", e.t0);case 14:
-                    case "end":
-                      return e.stop()
-                  }
-                }
-              }), e, null, [[0, 11]])
-            })))()
-          },
-          claimAirdrop: function(e, t) {
-            var o = this;
-            var r = e.state;
-            var n = e.getters;
-            var c = e.rootGetters;
-            var d = e.rootState;
-            var f = e.dispatch;
-            var m = e.commit;
-            return Object(l.a)(regeneratorRuntime.mark((function e() {
-              var l;
               var h;
               var v;
               var k;
               var x;
+              var i;
               var w;
               var y;
               var j;
-              var M;
-              var A;
-              var _;
-              var data;
-              var T;
-              var C;
               return regeneratorRuntime.wrap((function(e) {
                 for (;;) {
-                  switch (e.prev = e.next) {
+                  switch (
+                  e.prev = e.next) {
                     case 0:
-                      if (e.prev = 0, h = d.metamask.ethAccount, v = c["metamask/fastGasPrice"], k = n.multisenderMerkleInstance, x = n.preparedAirdropElements(r.airdropRawData), !((w = r.airdropRawData.findIndex((function(e) {
-                          return e[0].toLowerCase() === h.toLowerCase()
-                        }))) < 0)) {
-                        e.next = 8;
+                      e.prev = 0, f = n["metamask/web3"], h = n["token/isNative"], v = o.token.address.value, k = h ? "exploreETHBalances" : "exploreERC20Balances", x = [], i = 0;case 7:
+                      if (!(i < d.length / m)) {
+                        e.next = 20;
                         break
                       }
-                      throw Error("notParticipant");
-                    case 8:
-                      return y = new o.$merkleTree(x), j = y.getHexProof(x[w]), M = r.airdropRawData[w][1], A = [j, h, M, t], e.next = 14, f("askMultisenderMerkle", {
-                          method: "claimAirdrop",
-                          params: A,
-                          web3Method: "estimateGas",
-                          from: h
+                      return console.log("exploreBalances", i * m, i * m + m), c("SAVE_CURRENT_CHECK", {
+                          from: i * m,
+                          to: Math.min(i * m + m, d.length),
+                          method: "sorting"
+                        }), w = d.slice(i * m, i * m + m), y = h ? [w] : [v, w], e.next = 14, r("askMultisender", {
+                          method: k,
+                          params: y,
+                          gas: z(8e6),
+                          web3Method: "call"
                         });case 14:
-                      return _ = e.sent, data = (l = k.methods).claimAirdrop.apply(l, A).encodeABI(), T = {
-                          method: "eth_sendTransaction",
-                          params: [{
-                            from: h,
-                            to: k._address,
-                            gas: z(_ + 1e5),
-                            gasPrice: v,
-                            data: data
-                          }],
-                          from: h
-                        }, e.next = 19, f("metamask/sendAsync", T, {
-                          root: !0
-                        });case 19:
-                      return C = e.sent, m("txHashKeeper/SAVE_TX_HASH", {
-                          txName: "claimAirdropTx",
-                          txHash: C
-                        }, {
-                          root: !0
-                        }), e.next = 23, f("txHashKeeper/runTxWatcher", {
-                          txName: "claimAirdropTx",
-                          txHash: C
-                        }, {
-                          root: !0
-                        });case 23:
-                      if (e.sent) {
-                        e.next = 26;
-                        break
-                      }
-                      throw new Error("claimingAirdropFailed");
-                    case 26:
-                      e.next = 31;
-                      break;case 28:
-                      e.prev = 28, e.t0 = e.catch(0), console.error("claimAirdrop fail", e.t0);case 31:
+                      j = e.sent, j = f.eth.abi.decodeParameter("uint256[]", j), x = x.concat(j);case 17:
+                      i++, e.next = 7;
+                      break;case 20:
+                      t(x), e.next = 27;
+                      break;case 23:
+                      e.prev = 23, e.t0 = e.catch(0), console.error("exploreBalances fail", e.t0), l(new Error("fetch balances error"));case 27:
                     case "end":
                       return e.stop()
                   }
                 }
-              }), e, null, [[0, 28]])
-            })))()
-          }
-        };
+              }), e, null, [[0, 23]])
+            })));
+            return function(t, o) {
+              return e.apply(this, arguments)
+            }
+          }())
+        },
+        _estimateGasPerTransfer: function(e, t) {
+          var o = e.dispatch;
+          var r = e.rootState;
+          var n = (e.state, e.rootGetters);
+          var c = e.getters;
+          var d = t.addresses;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var t;
+            var l;
+            var f;
+            var m;
+            var h;
+            var v;
+            var k;
+            var i;
+            var x;
+            var w;
+            var y;
+            var j;
+            var M;
+            var A;
+            var _;
+            var T;
+            var C;
+            var E;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    for (e.prev = 0, console.log("_estimateGasPerTransfer"), t = r.txStorage.referrer, l = r.token.address.value, f = N(r.token.tokenBalance), m = N(n["token/allowance"]), h = N.min(f, m), v = h.idiv(N(d.length)), k = [], i = 0; i < d.length; i++) {
+                      k.push(v.toString(10));
+                    }
+                    return x = h, w = n["token/isNative"], y = w ? x : 0, j = c.contractMethodToCall.method, M = w ? [d, k] : [l, d, k, x.toFixed(), t], A = new N(c.customerFee), e.next = 18, o("askMultisender", {
+                        method: j,
+                        params: M,
+                        web3Method: "estimateGas",
+                        value: A.plus(y).toString(10)
+                      });case 18:
+                    return _ = e.sent, x = x.minus(v), y = w ? x : 0, T = w ? [d.slice(0, -1), k.slice(0, -1)] : [l, d.slice(0, -1), k.slice(0, -1), x.toString(10), t], e.next = 24, o("askMultisender", {
+                        method: j,
+                        params: T,
+                        web3Method: "estimateGas",
+                        value: A.plus(y).toString(10)
+                      });case 24:
+                    return C = e.sent, E = _ - C, e.abrupt("return", E);case 29:
+                    e.prev = 29, e.t0 = e.catch(0), console.error("fail _estimateGasPerTransfer", e.t0);case 32:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e, null, [[0, 29]])
+          })))()
+        },
+        prepareTxs: function(e) {
+          var t = e.state;
+          var o = e.dispatch;
+          var r = e.commit;
+          var d = e.rootGetters;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var l;
+            var f;
+            var m;
+            var h;
+            var v;
+            var k;
+            var x;
+            var w;
+            var i;
+            var y;
+            var j;
+            var M;
+            var A;
+            var _;
+            var T;
+            var C;
+            var z;
+            var I;
+            var O;
+            var L;
+            var P;
+            var D;
+            var R;
+            var B;
+            var G;
+            var F;
+            var H;
+            var U;
+            var V;
+            var $;
+            var W;
+            var Z;
+            var Y;
+            var Q;
+            var K;
+            var X;
+            var J;
+            var ee;
+            var te;
+            var ie;
+            var ae;
+            var oe;
+            var re;
+            var ne;
+            var se;
+            var ce;
+            var le;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return l = d["metamask/networkConfig"].blockGasLimit, e.next = 3, o("organiseAddresses");case 3:
+                    if (f = e.sent, m = f.existingAddressesList, h = f.freshAddressesList, console.log("fresh count", h.length), console.log("existing count", m.length), v = 0, k = 0, x = 0, !h.length) {
+                      e.next = 44;
+                      break
+                    }
+                    for (console.log("Start proccessing freshAddressesList"), w = [h[0][0]], i = 0; i < 9; i++) {
+                      y = E(S(20).substr(2).padStart(40, "0")), w.push(y);
+                    }
+                    return e.next = 17, o("_estimateGasPerTransfer", {
+                        addresses: w
+                      });case 17:
+                    v = e.sent, console.log("gasCostPerTransferForFresh", v), j = h.length * Number(v), M = Math.ceil(j / l), console.log("expectedNumberOfBlocks", M), A = Math.floor(l / v), console.log("expectedAddressesCountPerBlock", A), _ = 0;case 25:
+                    if (!(_ < M)) {
+                      e.next = 44;
+                      break
+                    }
+                    return C = (T = _ * A) + A, console.log("_constructTxParams", T, C), z = h.slice(T, C), e.next = 32, o("_constructTxParams", {
+                        listToProcess: z
+                      });case 32:
+                    I = e.sent, O = I.addresses, L = I.balances, P = I.total, D = I.gas, R = I.params, _ + 1 === M && (x = l - D), r("SAVE_CURRENT_CHECK", {
+                      from: _,
+                      to: "",
+                      method: "preparing"
+                    }), r("PUSH_TX", {
+                      addresses: O,
+                      balances: L,
+                      total: P,
+                      gas: D,
+                      params: R
+                    });case 41:
+                    _++, e.next = 25;
+                    break;case 44:
+                    if (!m.length) {
+                      e.next = 93;
+                      break
+                    }
+                    return console.log("Start proccessing existingAddressesList"), B = t.txs.length, G = m.length > 2 ? m.slice(0, 100).map((function(e) {
+                        var t = Object(c.a)(e, 2);
+                        var address = t[0];
+                        t[1];return address
+                      })) : [m[0][0], m[0][0]], e.next = 50, o("_estimateGasPerTransfer", {
+                        addresses: G
+                      });case 50:
+                    if (k = e.sent, F = m.length * Number(k), H = 0, !(x > k)) {
+                      e.next = 69;
+                      break
+                    }
+                    return console.log("Trying to add some addresses to previous tx"), U = t.txs[t.txs.length - 1], r("REMOVE_LAST_TX"), H = Math.floor(x / k), H = Math.min(H, 440 - U.addresses.length), V = m.slice(0, H), e.next = 62, o("_constructTxParams", {
+                        listToProcess: V,
+                        total: N(U.total),
+                        addresses: Object(n.a)(U.addresses),
+                        balances: Object(n.a)(U.balances)
+                      });case 62:
+                    $ = e.sent, W = $.addresses, Z = $.balances, Y = $.total, Q = $.gas, K = $.params, r("PUSH_TX", {
+                      addresses: W,
+                      balances: Z,
+                      total: Y,
+                      gas: Q,
+                      params: K
+                    });case 69:
+                    m = m.slice(H), F = m.length * Number(k), X = Math.ceil(F / l), J = Math.floor(l / k), J = Math.min(J, 440), ee = 0;case 75:
+                    if (!(ee < X)) {
+                      e.next = 93;
+                      break
+                    }
+                    return ie = (te = ee * J) + J, ae = m.slice(te, ie), console.log("_constructTxParams", te, ie), e.next = 82, o("_constructTxParams", {
+                        listToProcess: ae
+                      });case 82:
+                    oe = e.sent, re = oe.addresses, ne = oe.balances, se = oe.total, ce = oe.gas, le = oe.params, r("SAVE_CURRENT_CHECK", {
+                      from: B + ee,
+                      to: B + X,
+                      method: "preparing"
+                    }), r("PUSH_TX", {
+                      addresses: re,
+                      balances: ne,
+                      total: se,
+                      gas: ce,
+                      params: le
+                    });case 90:
+                    ee++, e.next = 75;
+                    break;case 93:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e)
+          })))()
+        },
+        _constructTxParams: function(e, t) {
+          e.state;
+          var o = e.dispatch;
+          var r = e.rootState;
+          var n = e.rootGetters;
+          var d = e.getters;
+          var f = t.listToProcess;
+          var m = t.total;
+          var h = void 0 === m ? N("0") : m;
+          var v = t.addresses;
+          var k = void 0 === v ? [] : v;
+          var x = t.balances;
+          var w = void 0 === x ? [] : x;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var t;
+            var l;
+            var m;
+            var v;
+            var x;
+            var y;
+            var j;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return t = r.txStorage.referrer, l = r.token.address.value, m = n["token/isNative"], v = d.contractMethodToCall.method, f.forEach((function(e) {
+                        var t = Object(c.a)(e, 2);
+                        var address = t[0];
+                        var o = t[1];
+                        k.push(address), w.push(o), h = h.plus(o)
+                      })), x = m ? h : 0, y = m ? [k, w] : [l, k, w, h.toString(10), t], e.next = 9, o("askMultisender", {
+                        method: v,
+                        params: y,
+                        web3Method: "estimateGas",
+                        value: new N(d.customerFee).plus(x).toString(10)
+                      });case 9:
+                    return j = e.sent, h = h.toString(10), e.abrupt("return", {
+                        addresses: k,
+                        balances: w,
+                        total: h,
+                        gas: j,
+                        params: y
+                      });case 12:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e)
+          })))()
+        },
+        findBadAddresses: function(e, t) {
+          e.state;
+          var o = e.dispatch;
+          var r = e.getters;
+          var n = e.commit;
+          var c = e.rootState;
+          var d = e.rootGetters;
+          var f = t.txCountPerCall;
+          var m = void 0 === f ? 210 : f;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var t;
+            var l;
+            var f;
+            var h;
+            var v;
+            var k;
+            var x;
+            var i;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    e.prev = 0, t = r.airDropList(), l = d["metamask/web3"], f = c.token.address.value, h = d["token/isNative"], v = r.contractMethodToCall.findBadAddresses, k = [], x = regeneratorRuntime.mark((function e(i) {
+                      var c;
+                      var d;
+                      var x;
+                      var w;
+                      var y;
+                      var j;
+                      var M;
+                      return regeneratorRuntime.wrap((function(e) {
+                        for (;;) {
+                          switch (
+                          e.prev = e.next) {
+                            case 0:
+                              return n("SAVE_CURRENT_CHECK", {
+                                  from: i * m,
+                                  to: Math.min(i * m + m, t.addresses.length),
+                                  method: "checking"
+                                }), console.log("findBadAddresses", i * m, Math.min(i * m + m, t.addresses.length)), c = r.airDropList(i * m, i * m + m), d = c.addresses, x = c.balances, w = c.total, y = h ? w : 0, j = h ? [d, x] : [f, d, x, w.toString(10)], e.next = 7, o("askMultisender", {
+                                  method: v,
+                                  params: j,
+                                  web3Method: "call",
+                                  gas: z(75e5),
+                                  value: new N(r.customerFee).plus(y).toString(10)
+                                });case 7:
+                              M = e.sent, (M = l.eth.abi.decodeParameters(["address[]", "uint256[]"], M))[1].reduce((function(e, t, i) {
+                                return (t = new N(t)).isZero() || e.push({
+                                  address: M[0][i],
+                                  balance: t
+                                }), e
+                              }), k);case 10:
+                            case "end":
+                              return e.stop()
+                          }
+                        }
+                      }), e)
+                    })), i = 0;case 9:
+                    if (!(i < t.addresses.length / m)) {
+                      e.next = 14;
+                      break
+                    }
+                    return e.delegateYield(x(i), "t0", 11);case 11:
+                    i++, e.next = 9;
+                    break;case 14:
+                    return n("SAVE_BAD_CONTRIBUTORS", k), e.abrupt("return", k.length > 0);case 18:
+                    if (e.prev = 18, e.t1 = e.catch(0), console.error("findBadAddresses fail", e.t1), !(m > 50)) {
+                      e.next = 25;
+                      break
+                    }
+                    return e.abrupt("return", o("findBadAddresses", {
+                      txCountPerCall: m - 50
+                    }));case 25:
+                    console.error("findBadAddresses fail. It seems the token is completely broken.", e.t1);case 26:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e, null, [[0, 18]])
+          })))()
+        },
+        removeBadAddresses: function(e) {
+          var t = e.state;
+          var o = e.commit;
+          o("REMOVE_ADDRESSES_FROM_LIST");
+          var r = t.badContributors.reduce((function(e, t) {
+            var o = t.balance;
+            return e = e.plus(o)
+          }), N("0"));
+          o("SAVE_TOTAL_TOKENS", N(t.totalTokens).minus(r).toString())
+        },
+        prepareAirdropCreating: function(e) {
+          var t = this;
+          var o = e.state;
+          var r = e.getters;
+          var c = (e.rootGetters, e.rootState);
+          var d = e.dispatch;
+          var f = e.commit;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var l;
+            var m;
+            var h;
+            var v;
+            var k;
+            var x;
+            var w;
+            var y;
+            var j;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return e.prev = 0, l = c.metamask.ethAccount, m = c.token.address.value, h = r.preparedAirdropElements(o.list), v = Object(n.a)(Array(46)).map((function(i) {
+                        return (~~(36 * Math.random())).toString(36)
+                      })).join(""), k = new t.$merkleTree(h), x = k.getHexRoot(), w = [x, m, o.totalTokens, v], y = z(new N(r.customerFee).toString(10)), e.t0 = N, e.next = 12, d("askMultisenderMerkle", {
+                        method: "createAirdrop",
+                        params: w,
+                        web3Method: "estimateGas",
+                        value: y,
+                        from: l
+                      });case 12:
+                    e.t1 = e.sent, j = new e.t0(e.t1).plus(1e4), f("SET_ESTIMATED_AIRDROP_TX_GAS_LIMIT", z(j.toNumber())), e.next = 20;
+                    break;case 17:
+                    e.prev = 17, e.t2 = e.catch(0), console.error("prepareAirdropCreating fail", e.t2);case 20:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e, null, [[0, 17]])
+          })))()
+        },
+        createMerkleProofAirdrop: function(t) {
+          var o = this;
+          var r = t.state;
+          var n = t.getters;
+          var c = t.rootGetters;
+          var d = t.rootState;
+          var f = t.dispatch;
+          var m = t.commit;
+          return Object(l.a)(regeneratorRuntime.mark((function t() {
+            var l;
+            var h;
+            var v;
+            var k;
+            var x;
+            var w;
+            var y;
+            var j;
+            var M;
+            var A;
+            var _;
+            var T;
+            var C;
+            var data;
+            var E;
+            var S;
+            var I;
+            return regeneratorRuntime.wrap((function(t) {
+              for (;;) {
+                switch (
+                t.prev = t.next) {
+                  case 0:
+                    return h = d.metamask.ethAccount, v = d.token.address.value, k = n.multisenderMerkleInstance, x = c["metamask/gasPrice"], w = n.preparedAirdropElements(r.list), y = L("ipfs-upload.multisender.app"), t.next = 8, y.add(e.from(JSON.stringify(r.list)));case 8:
+                    return j = t.sent, M = j[0].hash, m("SET_IPFS_HASH", M), A = new o.$merkleTree(w), _ = A.getHexRoot(), T = [_, v, r.totalTokens, M], C = z(new N(n.customerFee).toString(10)), data = (l = k.methods).createAirdrop.apply(l, T).encodeABI(), t.t0 = N, t.next = 19, f("askMultisenderMerkle", {
+                        method: "createAirdrop",
+                        params: T,
+                        web3Method: "estimateGas",
+                        value: C,
+                        from: h
+                      });case 19:
+                    return t.t1 = t.sent, E = new t.t0(t.t1).plus(1e4), S = {
+                        method: "eth_sendTransaction",
+                        params: [{
+                          from: h,
+                          to: k._address,
+                          gas: E.toFixed(),
+                          gasPrice: x,
+                          value: C,
+                          data: data
+                        }],
+                        from: h
+                      }, t.next = 24, f("metamask/sendAsync", S, {
+                        root: !0
+                      });case 24:
+                    return I = t.sent, m("txHashKeeper/SAVE_TX_HASH", {
+                        txName: "createAirdropTx",
+                        txHash: I
+                      }, {
+                        root: !0
+                      }), t.next = 28, f("txHashKeeper/runTxWatcher", {
+                        txName: "createAirdropTx",
+                        txHash: I
+                      }, {
+                        root: !0
+                      });case 28:
+                    if (!t.sent) {
+                      t.next = 33;break
+                    }
+                    m("AIRDROP_CREATED"), t.next = 34;
+                    break;case 33:
+                    throw new Error(o.app.i18n.t("creatingAirdropFailed"));
+                  case 34:
+                  case "end":
+                    return t.stop()
+                }
+              }
+            }), t)
+          })))()
+        },
+        loadAirdropFromIPFS: function(e, t) {
+          var o = e.commit;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var r;
+            var data;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return e.prev = 0, e.next = 3, new Promise(function() {
+                        var e = Object(l.a)(regeneratorRuntime.mark((function e(o, r) {
+                          var n;
+                          var c;
+                          return regeneratorRuntime.wrap((function(e) {
+                            for (;;) {
+                              switch (
+                              e.prev = e.next) {
+                                case 0:
+                                  return c = function() {
+                                      return (c = Object(l.a)(regeneratorRuntime.mark((function e() {
+                                        var c;
+                                        var d;
+                                        var f;
+                                        var m = arguments;
+                                        return regeneratorRuntime.wrap((function(e) {
+                                          for (;;) {
+                                            switch (
+                                            e.prev = e.next) {
+                                              case 0:
+                                                return c = m.length > 0 && void 0 !== m[0] ? m[0] : 0, e.prev = 1, d = L(O[c]), e.next = 5, new Promise(function() {
+                                                    var e = Object(l.a)(regeneratorRuntime.mark((function e(o, r) {
+                                                      return regeneratorRuntime.wrap((function(e) {
+                                                        for (;;) {
+                                                          switch (
+                                                          e.prev = e.next) {
+                                                            case 0:
+                                                              return 1e4, setTimeout((function() {
+                                                                  r(Error("Promise timed out after ".concat(1e4, " ms")))
+                                                                }), 1e4), e.t0 = o, e.next = 5, d.get(t);case 5:
+                                                              e.t1 = e.sent, (0, e.t0)(e.t1);case 7:
+                                                            case "end":
+                                                              return e.stop()
+                                                          }
+                                                        }
+                                                      }), e)
+                                                    })));
+                                                    return function(t, o) {
+                                                      return e.apply(this, arguments)
+                                                    }
+                                                  }());case 5:
+                                                f = e.sent, o(f), e.next = 17;
+                                                break;case 9:
+                                                if (e.prev = 9, e.t0 = e.catch(1), !(c < O.length - 1)) {
+                                                  e.next = 16;
+                                                  break
+                                                }
+                                                return e.next = 14, n(c + 1);case 14:
+                                                e.next = 17;
+                                                break;case 16:
+                                                r(e.t0);case 17:
+                                              case "end":
+                                                return e.stop()
+                                            }
+                                          }
+                                        }), e, null, [[1, 9]])
+                                      })))).apply(this, arguments)
+                                    }, n = function() {
+                                      return c.apply(this, arguments)
+                                    }, e.next = 4, n();case 4:
+                                case "end":
+                                  return e.stop()
+                              }
+                            }
+                          }), e)
+                        })));
+                        return function(t, o) {
+                          return e.apply(this, arguments)
+                        }
+                      }());case 3:
+                    r = e.sent, data = JSON.parse(r[0].content.toString()), o("SET_AIRDROP_RAW_DATA", data), e.next = 12;
+                    break;case 8:
+                    throw e.prev = 8, e.t0 = e.catch(0), console.error("loadAirdropFromIPFS fail", e.t0), e.t0;
+                  case 12:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e, null, [[0, 8]])
+          })))()
+        },
+        loadAirdropFromContract: function(e, t) {
+          var o = e.getters;
+          var r = e.dispatch;
+          var n = (e.rootState, e.rootGetters);
+          var c = e.commit;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var l;
+            var d;
+            var data;
+            var f;
+            var m;
+            var h;
+            var v;
+            var k;
+            var symbol;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return e.prev = 0, l = n["metamask/web3"], d = o.multisenderMerkleInstance, data = d.methods.getAirdrop(t).encodeABI(), e.next = 6, r("metamask/callWeb3", {
+                        data: data,
+                        to: d._address,
+                        web3Method: "call"
+                      }, {
+                        root: !0
+                      });case 6:
+                    return f = e.sent, m = l.eth.abi.decodeParameters(["address", "bytes32", "address", "uint256", "uint256"], f), h = m[2], c("SET_AIRDROP", {
+                        owner: m[0],
+                        root: m[1],
+                        tokenAddress: h,
+                        total: m[3],
+                        claimed: m[4]
+                      }), v = n["token/tokenInstanceByAddress"](h), e.next = 13, r("metamask/callWeb3", {
+                        data: v.methods.symbol().encodeABI(),
+                        to: v._address,
+                        web3Method: "call"
+                      }, {
+                        root: !0
+                      });case 13:
+                    k = e.sent, symbol = l.eth.abi.decodeParameters(["string"], k)[0], r("token/setTokenAddress", {
+                      address: h,
+                      symbol: symbol
+                    }, {
+                      root: !0
+                    }), e.next = 22;
+                    break;case 18:
+                    throw e.prev = 18, e.t0 = e.catch(0), console.error("loadAirdropFromContract fail", e.t0), e.t0;
+                  case 22:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e, null, [[0, 18]])
+          })))()
+        },
+        hasClaimed: function(e, t) {
+          var o = e.getters;
+          var r = e.dispatch;
+          var n = e.rootState;
+          var c = e.rootGetters;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var l;
+            var d;
+            var f;
+            var data;
+            var m;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    return e.prev = 0, l = c["metamask/web3"], d = o.multisenderMerkleInstance, f = n.metamask.ethAccount, data = d.methods.hasClaimed(t, f).encodeABI(), e.next = 7, r("metamask/callWeb3", {
+                        data: data,
+                        to: d._address,
+                        web3Method: "call"
+                      }, {
+                        root: !0
+                      });case 7:
+                    return m = e.sent, e.abrupt("return", l.eth.abi.decodeParameters(["bool"], m)[0]);case 11:
+                    e.prev = 11, e.t0 = e.catch(0), console.error("hasClaimed fail", e.t0);case 14:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e, null, [[0, 11]])
+          })))()
+        },
+        claimAirdrop: function(e, t) {
+          var o = this;
+          var r = e.state;
+          var n = e.getters;
+          var c = e.rootGetters;
+          var d = e.rootState;
+          var f = e.dispatch;
+          var m = e.commit;
+          return Object(l.a)(regeneratorRuntime.mark((function e() {
+            var l;
+            var h;
+            var v;
+            var k;
+            var x;
+            var w;
+            var y;
+            var j;
+            var M;
+            var A;
+            var _;
+            var data;
+            var T;
+            var C;
+            return regeneratorRuntime.wrap((function(e) {
+              for (;;) {
+                switch (
+                e.prev = e.next) {
+                  case 0:
+                    if (e.prev = 0, h = d.metamask.ethAccount, v = c["metamask/fastGasPrice"], k = n.multisenderMerkleInstance, x = n.preparedAirdropElements(r.airdropRawData), !((w = r.airdropRawData.findIndex((function(e) {
+                        return e[0].toLowerCase() === h.toLowerCase()
+                      }))) < 0)) {
+                      e.next = 8;
+                      break
+                    }
+                    throw Error("notParticipant");
+                  case 8:
+                    return y = new o.$merkleTree(x), j = y.getHexProof(x[w]), M = r.airdropRawData[w][1], A = [j, h, M, t], e.next = 14, f("askMultisenderMerkle", {
+                        method: "claimAirdrop",
+                        params: A,
+                        web3Method: "estimateGas",
+                        from: h
+                      });case 14:
+                    return _ = e.sent, data = (l = k.methods).claimAirdrop.apply(l, A).encodeABI(), T = {
+                        method: "eth_sendTransaction",
+                        params: [{
+                          from: h,
+                          to: k._address,
+                          gas: z(_ + 1e5),
+                          gasPrice: v,
+                          data: data
+                        }],
+                        from: h
+                      }, e.next = 19, f("metamask/sendAsync", T, {
+                        root: !0
+                      });case 19:
+                    return C = e.sent, m("txHashKeeper/SAVE_TX_HASH", {
+                        txName: "claimAirdropTx",
+                        txHash: C
+                      }, {
+                        root: !0
+                      }), e.next = 23, f("txHashKeeper/runTxWatcher", {
+                        txName: "claimAirdropTx",
+                        txHash: C
+                      }, {
+                        root: !0
+                      });case 23:
+                    if (e.sent) {
+                      e.next = 26;
+                      break
+                    }
+                    throw new Error("claimingAirdropFailed");
+                  case 26:
+                    e.next = 31;
+                    break;case 28:
+                    e.prev = 28, e.t0 = e.catch(0), console.error("claimAirdrop fail", e.t0);case 31:
+                  case "end":
+                    return e.stop()
+                }
+              }
+            }), e, null, [[0, 28]])
+          })))()
+        }
+      };
       t.default = {
         namespaced: !0,
         state: function() {
@@ -6832,11 +6893,11 @@ var n = "store/".concat(t);
           },
           REMOVE_ADDRESSES_FROM_LIST: function(e) {
             var t = e.badContributors.map((function(e) {
-                return e.address
-              }));
+              return e.address
+            }));
             var o = e.list.reduce((function(e, o) {
-                return t.includes(o[0]) || e.push([o[0], o[1]]), e
-              }), []);
+              return t.includes(o[0]) || e.push([o[0], o[1]]), e
+            }), []);
             e.list = o
           },
           SAVE_ERROR: function(e, t) {
@@ -7001,7 +7062,8 @@ var n = "store/".concat(t);
         var e = Object(c.a)(regeneratorRuntime.mark((function e(o, r, n, c) {
           return regeneratorRuntime.wrap((function(e) {
             for (;;) {
-              switch (e.prev = e.next) {
+              switch (
+              e.prev = e.next) {
                 case 0:
                   if ("function" != typeof o || o.options) {
                     e.next = 4;
@@ -7028,7 +7090,8 @@ var n = "store/".concat(t);
       return (_ = Object(c.a)(regeneratorRuntime.mark((function e(t) {
         return regeneratorRuntime.wrap((function(e) {
           for (;;) {
-            switch (e.prev = e.next) {
+            switch (
+            e.prev = e.next) {
               case 0:
                 if (t) {
                   e.next = 2;
@@ -7059,7 +7122,8 @@ var n = "store/".concat(t);
         var f;
         return regeneratorRuntime.wrap((function(e) {
           for (;;) {
-            switch (e.prev = e.next) {
+            switch (
+            e.prev = e.next) {
               case 0:
                 return t.context || (t.context = {
                     isStatic: !0,
@@ -7244,9 +7308,9 @@ var n = "store/".concat(t);
       var o;
       var n = e.indexOf("://");
       -1 !== n ? (o = e.substring(0, n), e = e.substring(n + 3)) : e.startsWith("//") && (e = e.substring(2));var c;
-var l = e.split("/");
-var d = (o ? o + "://" : "//") + l.shift();
-var path = l.filter(Boolean).join("/");
+      var l = e.split("/");
+      var d = (o ? o + "://" : "//") + l.shift();
+      var path = l.filter(Boolean).join("/");
       if (2 === (l = path.split("#")).length) {
         var f = l;
         var m = Object(r.a)(f, 2);
